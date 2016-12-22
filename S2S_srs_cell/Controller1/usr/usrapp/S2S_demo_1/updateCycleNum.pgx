@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2" >
+  <Program name="updateCycleNum" access="private" >
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1" >
+      <Parameter name="x_nNum" type="num" use="value" xsi:type="element" dimensions="1" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nLocalWord" type="num" xsi:type="array" size="2" />
+    </Locals>
+    <Code><![CDATA[begin
+
+  //let's suppose that in the plc's db "nDBwrite" there is a word, starting from byte 10, that represent the number of cyle performed by
+  //the robot
+
+  //first of all we have to "translate" the argument x_nNum in a 2 byte buffer representing the word (using "big-endian" format)
+  //the better way to do this is a local 2 elements array written by the "helper" function setWordAt
+  call S7:setWordAt(0,x_nNum,l_nLocalWord)
+
+  //then we write this buffer to nDBwrite!
+  call S7:writeArea(S7:nAreaDB,nDBwrite,l_nLocalWord,0,size(l_nLocalWord))
+
+end]]></Code>
+  </Program>
+</Programs>

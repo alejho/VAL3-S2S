@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="init" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_sTCPclient" type="sio" xsi:type="element" use="reference" />
+    </Parameters>
+    <Code><![CDATA[begin
+  
+  //|==============================================================================|
+  //|   S2S Library (Staubli to Siemens)                                           |
+  //|==============================================================================|
+  //|   Author: Alessio Villa (a.villa@staubli.com)
+  //|   Year: 2016
+  
+  //|   S2S is a minimal VAL3 porting of the "S7_micro_client" class of the SNAP7 library (Copyright (C) 2013, Davide Nardella, http://snap7.sourceforge.net/).
+  //|   It allows the read/write communication from a Staubli controller to a Siemens PLC over a standard ethernet TCP/IP connection.
+ 
+  //|   LICENSIG:
+  //|   Since the snap7 are released under lgplv3 license and this is a derivative work, this library is also released un lgplv3 license.
+  //|   You should have received a copy of the GNU General Public License and a copy of Lesser GNU General Public License along with S2S.
+  //|   If not, see  http://www.gnu.org/licenses/ 
+  
+  sioLink(sTCPclient, x_sTCPclient)
+  sioCtrl(sTCPclient, "port", nISOPort)
+  sioCtrl(sTCPclient, "timeout", nRecvTimeout)
+  sioCtrl(sTCPclient, "endOfString", 13)
+  sioCtrl(sTCPclient, "clients", 1)
+  sioCtrl(sTCPclient, "nagle", false)
+  
+  nLocalTSAP_HI = 1
+  nLocalTSAP_LO = 0
+  nRemoteTSAP_HI = 1
+  nRemoteTSAP_LO = 2
+  
+  bConnected = false
+  //PG connection type
+  nConnType = 1
+  call setLastError(nNoErrors)
+  nPDULength = 0
+  nRecvTimeout = 0.5
+  
+end]]></Code>
+  </Program>
+</Programs>

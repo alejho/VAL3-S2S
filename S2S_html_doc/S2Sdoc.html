@@ -1,0 +1,1021 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>S2S</title>
+	<meta name="generator" content="Zim 0.65">
+	<meta name="viewport" content="width=device-width">
+	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,greek,latin-ext' rel='stylesheet' type='text/css'> -->
+	<![if !IE]>
+	<!-- comment out for IE since it spams the user with warnings -->
+	<!--script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+	<script type='text/javascript'>
+		$(window).load(function(){$("#navigation").height( $("#content").height()+65 );});
+	</script!-->
+	<![endif]>
+	<style>
+		body, html {
+			height:100%;
+			font-family:'Open Sans', sans-serif;
+			font-size: 14px;
+			line-height:1.3em;
+			background-color:#FAFAFA;
+			text-rendering:geometricPrecision;
+			margin:0;
+			padding:0;
+		}
+		strong, b{
+			font-weight: bold;
+		}
+		.wrapper {
+			height:100%;
+			position:relative;
+		}
+		#navigation {
+			background-color:#F3F3F3;
+			background-image:url(Avil_logo.png), url(../Avil_logo.png), url(../../Avil_logo.png), url(../../../Avil_logo.png);
+			background-repeat:no-repeat;
+			background-position: center top;
+			display:inline-block;
+			border-right:1px solid #EAEAEA;
+			padding-right:65px;
+			padding-top:230px;
+			padding-left:25px;
+			position:relative;
+			float:left;
+			min-height:100%;
+			width: 300px;
+		}
+		#content {
+			float:left;
+			display:inline-block;
+			position:absolute;
+			max-width:960px;
+			padding:65px;
+		}
+		#content img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 800px;
+			}
+			
+		#navigation ul {
+			margin-top:0;
+			margin-bottom:0;
+			padding-left:40px;
+		}
+		#navigation li {
+			list-style-type:none;
+		}
+		#navigation a {
+			text-decoration:none;
+			color:gray;
+		}
+		#navigation strong {
+			color:#4E9A06;
+			font-weight:400;
+		}
+		#navigation a:hover {
+			text-decoration:underline;
+		}
+		#content h1:nth-child(1) {
+			margin-top:0;
+		}
+		h1,h2,h3,h4,h5,h6 {
+			color:#4E9A06;
+			font-weight:300;
+			margin-bottom: 0;
+		}
+		p {
+			margin-top: 0;
+		}
+		#content a {
+			color:#CE5C00;
+		}
+		#content a {
+			text-decoration: none;
+		}
+		#content a:hover {
+			text-decoration: underline;
+		}
+		#content a:active {
+			text-decoration: underline;
+		}
+		#content strike {
+			color: grey;
+		}
+		#content u {
+			text-decoration: none;
+			background-color: yellow;
+		}
+		#content tt {
+			color: #2e3436;
+		}
+		#content pre {
+			color: #2e3436;
+			margin-left: 20px;
+		}
+		.backlinks {
+			color:gray;
+		}
+		hr.footnotes {
+			width: 20%;
+			margin-left: 0;
+		}
+		@media print{
+			#navigation{
+				background-color:#FFF;
+			}
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
+
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div id="navigation"><ul>
+<li><a href="#1 What is S2S library" title="1 What is S2S library" class="page">1 What is S2S library</a></li>
+<li><a href="#2 How does it work" title="2 How does it work" class="page">2 How does it work</a></li>
+<li><a href="#3 Advantages" title="3 Advantages" class="page">3 Advantages</a></li>
+<li><a href="#4 Design Principles" title="4 Design Principles" class="page">4 Design Principles</a></li>
+<li><a href="#5 Library Functions" title="5 Library Functions" class="page">5 Library Functions</a>
+<ul>
+<li><a href="#5 Library Functions:5.0 startup functions" title="5.0 startup functions" class="page">5.0 startup functions</a>
+<ul>
+<li><a href="#5 Library Functions:5.0 startup functions:5.0.1 init" title="5.0.1 init" class="page">5.0.1 init</a></li>
+<li><a href="#5 Library Functions:5.0 startup functions:5.0.2 connectTo" title="5.0.2 connectTo" class="page">5.0.2 connectTo</a></li>
+</ul>
+</li>
+<li><a href="#5 Library Functions:5.1 read-write functions" title="5.1 read-write functions" class="page">5.1 read-write functions</a>
+<ul>
+<li><a href="#5 Library Functions:5.1 read-write functions:5.1.1 readArea" title="5.1.1 readArea" class="page">5.1.1 readArea</a></li>
+<li><a href="#5 Library Functions:5.1 read-write functions:5.1.2 writeArea" title="5.1.2 writeArea" class="page">5.1.2 writeArea</a></li>
+<li><a href="#5 Library Functions:5.1 read-write functions:5.1.3 readDB" title="5.1.3 readDB" class="page">5.1.3 readDB</a></li>
+</ul>
+</li>
+<li><a href="#5 Library Functions:5.2 Helper functions" title="5.2 Helper functions" class="page">5.2 Helper functions</a>
+<ul>
+<li><a href="#5 Library Functions:5.2 Helper functions:5.2.1 getBitAt" title="5.2.1 getBitAt" class="page">5.2.1 getBitAt</a></li>
+<li><a href="#5 Library Functions:5.2 Helper functions:5.2.2 getByteAt" title="5.2.2 getByteAt" class="page">5.2.2 getByteAt</a></li>
+<li><a href="#5 Library Functions:5.2 Helper functions:5.2.3 getWordAt" title="5.2.3 getWordAt" class="page">5.2.3 getWordAt</a></li>
+<li><a href="#5 Library Functions:5.2 Helper functions:5.2.4 getDwordAt" title="5.2.4 getDwordAt" class="page">5.2.4 getDwordAt</a></li>
+<li><a href="#5 Library Functions:5.2 Helper functions:5.2.5 setBitAt" title="5.2.5 setBitAt" class="page">5.2.5 setBitAt</a></li>
+<li><a href="#5 Library Functions:5.2 Helper functions:5.2.6 setByteAt" title="5.2.6 setByteAt" class="page">5.2.6 setByteAt</a></li>
+<li><a href="#5 Library Functions:5.2 Helper functions:5.2.7 setWordAt" title="5.2.7 setWordAt" class="page">5.2.7 setWordAt</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#6 Integration in VAL3 application" title="6 Integration in VAL3 application" class="page">6 Integration in VAL3 application</a>
+<ul>
+<li><a href="#6 Integration in VAL3 application:6.0 Getting Started" title="6.0 Getting Started" class="page">6.0 Getting Started</a></li>
+<li><a href="#6 Integration in VAL3 application:6.1 Best Pratices" title="6.1 Best Pratices" class="page">6.1 Best Pratices</a></li>
+<li><a href="#6 Integration in VAL3 application:6.2 Testing Platform" title="6.2 Testing Platform" class="page">6.2 Testing Platform</a></li>
+<li><a href="#6 Integration in VAL3 application:6.3 Errors management" title="6.3 Errors management" class="page">6.3 Errors management</a></li>
+</ul>
+</li>
+<li><a href="#7 PLC notes" title="7 PLC notes" class="page">7 PLC notes</a></li>
+<li><a href="#8 Disclaimer and Licensing" title="8 Disclaimer and Licensing" class="page">8 Disclaimer and Licensing</a></li>
+<li><a href="#9 Contacts" title="9 Contacts" class="page">9 Contacts</a></li>
+</ul>
+
+		</div>
+		<div id="content">
+			<h1>1 What is S2S library? <a name='1 What is S2S library'></a></h1>
+			<br><br>
+			<p>
+S2S is a minimal VAL3 porting of the "S7_micro_client" class of the SNAP7 library (Copyright (C) 2013, Davide Nardella, <a href="http://snap7.sourceforge.net/" title="http://snap7.sourceforge.net/" class="http">http://snap7.sourceforge.net/</a>).<br>
+S2S is an acronym for "Staubli to Siemens" (or "Siemens to Staubli" if you prefer!).<br>
+<b>It allows the read/write communication from a Staubli controller to a Siemens PLC over a standard ethernet TCP/IP connection</b>, without the needs of a specific fieldbus.  
+</p>
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>2 How does it work? <a name='2 How does it work'></a></h1>
+			<br><br>
+			<p>
+<b>Short story:</b> <br>
+Siemens S7 communication between a plc and the rest of the world works by "telegrams" sent, usually, over a fieldbus.<br>
+The same telegrams can be incapsulated in TCP/IP packet and sent over a standard Ethernet connection.<br>
+The VAL3 language allow to send/receive data over TCP/IP.
+</p>
+
+<p>
+...easy eh?
+</p>
+
+<p>
+<img src="./S2Sdoc_files/2_How_does_it_work/pasted_image.png">
+</p>
+
+<p>
+In general, all Siemens plc's with a network board can do this.<br>
+If you're interested you can find a better explanation <a href="http://snap7.sourceforge.net/siemens_comm.html" title="here" class="http">here</a>.
+</p>
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>3 Advantages <a name='3 Advantages'></a></h1>
+			<br><br>
+			<p>
+<ul>
+<li><b>No needs of a specific fieldbus</b> to manage the communication between Staubli Controller and a Siemens plc (<b>in few words...you don't need to buy ax expensive profinet/profibus board</b>).</li>
+<li><b>Flexibility</b>, since you can modify the quantity and type of information exchanged between the roboot and the plc <b>without re-configuring the fieldbus parameters (using weird tools as applicomIO!)</b>.</li>
+<li>The possibility to <b>use a Staubli controller as a "bridge" between the plc and some other device</b> connected to the robot's controller (cameras, PC's...)</li>
+</ul>
+</p>
+
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>4 Design Principles <a name='4 Design Principles'></a></h1>
+			<br><br>
+			<p>
+Memory areas on plc's side are "byte addressed", so the easiest way to represent it in a VAL3 application is with an array of "num" where an element is a byte.<br>
+<b>So, in this documentation, the terms "array of num" and "array of bytes" are synonyms.</b> 
+</p>
+
+<p>
+<b>The communication between the robot's controller and the plc is done by reading and writing these arrays of "num".</b><br>
+In these arrays of "num" (actually bytes) are "hidden" the information we want to exchange with the plc (it could be a single bit in the middle of a byte or a double word made by 4 bytes!)<br>
+<b>To help the VAL3 programmer in reading/writing information from/to these arrays the S2S library provide a collection of convenient</b> "<a href="#5 Library Functions:5.2 Helper functions" title="helper functions" class="page">helper functions</a>".
+</p>
+
+<br>
+
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5 Library Functions <a name='5 Library Functions'></a></h1>
+			<br><br>
+			
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5.0 startup functions <a name='5 Library Functions:5.0 startup functions'></a></h1>
+			<br><br>
+			<p>
+These functions must be called at least once when the VAL3 application is started to initialize the library and establish a connection.
+</p>
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5.0.1 init <a name='5 Library Functions:5.0 startup functions:5.0.1 init'></a></h1>
+			<br><br>
+			<p>
+Created giovedì 01 dicembre 2016
+</p>
+
+<h2>init(sio&amp; x_sTCPclient)</h2>
+
+<br>
+
+<p>
+This function initialize the library.<br>
+Use it once at the beginning of your VAL3 application.
+</p>
+
+<h4>Arguments:</h4>
+
+<br>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li><b>x_sTCPclient</b>: the sio variable linked with the TCP client socket you must define on your controller  </li>
+</ul>
+</p>
+
+<h4>Example:</h4>
+
+<p>
+<img src="./S2Sdoc_files/5_Library_Functions/5.0_startup_functions/5.0.1_init/pasted_image.png">
+</p>
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5.0.2 connectTo <a name='5 Library Functions:5.0 startup functions:5.0.2 connectTo'></a></h1>
+			<br><br>
+			<h2>connectTo(string x_sIp, num x_nRack, num x_nSlot)</h2>
+
+<br>
+
+<p>
+This function establish a connection between the robot's controller and the PLC and negotiate some communicatione parameters with it.<br>
+Normally it's enough to use it once at the beginning of you VAL3 application (more than once if in your application you're going to disconnect/reconnect to plc).-
+</p>
+
+<h4>Arguments:</h4>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li><b>x_sIp: </b>the PLC's ip address</li>
+<li><b>x_nRack: </b>rack number of the plc's cpu</li>
+<li><b>x_nSlot</b>: slot number of the plc's cpu</li>
+</ul>
+</p>
+
+<br>
+
+<h4>Example:</h4>
+
+<p>
+<img src="./S2Sdoc_files/5_Library_Functions/5.0_startup_functions/5.0.2_connectTo/pasted_image.png">
+</p>
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5.1 read-write functions <a name='5 Library Functions:5.1 read-write functions'></a></h1>
+			<br><br>
+			<p>
+These functions allows the controller to access the PLC memory's areas to write or read data.<br>
+They all receive an array of num as argument, this array is the "VAL3 representation" of the memory area we are accessing in the PLC.
+</p>
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5.1.1 readArea <a name='5 Library Functions:5.1 read-write functions:5.1.1 readArea'></a></h1>
+			<br><br>
+			<h2>readArea(num x_nIdArea, num x_nDBnumber, num x_nStartAt, num x_nQty, num&amp; x_nBuffer[1])</h2>
+
+<br>
+
+<p>
+This function read a memory area from the PLC starting from "x_nStartAt" byte and for a "x_nQty" number of bytes.<br>
+The result is stored in a "num" array that will represent the memory area read.
+</p>
+
+<h4>Arguments:</h4>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li><b>x_nIdArea</b>: the PLC's memory area identifier (you'll find several identifier as public members of the library with the suffix "nArea").</li>
+<li><b>x_nDBnumber</b>: the DB number you're reading from (this parameter is not important if you're not reading a db...but in VAL3 there's no possibility to overload functions so we must pass it the same to this function!).</li>
+<li><b>x_nStartAt</b>:: the byte adddress you want start to read from.</li>
+<li><b>x_nQty:</b> the amount of bytes you want to read. </li>
+<li><b>x_nBuffer[1]</b>:  a monodimensional array where the area read is stored. <b>If the size of this buffer is smaller than "x_nQty" only "size(x_nBuffer[])" will be read .</b></li>
+</ul>
+</p>
+
+<h4>Example:</h4>
+
+<br>
+
+<p>
+<img src="./S2Sdoc_files/5_Library_Functions/5.1_read-write_functions/5.1.1_readArea/pasted_image001.png">
+</p>
+
+<br>
+<br>
+<br>
+
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5.1.2 writeArea <a name='5 Library Functions:5.1 read-write functions:5.1.2 writeArea'></a></h1>
+			<br><br>
+			<h2>writeArea(num x_nIdArea, num x_nDBnumber, num x_nBuffer[1], num x_nStartAt, num x_nQty)</h2>
+
+<br>
+
+<p>
+This function write in a given PLC memory's area the content of the passed array of num, starting from a gven byte and for a given amount of bytes.
+</p>
+
+<h4>Arguments:</h4>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li><b>x_nIdArea</b>: the PLC's memory area identifier (you'll find several identifier as public members of the library with the suffix "nArea").</li>
+<li><b>x_nDBnumber</b>: the DB number you're writing to (this parameter is not important if you're not writing a db...but in VAL3 there's no possibility to overload functions so we must pass it the same to this function!).</li>
+<li><b>x_nBuffer[1]</b>:  a monodimensional array where representing the memory area we want to write. <b>If the size of this buffer is smaller than "x_nQty" only "size(x_nBuffer[])" will be written .</b></li>
+<li><b>x_nStartAt</b>:: the byte address you want start to write from.</li>
+<li><b>x_nQty:</b> the amount of bytes you want to write.</li>
+</ul>
+</p>
+
+<h4>Example:</h4>
+
+<br>
+
+<p>
+<img src="./S2Sdoc_files/5_Library_Functions/5.1_read-write_functions/5.1.2_writeArea/pasted_image.png">
+</p>
+
+<br>
+<br>
+<br>
+
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5.1.3 readDB <a name='5 Library Functions:5.1 read-write functions:5.1.3 readDB'></a></h1>
+			<br><br>
+			<h2>readDB(num x_nDBnumber, num&amp; x_nDB[1])</h2>
+
+<br>
+
+<p>
+This function is a convenient wrapper of "readArea" useful to read a whole DB from the PLC.
+</p>
+
+<h4>Arguments:</h4>
+
+<br>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li><b>x_nDBnumber</b>: the DB number you want to read</li>
+<li><b>x_nDB[1]</b>:  a monodimensional array of "num" where the db is stored. <b>The size of this buffer will be resized to match exactly the db's size , for this reason x_nDB[] MUST BE A GLOBAL VARIABLE.</b></li>
+</ul>
+</p>
+
+<h4>Example:</h4>
+
+<br>
+
+<p>
+<img src="./S2Sdoc_files/5_Library_Functions/5.1_read-write_functions/5.1.3_readDB/pasted_image.png">
+</p>
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5.2 Helper functions <a name='5 Library Functions:5.2 Helper functions'></a></h1>
+			<br><br>
+			<p>
+These function help the programmer to handle the array of "num" representing the memory's area of the PLC.
+</p>
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5.2.1 getBitAt <a name='5 Library Functions:5.2 Helper functions:5.2.1 getBitAt'></a></h1>
+			<br><br>
+			<h2>getBitAt(num x_nByteIndex, num x_nBitIndex, num x_nBuffer[1], bool&amp; x_bRes)</h2>
+
+<br>
+
+<p>
+This function get the boolean value of the bit number "x_nBitIndex" of the "x_nByteIndex" element (that represent a byte) of the passed array of num.
+</p>
+
+<h4>Arguments:</h4>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li><b>x_nByteIndex</b>: the index of the "x_nBuffer[]" array representing the byte we want to read from.</li>
+<li><b>x_nBitIndex</b>: the bit number from 0(LSB) to 7(MSB) in the x_nByteIndex byte, <b>if this value is lower than 0 or higher than 7 x_bRes will be set to false by default.</b></li>
+<li><b>x_nBuffer[1]</b>: the monodimensional array of num from where we are reading the bit value.</li>
+<li><b>x_bRes</b>: the result, set to "true" if the bit is high, false otherwise. </li>
+</ul>
+</p>
+
+<h4>Example:</h4>
+
+<br>
+
+<p>
+<div style='padding-left: 30pt'>
+<b>call</b> <b>getBitAt(12, 3, nDB, l_bRes)</b>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<img src="./S2Sdoc_files/5_Library_Functions/5.2_Helper_functions/5.2.1_getBitAt/pasted_image002.png">
+</div>
+</p>
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5.2.2 getByteAt <a name='5 Library Functions:5.2 Helper functions:5.2.2 getByteAt'></a></h1>
+			<br><br>
+			<h2>getByteAt(num x_nByteIndex, num x_nBuffer[1], num&amp; x_nRes)</h2>
+
+<br>
+
+<p>
+This function is trivial, it just return in "x_nRes" the "x_nByteIndex" element of the array x_nBuffer.
+</p>
+
+<h4>Arguments:</h4>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li><b>x_nByteIndex</b>: the index of the element in the "x_nBuffer[]" array representing the byte we want to read</li>
+<li><b>x_nBuffer[1]</b>: the monodimensional array of num from where we are reading a byte.</li>
+<li><b>x_nRes</b>: where the result is stored</li>
+</ul>
+</p>
+
+<h4>Esempio:</h4>
+
+<br>
+
+<p>
+<div style='padding-left: 30pt'>
+<b>call getByteAt(12, nDB, l_nRes)</b>
+</div>
+</p>
+
+<p>
+<img src="./S2Sdoc_files/5_Library_Functions/5.2_Helper_functions/5.2.2_getByteAt/pasted_image.png">
+</p>
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5.2.3 getWordAt <a name='5 Library Functions:5.2 Helper functions:5.2.3 getWordAt'></a></h1>
+			<br><br>
+			<h2>getWordAt(num x_nByteIndex, num x_nBuffer[1], num&amp; x_nRes)</h2>
+
+<br>
+
+<p>
+This function return in "x_nRes" the value of the word composed by two bytes starting from "x_nByteIndex" element of the array x_nBuffer.<br>
+The first byte is the lower part of the word (Big Endian)
+</p>
+
+<h4>Arguments:</h4>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li><b>x_nByteIndex</b>: the index of the element in the "x_nBuffer[]" array representing the starting byte of the word we want to read</li>
+<li><b>x_nBuffer[1]</b>: the monodimensional array of num from where we are reading a word.</li>
+<li><b>x_nRes</b>: where the result is stored</li>
+</ul>
+</p>
+
+<h4>Esempio:</h4>
+
+<br>
+
+<p>
+<div style='padding-left: 30pt'>
+<b>call getWordAt(3, nDB, l_nRes)</b>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+after this line of code l_nRes will be 1284 (4+5*2^8)
+</div>
+</p>
+
+<p>
+<img src="./S2Sdoc_files/5_Library_Functions/5.2_Helper_functions/5.2.3_getWordAt/pasted_image.png">
+</p>
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5.2.4 getDwordAt <a name='5 Library Functions:5.2 Helper functions:5.2.4 getDwordAt'></a></h1>
+			<br><br>
+			<h2>getDwordAt(num x_nByteIndex, num x_nBuffer[1], num&amp; x_nRes)</h2>
+
+<br>
+
+<p>
+This function return in "x_nRes" the value of the double word composed by four bytes starting from "x_nByteIndex" element of the array x_nBuffer.<br>
+The first byte is the lower part of the word (Big Endian)
+</p>
+
+<h4>Arguments:</h4>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li><b>x_nByteIndex</b>: the index of the element in the "x_nBuffer[]" array representing the starting byte of the double word we want to read</li>
+<li><b>x_nBuffer[1]</b>: the monodimensional array of num from where we are reading a double word.</li>
+<li><b>x_nRes</b>: where the result is stored</li>
+</ul>
+</p>
+
+<h4>Esempio:</h4>
+
+<br>
+
+<p>
+<div style='padding-left: 30pt'>
+<b>call getDWordAt(7, nDB, l_nRes)</b>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+after this line of code l_nRes will be : 8 + 9*2^8 + 10*2^16 + 1*2^32
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<img src="./S2Sdoc_files/5_Library_Functions/5.2_Helper_functions/5.2.4_getDwordAt/pasted_image.png">
+</div>
+</p>
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5.2.5 setBitAt <a name='5 Library Functions:5.2 Helper functions:5.2.5 setBitAt'></a></h1>
+			<br><br>
+			<h2>setBitAt(num x_nByteIndex, num x_nBitIndex, bool x_bBit, num&amp; x_nBuffer[1])</h2>
+
+<br>
+
+<p>
+This function set to "x_bBit" the boolean value of the bit number "x_nBitIndex" of the "x_nByteIndex" element (that represent a byte) of the passed array of num.
+</p>
+
+<h4>Arguments:</h4>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li><b>x_nByteIndex</b>: the index of the "x_nBuffer[]" array representing the byte we want to set.</li>
+<li><b>x_nBitIndex</b>: the bit number from 0(LSB) to 7(MSB) in the x_nByteIndex byte, <b>if this value is lower than 0 or higher than 7 this function will have no effetcs.</b></li>
+<li><b>x_bBit</b>: the boolean value we want to set. </li>
+<li><b>x_nBuffer[1]</b>: the monodimensional array of num from we are writing the bit value.</li>
+</ul>
+</p>
+
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5.2.6 setByteAt <a name='5 Library Functions:5.2 Helper functions:5.2.6 setByteAt'></a></h1>
+			<br><br>
+			<h2>setByteAt(num x_nByteIndex, num x_nByte ,num&amp; x_nBuffer[1])</h2>
+
+<br>
+
+<p>
+This function is trivial, it just set to "x_nByte" the "x_nByteIndex" element of the array x_nBuffer.
+</p>
+
+<h4>Arguments:</h4>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li><b>x_nByteIndex</b>: the index of the element in the "x_nBuffer[]" array representing the byte we want to read.</li>
+<li><b>x_nRes</b>: the byte value we want to set.</li>
+<li><b>x_nBuffer[1]</b>: the monodimensional array of num from where we are reading a byte.</li>
+</ul>
+</p>
+
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5.2.7 setWordAt <a name='5 Library Functions:5.2 Helper functions:5.2.7 setWordAt'></a></h1>
+			<br><br>
+			<h2>SetWordAt(num x_nByteIndex, num x_nWord, num&amp; x_nBuffer[1])</h2>
+
+<br>
+
+<p>
+This function set to "x_nWord" the value of the word composed by two bytes starting from "x_nByteIndex" element of the array x_nBuffer.<br>
+This will be done according to the Big Endian notation used in Siemens.
+</p>
+
+<h4>Arguments:</h4>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li><b>x_nByteIndex</b>: the index of the element in the "x_nBuffer[]" array representing the starting byte of the word we want to read</li>
+<li><b>x_nBuffer[1]</b>: the monodimensional array of num from where we are reading a word.</li>
+<li><b>x_nRes</b>: where the result is stored</li>
+</ul>
+</p>
+
+<br>
+
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>6 Integration in VAL3 application <a name='6 Integration in VAL3 application'></a></h1>
+			<br><br>
+			<p>
+<b>S2S library need to be linked to your VAL3 application as any other VAL3 library.</b><br>
+In the SRS cell that you can download from the repository you'll find (in Controller/usr/usrapp) the library and some demo application linked to it (see under "reference").<br>
+If you have no idea of what is a SRS cell or how to link a library to your application you should probably contact Staubli support.
+</p>
+
+<br>
+
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>6.0 Getting Started <a name='6 Integration in VAL3 application:6.0 Getting Started'></a></h1>
+			<br><br>
+			<p>
+The easiest way to start with S2S is by looking at some simple examples.<br>
+In the SRS cell that you can download from the repository you'll find a demo application called "S2S_demo_0".<br>
+Upload it to your controller.
+</p>
+
+<p>
+Configure it by setting the right ip address, rack and slot in the "<b>connectTo()</b>" function.
+</p>
+
+<p>
+<img src="./S2Sdoc_files/6_Integration_in_VAL3_application/6.0_Getting_Started/pasted_image.png">
+</p>
+
+<p>
+Rack and Slot parameters may change depending on the hardware configuration settings in the plc's project.<br>
+The following table list default values for different platforms.
+</p>
+
+<p>
+<img src="./S2Sdoc_files/6_Integration_in_VAL3_application/6.0_Getting_Started/pasted_image001.png"><br>
+Set the db number you want to use to perform the test by changing the value of the variable nDBnumber.<br>
+On the plc side, define the db (if you're using <u>S7 1200/1500 have a look </u><a href="#7 PLC notes" title="here" class="page">here</a>)
+</p>
+
+<p>
+<img src="./S2Sdoc_files/6_Integration_in_VAL3_application/6.0_Getting_Started/pasted_image002.png">
+</p>
+
+<br>
+
+<p>
+Create a socket TCP client on the controller and link it to the sio variable <b>sTcpClient</b>.<br>
+The configuration of the socket it's not important, it will be overwritten by the <b>init()</b> and <b>connectTo()</b> functions of the library.
+</p>
+
+<p>
+<img src="./S2Sdoc_files/6_Integration_in_VAL3_application/6.0_Getting_Started/pasted_image004.png"><img src="./S2Sdoc_files/6_Integration_in_VAL3_application/6.0_Getting_Started/pasted_image003.png">
+</p>
+
+<p>
+Connect a cable between the controller and the plc (be sure they're both in the same network)<br>
+Run the application to perform automatically the following operation:
+</p>
+
+<p>
+<ol type="1" start="1">
+<li>Initialize the library.</li>
+<li>Connect to PLC.</li>
+<li>Write a sample buffer to the db "nDBnumber".</li>
+<li>Read the whole db "nDBnumber".</li>
+</ol>
+</p>
+
+<p>
+If everything is ok you'll se a succes message...otherwise an error message will appear.
+</p>
+
+<p>
+<img src="./S2Sdoc_files/6_Integration_in_VAL3_application/6.0_Getting_Started/pasted_image005.png"><img src="./S2Sdoc_files/6_Integration_in_VAL3_application/6.0_Getting_Started/pasted_image006.png">
+</p>
+
+<p>
+The "S2S_demo_0" code is quite simple and well commented, so it should be easy to learn the basics for your application.
+</p>
+
+<p>
+In addition you'll find at least another demo application "S2S_demo_1" where a pick&amp;place application is made by reading/writing from two different db's.
+</p>
+
+<br>
+
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>6.1 Best Pratices <a name='6 Integration in VAL3 application:6.1 Best Pratices'></a></h1>
+			<br><br>
+			<p>
+In theory the readArea/writeArea functions of this library could work with different areas on the plc's memory (db, timers, inputs, outputs, merkers), but, <b>in my opinion, to manage the communication between a robot's controller and a plc's reading/writing db's is more than enough</b>.<br>
+To reduce complexity a good way to work is to <b>define on the plc's side two db's: the first is where the robot writes and the plc reads, in the second the robot read and the plc writes.</b>
+</p>
+
+<p>
+<img src="./S2Sdoc_files/6_Integration_in_VAL3_application/6.1_Best_Pratices/pasted_image002.png">
+</p>
+
+<br>
+
+<p>
+Since we're not using a fieldbus <b>we don't have any "dio" or "aio" in our VAL3 application coming from the PLC</b>.<br>
+For this reason <b>is a good pratice to "encapsulate" the read/write operation in specific function</b>, <b>as you can see in the "S2S_demo_1" application.</b><br>
+This will improve the efficiency in doing modification to your code and the possibility to manage erros in case of connection's problems!
+</p>
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>6.2 Testing Platform <a name='6 Integration in VAL3 application:6.2 Testing Platform'></a></h1>
+			<br><br>
+			<p>
+In the <a href="https://sourceforge.net/projects/snap7/files/" title="Snap7" class="https">Snap7</a> library folders you can find a very convenient "PLC emulator" you can use to debug your application and made some read/write db tests.<br>
+You can find it in the folder <b>\snap7-full-1.4.1\rich-demos\x86_64-win64\bin\serverdemo.exe</b><br>
+In the same folder you also find a "client" demo.
+</p>
+
+<p>
+<img src="./S2Sdoc_files/6_Integration_in_VAL3_application/6.2_Testing_Platform/pasted_image002.png">
+</p>
+
+<br>
+
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>6.3 Errors management <a name='6 Integration in VAL3 application:6.3 Errors management'></a></h1>
+			<br><br>
+			<p>
+At the moment there's no a big errors managements.<br>
+The library itself set a numeric value (<b>nLastError</b>) representig different error conditions.<br>
+In case of problems you can eventually check it to help me in debug
+</p>
+
+<p>
+<img src="./S2Sdoc_files/6_Integration_in_VAL3_application/6.3_Errors_management/pasted_image001.png">
+</p>
+
+<p>
+Coding your application you can verify, every time you interact with the plc, that everything is ok.<br>
+Like this:
+</p>
+
+<p>
+<img src="./S2Sdoc_files/6_Integration_in_VAL3_application/6.3_Errors_management/pasted_image002.png">
+</p>
+
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>7 PLC notes <a name='7 PLC notes'></a></h1>
+			<br><br>
+			<p>
+In theory S2S should work with the following hardware (but, at the moment i didn't test it!):
+</p>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li>S7 300/400/WinAC </li>
+</ul>
+</p>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li><u>S7 1200/1500 with the followings considerations:</u></li>
+</ul>
+</p>
+
+<p>
+<div style='padding-left: 60pt'>
+<b>Data Access:</b><br>
+To access a DB in S7 1500 some additional setting plc-side are needed.
+</div>
+</p>
+
+<p>
+<ol style='padding-left: 30pt' type="1" start="1">
+<li>Only global DBs can be accessed.</li>
+<li>The optimized block access must be turned off.</li>
+<li>The access level must be “full” and the “connection mechanism” must allow GET/PUT.</li>
+</ol>
+</p>
+
+<p>
+<div style='padding-left: 60pt'>
+Let’s see these settings in TIA Portal V12
+</div>
+</p>
+
+<p>
+<div style='padding-left: 60pt'>
+<b>DB property:</b><br>
+Select the DB in the left pane under “Program blocks” and press Alt-Enter (or in the contextual menu select “Properties…”)<br>
+Uncheck Optimized block access, by default it’s checked.
+</div>
+</p>
+
+<p>
+<div style='padding-left: 60pt'>
+<img src="./S2Sdoc_files/7_PLC_notes/pasted_image.png">
+</div>
+</p>
+
+<br>
+
+<p>
+<div style='padding-left: 60pt'>
+<b>Protection:</b><br>
+Select the CPU project in the left pane and press Alt-Enter (or in the contextual menu select “Properties…”)<br>
+In the item Protection, select “Full access” and Check “Permit access with PUT/GET ….” as in figure.
+</div>
+</p>
+
+<p>
+<div style='padding-left: 60pt'>
+<img src="./S2Sdoc_files/7_PLC_notes/pasted_image001.png">
+</div>
+</p>
+
+<br>
+<br>
+
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>8 Disclaimer and Licensing <a name='8 Disclaimer and Licensing'></a></h1>
+			<br><br>
+			<p>
+First of all...i'm sorry for my bed english...if you would like to make some improvements in the grammar of this documentation, you're welcome!
+</p>
+
+<p>
+Then remember that:
+</p>
+
+<p>
+<b>S2S is distributed in the hope that it will be useful, but IS PROVIDED "AS IS", WITHOUT ANY WARRANTY.      </b><br>
+<b>THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  </b><br>
+<b>SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.</b>  
+</p>
+
+<p>
+Since S2S is a derivative work of the <a href="http://snap7.sourceforge.net/" title="Snap7" class="http">Snap7</a> (released under lgpl v3) <b>this library is also released under lgpl v3</b>.
+</p>
+
+<p>
+If you didn't receive the license with the library you can get a copy <a href="https://www.gnu.org/licenses/lgpl-3.0.txt" title="here." class="https">here.</a><br>
+If you want to know more about the license go <a href="https://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License" title="here" class="https">here</a>.
+</p>
+
+<p>
+<b>In short:</b><br>
+This license is mainly applied to libraries. <br>
+You may copy, distribute and modify the software provided that modifications are described and licensed for free under LGPL. <br>
+Derivatives works (including modifications or anything statically linked to the library) can only be redistributed under LGPL, <b>but applications that use the library can be licensed as you prefer.</b>
+</p>
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>9 Contacts <a name='9 Contacts'></a></h1>
+			<br><br>
+			<p>
+For any question or request contact me to asvilla83&lt;at&gt;gmail.com
+</p>
+
+
+			<br>
+
+			
+		</div>
+	</div>
+</body>
+</html>
+

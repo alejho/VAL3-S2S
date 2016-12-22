@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="stop">
+    <Code><![CDATA[begin
+  cls()
+  title("End")
+  gotoxy(10,7)
+  putln(" END Math program")
+  resetMotion()
+  userPage(false)
+end]]></Code>
+  </Program>
+</Programs>

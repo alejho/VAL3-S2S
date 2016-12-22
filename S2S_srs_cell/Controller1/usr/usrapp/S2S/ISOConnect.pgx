@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="ISOConnect">
+    <Locals>
+      <Local name="l_nLength" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  nISO_CR[16]=nLocalTSAP_HI
+  nISO_CR[17]=nLocalTSAP_LO
+  nISO_CR[20]=nRemoteTSAP_HI
+  nISO_CR[21]=nRemoteTSAP_LO
+  
+  //if sioSet(sTCPclient, nISO_CR) == size(nISO_CR)
+  call sendPacket(nISO_CR, size(nISO_CR))
+  if nLastError==nNoErrors
+    call recvISOpacket(l_nLength)
+    //15 = 22 (sizeof CC telegram) - 7 (sizeof Header)
+    if nLastError==nNoErrors and l_nLength==15
+      //it was a connection confirm?
+      if nLastPDUType!=nCC
+        call setLastError(nErrISOInvPDU)
+      endIf
+    endIf
+  else
+    call setLastError(nErrISOConnFail)
+  endIf
+  
+end]]></Code>
+  </Program>
+</Programs>

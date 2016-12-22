@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<bio>
+  <bioDin index="0"  name="bIn0" mode="notInverted" />
+  <bioDin index="1"  name="bIn1" mode="notInverted" />
+  <bioDin index="2"  name="bIn2" mode="notInverted" />
+  <bioDin index="3"  name="bIn3" mode="notInverted" />
+  <bioDin index="4"  name="bIn4" mode="notInverted" />
+  <bioDin index="5"  name="bIn5" mode="notInverted" />
+  <bioDin index="6"  name="bIn6" mode="notInverted" />
+  <bioDin index="7"  name="bIn7" mode="notInverted" />
+  <bioDin index="8"  name="bIn8" mode="notInverted" />
+  <bioDin index="9"  name="bIn9" mode="notInverted" />
+  <bioDin index="10"  name="bIn10" mode="notInverted" />
+  <bioDin index="11"  name="bIn11" mode="notInverted" />
+  <bioDin index="12"  name="bIn12" mode="notInverted" />
+  <bioDin index="13"  name="bIn13" mode="notInverted" />
+  <bioDin index="14"  name="bIn14" mode="notInverted" />
+  <bioDin index="15"  name="bIn15" mode="notInverted" />
+  <bioDout index="0"  name="bOut0" mode="notInverted" />
+  <bioDout index="1"  name="bOut1" mode="notInverted" />
+  <bioDout index="2"  name="bOut2" mode="notInverted" />
+  <bioDout index="3"  name="bOut3" mode="notInverted" />
+  <bioDout index="4"  name="bOut4" mode="notInverted" />
+  <bioDout index="5"  name="bOut5" mode="notInverted" />
+  <bioDout index="6"  name="bOut6" mode="notInverted" />
+  <bioDout index="7"  name="bOut7" mode="notInverted" />
+  <bioDout index="8"  name="bOut8" mode="notInverted" />
+  <bioDout index="9"  name="bOut9" mode="notInverted" />
+  <bioDout index="10"  name="bOut10" mode="notInverted" />
+  <bioDout index="11"  name="bOut11" mode="notInverted" />
+  <bioDout index="12"  name="bOut12" mode="notInverted" />
+  <bioDout index="13"  name="bOut13" mode="notInverted" />
+  <bioDout index="14"  name="bOut14" mode="notInverted" />
+  <bioDout index="15"  name="bOut15" mode="notInverted" />
+</bio>

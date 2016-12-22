@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- =============================== WARNING ===================================
+ * name length is 16 characters maximum
+ * name cannot start with a numrical character (0..9)
+ * name can only be stadard ASCII characters
+ (not '-')
+============================================================================ -->
+<!-- ======================= Parameters description ============================ 
+- can 
+        freq: CAN bus frequency in KHz
+        waitBeforeReset: delay in ms before sending reset command on CAN bus 
+    (MAX_UINT32: 4294967295: Reset not send)
+    (Default: 0: no delay)                                      
+        waitBeforeStart: delay in ms before sending start command on CAN bus                                        
+    (Default: 0: no delay)
+        canOpen: true configure the CAN master to use canOpen protocol
+    (Default: true)
+- module                                                                 
+    name: name of the module in VAL3                                                
+    address: module address on the can bus                                                
+    heartBeat: maximum duration between 2 heartBeat in ms         
+    (Default: no heartBeat check)                                      
+    outputRefreshCycle: output refresh cycle time in ms (resolution is 4ms)
+    (Default: 0 so 4ms)
+    sendRtr: true force the CAN master to send a "Remote transmission Request"
+        just after synchronisation message 
+    (Default: false: no RTR)
+- dio 
+    name: name of the digital input or output in VAL3                                                      
+    mode: specified in the state must be inverted(inverted) or not(notInverted) 
+    in VAL3 (Default: notInverted).
+    channel: bit number in the PDO associated with the dio
+- aio
+    name: name of the analogic input or output in VAL3
+    coefA, coefB: coef apply to aio in VAL3: coefA*aio + coefB
+    (Default: coeafA=1 and coefB=0)
+    channel: first bit number in the PDO associated with the aio
+    bitcount: size in bit of the aio
+    format: specify the format in VAL3 (unsigned, signed, float)
+============================================================================ -->
+<can freq="500" waitBeforeReset="0" waitBeforeStart="10000">
+    <Options name="remio" />
+    <!-- ARMIO -->
+    <module name="RemIO" address="1" sendRtr="true" heartBeat="0" outputRefreshCycle="16">
+        <dinputs>
+            <dio name="remio0_I" mode="notInverted" channel="0" />
+            <dio name="remio1_I" mode="notInverted" channel="1" />
+            <dio name="remio2_I" mode="notInverted" channel="2" />
+            <dio name="remio3_I" mode="notInverted" channel="3" />
+            <dio name="remio4_I" mode="notInverted" channel="4" />
+            <dio name="remio5_I" mode="notInverted" channel="5" />
+            <dio name="remio6_I" mode="notInverted" channel="6" />
+            <dio name="remio7_I" mode="notInverted" channel="7" />
+        </dinputs>
+        <doutputs>
+            <dio name="remio0_Q" mode="notInverted" channel="0" />
+            <dio name="remio1_Q" mode="notInverted" channel="1" />
+            <dio name="remio2_Q" mode="notInverted" channel="2" />
+            <dio name="remio3_Q" mode="notInverted" channel="3" />
+            <dio name="remio4_Q" mode="notInverted" channel="4" />
+            <dio name="remio5_Q" mode="notInverted" channel="5" />
+            <dio name="remio6_Q" mode="notInverted" channel="6" />
+            <dio name="remio7_Q" mode="notInverted" channel="7" />
+        </doutputs>
+        <ainputsPdo2>
+            <aio name="remio0_IW" channel="7" bitCount="8" coefA="12.8" format="signed" />
+            <aio name="remio1_IW" channel="23" bitCount="8" coefA="12.8" format="signed" />
+            <aio name="remio2_IW" channel="39" bitCount="8" coefA="12.8" format="signed" />
+            <aio name="remio3_IW" channel="55" bitCount="8" coefA="12.8" format="signed" />
+        </ainputsPdo2>
+        <aoutputsPdo2>
+            <aio name="remio0_QW" channel="0" bitCount="12" coefA="409.5" format="unsigned" />
+            <aio name="remio1_QW" channel="16" bitCount="12" coefA="409.5" format="unsigned" />
+            <aio name="remio2_QW" channel="32" bitCount="12" coefA="409.5" format="unsigned" />
+            <aio name="remio3_QW" channel="48" bitCount="12" coefA="409.5" format="unsigned" />
+        </aoutputsPdo2>
+    </module>
+</can>

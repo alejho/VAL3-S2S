@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://www.staubli.com/robotics/VAL3/Project/3">
+  <Parameters version="s7.9.1" stackSize="5000" millimeterUnit="true" />
+  <Programs />
+  <Database>
+    <Data file="ISO_PDU_DATA_T.dtx" />
+  </Database>
+  <Libraries />
+  <Types>
+    <Type name="S7telegram_T" path="./S7telegram_T/S7telegram_T.pjx" />
+  </Types>
+</Project>

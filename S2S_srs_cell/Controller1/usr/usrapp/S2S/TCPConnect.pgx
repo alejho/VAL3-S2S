@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="TCPConnect">
+    <Code><![CDATA[begin
+  
+  //there's nothing like client.connect in val3 socket...it's the os to handle this stuff when you try to write something!
+  
+end]]></Code>
+  </Program>
+</Programs>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<encoders>
+  <encoderBoard index="0" >
+    <encoder index="0" >
+      <encoderCfg index="0"  name="e00PrstPos" value="0" />
+      <encoderCfg index="1"  name="e00Counts" value="4096" />
+      <encoderCfg index="2"  name="e00LatchEdgFall" value="0" />
+      <encoderCfg index="3"  name="e00LatchFilter" value="0" />
+    </encoder>
+    <encoder index="1" >
+      <encoderCfg index="0"  name="e01PrstPos" value="0" />
+      <encoderCfg index="1"  name="e01Counts" value="4096" />
+      <encoderCfg index="2"  name="e01LatchEdgFall" value="0" />
+      <encoderCfg index="3"  name="e01LatchFilter" value="0" />
+    </encoder>
+  </encoderBoard>
+  <encoderBoard index="1" >
+    <encoder index="0" >
+      <encoderCfg index="0"  name="e10PrstPos" value="0" />
+      <encoderCfg index="1"  name="e10Counts" value="4096" />
+      <encoderCfg index="2"  name="e10LatchEdgFall" value="0" />
+      <encoderCfg index="3"  name="e10LatchFilter" value="0" />
+    </encoder>
+    <encoder index="1" >
+      <encoderCfg index="0"  name="e11PrstPos" value="0" />
+      <encoderCfg index="1"  name="e11Counts" value="4096" />
+      <encoderCfg index="2"  name="e11LatchEdgFall" value="0" />
+      <encoderCfg index="3"  name="e11LatchFilter" value="0" />
+    </encoder>
+  </encoderBoard>
+  <encoderBoard index="2" >
+    <encoder index="0" >
+      <encoderCfg index="0"  name="e20PrstPos" value="0" />
+      <encoderCfg index="1"  name="e20Counts" value="4096" />
+      <encoderCfg index="2"  name="e20LatchEdgFall" value="0" />
+      <encoderCfg index="3"  name="e20LatchFilter" value="0" />
+    </encoder>
+    <encoder index="1" >
+      <encoderCfg index="0"  name="e21PrstPos" value="0" />
+      <encoderCfg index="1"  name="e21Counts" value="4096" />
+      <encoderCfg index="2"  name="e21LatchEdgFall" value="0" />
+      <encoderCfg index="3"  name="e21LatchFilter" value="0" />
+    </encoder>
+  </encoderBoard>
+</encoders>

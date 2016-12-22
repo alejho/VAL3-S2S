@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://www.staubli.com/robotics/VAL3/Project/3">
+  <Parameters version="s7.9.1" stackSize="5000" millimeterUnit="true" />
+  <Programs>
+    <Program file="connectTo.pgx" />
+    <Program file="getBitAt.pgx" />
+    <Program file="getByteAt.pgx" />
+    <Program file="getDBsize.pgx" />
+    <Program file="getdWordAt.pgx" />
+    <Program file="getWordAt.pgx" />
+    <Program file="init.pgx" />
+    <Program file="ISO_PDUsize.pgx" />
+    <Program file="ISOConnect.pgx" />
+    <Program file="NegotPduLength.pgx" />
+    <Program file="readArea.pgx" />
+    <Program file="readDB.pgx" />
+    <Program file="recvISOpacket.pgx" />
+    <Program file="recvPacket.pgx" />
+    <Program file="sendPacket.pgx" />
+    <Program file="setBitAt.pgx" />
+    <Program file="setByteAt.pgx" />
+    <Program file="setLastError.pgx" />
+    <Program file="setWordAt.pgx" />
+    <Program file="TCPConnect.pgx" />
+    <Program file="writeArea.pgx" />
+  </Programs>
+  <Database>
+    <Data file="S2S.dtx" />
+  </Database>
+  <Libraries>
+    <Library alias="bitOp" path="./Binary7En/Binary7En.pjx" />
+  </Libraries>
+  <Types>
+    <Type name="ISO_PDU_DATA_T" path="./ISO_PDU_DATA_T/ISO_PDU_DATA_T.pjx" />
+  </Types>
+</Project>

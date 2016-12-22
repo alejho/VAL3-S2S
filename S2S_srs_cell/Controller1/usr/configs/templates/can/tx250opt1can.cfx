@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- =============================== WARNING ===================================
+ * name length is 16 characters maximum
+ * name cannot start with a numrical character (0..9)
+ * name can only be stadard ASCII characters
+ (not '-')
+============================================================================ -->
+<!-- ======================= Parameters description ============================ 
+- can 
+        freq: CAN bus frequency in KHz
+        waitBeforeReset: delay in ms before sending reset command on CAN bus 
+    (MAX_UINT32: 4294967295: Reset not send)
+    (Default: 0: no delay)                                      
+        waitBeforeStart: delay in ms before sending start command on CAN bus                                        
+    (Default: 0: no delay)
+        canOpen: true configure the CAN master to use canOpen protocol
+    (Default: true)
+- module                                                                 
+    name: name of the module in VAL3                                                
+    address: module address on the can bus                                                
+    heartBeat: maximum duration between 2 heartBeat in ms         
+    (Default: no heartBeat check)                                      
+    outputRefreshCycle: output refresh cycle time in ms (resolution is 4ms)
+    (Default: 0 so 4ms)
+    sendRtr: true force the CAN master to send a "Remote transmission Request"
+        just after synchronisation message 
+    (Default: false: no RTR)
+- dio 
+    name: name of the digital input or output in VAL3                                                      
+    mode: specified in the state must be inverted(inverted) or not(notInverted) 
+    in VAL3 (Default: notInverted).
+    channel: bit number in the PDO associated with the dio
+- aio
+    name: name of the analogic input or output in VAL3
+    coefA, coefB: coef apply to aio in VAL3: coefA*aio + coefB
+    (Default: coeafA=1 and coefB=0)
+    channel: first bit number in the PDO associated with the aio
+    bitcount: size in bit of the aio
+    format: specify the format in VAL3 (unsigned, signed, float)
+============================================================================ -->
+<can freq="500" waitBeforeReset="0" waitBeforeStart="10000">
+    <Options name="tx250Paint_2V_MOTOR" /> 
+    <!-- ARMIO -->
+    <module name="PaintIO" address="1" sendRtr="true" heartBeat="0" outputRefreshCycle="16">
+        <dinputs>
+            <dio name="paint0_I" mode="notInverted" channel="0" />
+            <dio name="paint1_I" mode="notInverted" channel="1" />
+            <dio name="paint2_I" mode="notInverted" channel="2" />
+            <dio name="paint3_I" mode="notInverted" channel="3" />
+            <dio name="paint4_I" mode="notInverted" channel="4" />
+            <dio name="paint5_I" mode="notInverted" channel="5" />
+            <dio name="paint6_I" mode="notInverted" channel="6" />
+            <dio name="paint7_I" mode="notInverted" channel="7" />
+        </dinputs>
+        <doutputs>
+            <dio name="paint0_Q" mode="notInverted" channel="0" />
+            <dio name="paint1_Q" mode="notInverted" channel="1" />
+            <dio name="paint2_Q" mode="notInverted" channel="2" />
+            <dio name="paint3_Q" mode="notInverted" channel="3" />
+            <dio name="paint4_Q" mode="notInverted" channel="4" />
+            <dio name="paint5_Q" mode="notInverted" channel="5" />
+            <dio name="paint6_Q" mode="notInverted" channel="6" />
+            <dio name="paint7_Q" mode="notInverted" channel="7" />
+        </doutputs>        
+        <ainputsPdo2>
+            <aio name="paint0_IW" channel="7" bitCount="8" coefA="12.8" format="signed" />
+            <aio name="paint1_IW" channel="23" bitCount="8" coefA="12.8" format="signed" />
+            <aio name="paint2_IW" channel="39" bitCount="8" coefA="12.8" format="signed" />
+            <aio name="paint3_IW" channel="55" bitCount="8" coefA="12.8" format="signed" />
+        </ainputsPdo2>      
+        <aoutputsPdo2>
+            <aio name="paint0_QW" channel="0" bitCount="12" coefA="409.5" format="unsigned" />
+            <aio name="paint1_QW" channel="16" bitCount="12" coefA="409.5" format="unsigned" />
+            <aio name="paint2_QW" channel="32" bitCount="12" coefA="409.5" format="unsigned" />
+            <aio name="paint3_QW" channel="48" bitCount="12" coefA="409.5" format="unsigned" />
+        </aoutputsPdo2>     
+    </module>
+    <!-- DRIVE -->
+    <module name="PaintPump" address="2" heartBeat="16" outputRefreshCycle="16">
+        <doutputs>
+			<!--      "123456789012345" -->
+			<!-- 16 bits word0: ControlWord: CIA DSP 402 Object: 0x6040 -->
+            <dio name="switchedOn_0Q" channel="0" mode="notInverted" />
+            <dio name="enableVolt_1Q" channel="1" mode="notInverted" />
+            <dio name="quickStop_2Q" channel="2" mode="notInverted" />
+            <dio name="enableOp_3Q" channel="3" mode="notInverted" />
+            <dio name="faultReset_7Q" channel="7" mode="notInverted" />
+			<!-- 16 bits word1: Object: 0x6529 -->
+            <dio name="enableHold_16Q" channel="16" mode="notInverted" />
+            <dio name="watchDog_17Q" channel="17" mode="notInverted" />
+        </doutputs>
+        <aoutputs>
+			<!-- 16 bits word2: Object: 0x6527 -->
+            <aio name="speedCmd_32QW" channel="32" bitCount="16" coefA="-1" format="signed" />
+        </aoutputs>
+        <dinputs>
+			<!-- 16 bits word0: statusWord: CIA DSP 402 Object: 0x6041 -->
+            <dio name="ready2SwOn_0I" channel="0" mode="notInverted" />
+            <dio name="switchedOn_1I" channel="1" mode="notInverted" />
+            <dio name="opeEnabled_2I" channel="2" mode="notInverted" />
+            <dio name="fault_3I" channel="3" mode="notInverted" />
+            <dio name="voltEnabled_4I" channel="4" mode="notInverted" />
+            <dio name="quickStop_5I" channel="5" mode="notInverted" />
+            <dio name="swOnDis_6I" channel="6" mode="notInverted" />
+            <dio name="warning_7I" channel="7" mode="notInverted" />
+            <dio name="remote_9I" channel="9" mode="notInverted" />
+            <dio name="trgtReach_10I" channel="10" mode="notInverted" />
+            <dio name="intLmtAct_11I" channel="11" mode="notInverted" />
+			<!-- 16 bits word1: Object: 0x652A -->
+            <dio name="enableFbk_16I" channel="16" mode="notInverted" />
+            <dio name="speedReach_17I" channel="17" mode="notInverted" />
+            <dio name="speedOThr_18I" channel="18" mode="notInverted" />
+        </dinputs>
+        <ainputs>
+			<!-- 16 bits word3: Object: 0x6528 -->
+            <aio name="speedFbk_32IW" channel="32" bitCount="16" coefA="-1" format="signed" />
+        </ainputs>
+    </module>
+</can>

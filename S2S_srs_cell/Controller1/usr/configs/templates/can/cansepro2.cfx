@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- =============================== WARNING ===================================
+ * name length is 16 characters maximum
+ * name cannot start with a numrical character (0..9)
+ * name can only be stadard ASCII characters
+ (not '-')
+============================================================================ -->
+<!-- ======================= Parameters description ============================ 
+- can freq: CAN bus frequency in KHz                                         
+- module                                                                 
+    name: name of the module in VAL3                                                
+    address: module address on the can bus                                                
+    heartBeat: maximum duration between 2 heartBeat in ms         
+    (Default: no heartBeat check)                                      
+    outputRefreshCycle: output refresh cycle time in ms (resolution is 4ms)
+    (Default: 0 so 4ms)
+- dio 
+    name: name of the digital input or output in VAL3                                                      
+    mode: specified in the state must be inverted(inverted) or not(notInverted) 
+    in VAL3 (Default: notInverted).
+    channel: bit number in the PDO associated with the dio
+- aio
+    name: name of the analogic input or output in VAL3
+    coefA, coefB: coef apply to aio in VAL3: coefA*aio + coefB
+    (Default: coeafA=1 and coefB=0)
+    channel: first bit number in the PDO associated with the aio
+    bitcount: size in bit of the aio
+    format: specify the format in VAL3 (unsigned, signed, float)
+============================================================================ -->
+<can freq="250" >
+  <Options name="SEPRO_8IO_IMM" /> 
+  <!-- IO1 -->
+  <module name="16IOsepro_1" address="1" heartBeat="210" outputRefreshCycle="16">
+		<dinputs>
+			<dio name="io1_In1" mode="notInverted" channel="0" />
+			<dio name="io1_In2" mode="notInverted" channel="1" />
+			<dio name="io1_In3" mode="notInverted" channel="2" />
+			<dio name="io1_In4" mode="notInverted" channel="3" />
+			<dio name="io1_In5" mode="notInverted" channel="4" />
+			<dio name="io1_In6" mode="notInverted" channel="5" />
+			<dio name="io1_In7" mode="notInverted" channel="6" />
+			<dio name="io1_In8" mode="notInverted" channel="7" />
+			<dio name="io1_In9" mode="notInverted" channel="8" />
+			<dio name="io1_In10" mode="notInverted" channel="9" />
+			<dio name="io1_In11" mode="notInverted" channel="10" />
+			<dio name="io1_In12" mode="notInverted" channel="11" />
+			<dio name="io1_In13" mode="notInverted" channel="12" />
+			<dio name="io1_In14" mode="notInverted" channel="13" />
+			<dio name="io1_In15" mode="notInverted" channel="14" />
+			<dio name="io1_In16" mode="notInverted" channel="15" />
+		</dinputs>
+		<dinputsPdo2>
+			<dio name="io1_StatCC" mode="notInverted" channel="0" />
+		</dinputsPdo2>
+		<doutputs>
+			<dio name="io1_Out1" mode="notInverted" channel="0" />
+			<dio name="io1_Out2" mode="notInverted" channel="1" />
+			<dio name="io1_Out3" mode="notInverted" channel="2" />
+			<dio name="io1_Out4" mode="notInverted" channel="3" />
+			<dio name="io1_Out5" mode="notInverted" channel="4" />
+			<dio name="io1_Out6" mode="notInverted" channel="5" />
+			<dio name="io1_Out7" mode="notInverted" channel="6" />
+			<dio name="io1_Out8" mode="notInverted" channel="7" />
+			<dio name="io1_Out9" mode="notInverted" channel="8" />
+			<dio name="io1_Out10" mode="notInverted" channel="9" />
+			<dio name="io1_Out11" mode="notInverted" channel="10" />
+			<dio name="io1_Out12" mode="notInverted" channel="11" />
+			<dio name="io1_Out13" mode="notInverted" channel="12" />
+			<dio name="io1_Out14" mode="notInverted" channel="13" />
+			<dio name="io1_Out15" mode="notInverted" channel="14" />
+			<dio name="io1_Out16" mode="notInverted" channel="15" />
+		</doutputs>           
+	</module>
+  <!-- IO2 -->
+  <module name="16IOsepro_2" address="2" heartBeat="210" outputRefreshCycle="16">
+		<dinputs>
+			<dio name="io2_In1" mode="notInverted" channel="0" />
+			<dio name="io2_In2" mode="notInverted" channel="1" />
+			<dio name="io2_In3" mode="notInverted" channel="2" />
+			<dio name="io2_In4" mode="notInverted" channel="3" />
+			<dio name="io2_In5" mode="notInverted" channel="4" />
+			<dio name="io2_In6" mode="notInverted" channel="5" />
+			<dio name="io2_In7" mode="notInverted" channel="6" />
+			<dio name="io2_In8" mode="notInverted" channel="7" />
+			<dio name="io2_In9" mode="notInverted" channel="8" />
+			<dio name="io2_In10" mode="notInverted" channel="9" />
+			<dio name="io2_In11" mode="notInverted" channel="10" />
+			<dio name="io2_In12" mode="notInverted" channel="11" />
+			<dio name="io2_In13" mode="notInverted" channel="12" />
+			<dio name="io2_In14" mode="notInverted" channel="13" />
+			<dio name="io2_In15" mode="notInverted" channel="14" />
+			<dio name="io2_In16" mode="notInverted" channel="15" />
+		</dinputs>
+		<dinputsPdo2>
+			<dio name="io2_StatCC" mode="notInverted" channel="0" />
+		</dinputsPdo2>
+		<doutputs>
+			<dio name="io2_Out1" mode="notInverted" channel="0" />
+			<dio name="io2_Out2" mode="notInverted" channel="1" />
+			<dio name="io2_Out3" mode="notInverted" channel="2" />
+			<dio name="io2_Out4" mode="notInverted" channel="3" />
+			<dio name="io2_Out5" mode="notInverted" channel="4" />
+			<dio name="io2_Out6" mode="notInverted" channel="5" />
+			<dio name="io2_Out7" mode="notInverted" channel="6" />
+			<dio name="io2_Out8" mode="notInverted" channel="7" />
+			<dio name="io2_Out9" mode="notInverted" channel="8" />
+			<dio name="io2_Out10" mode="notInverted" channel="9" />
+			<dio name="io2_Out11" mode="notInverted" channel="10" />
+			<dio name="io2_Out12" mode="notInverted" channel="11" />
+			<dio name="io2_Out13" mode="notInverted" channel="12" />
+			<dio name="io2_Out14" mode="notInverted" channel="13" />
+			<dio name="io2_Out15" mode="notInverted" channel="14" />
+			<dio name="io2_Out16" mode="notInverted" channel="15" />
+		</doutputs>           
+	</module>
+  <!-- IO3 -->
+  <module name="16IOsepro_3" address="3" heartBeat="210" outputRefreshCycle="16">
+		<dinputs>
+			<dio name="io3_In1" mode="notInverted" channel="0" />
+			<dio name="io3_In2" mode="notInverted" channel="1" />
+			<dio name="io3_In3" mode="notInverted" channel="2" />
+			<dio name="io3_In4" mode="notInverted" channel="3" />
+			<dio name="io3_In5" mode="notInverted" channel="4" />
+			<dio name="io3_In6" mode="notInverted" channel="5" />
+			<dio name="io3_In7" mode="notInverted" channel="6" />
+			<dio name="io3_In8" mode="notInverted" channel="7" />
+			<dio name="io3_In9" mode="notInverted" channel="8" />
+			<dio name="io3_In10" mode="notInverted" channel="9" />
+			<dio name="io3_In11" mode="notInverted" channel="10" />
+			<dio name="io3_In12" mode="notInverted" channel="11" />
+			<dio name="io3_In13" mode="notInverted" channel="12" />
+			<dio name="io3_In14" mode="notInverted" channel="13" />
+			<dio name="io3_In15" mode="notInverted" channel="14" />
+			<dio name="io3_In16" mode="notInverted" channel="15" />
+		</dinputs>
+		<dinputsPdo2>
+			<dio name="io3_StatCC" mode="notInverted" channel="0" />
+		</dinputsPdo2>
+		<doutputs>
+			<dio name="io3_Out1" mode="notInverted" channel="0" />
+			<dio name="io3_Out2" mode="notInverted" channel="1" />
+			<dio name="io3_Out3" mode="notInverted" channel="2" />
+			<dio name="io3_Out4" mode="notInverted" channel="3" />
+			<dio name="io3_Out5" mode="notInverted" channel="4" />
+			<dio name="io3_Out6" mode="notInverted" channel="5" />
+			<dio name="io3_Out7" mode="notInverted" channel="6" />
+			<dio name="io3_Out8" mode="notInverted" channel="7" />
+			<dio name="io3_Out9" mode="notInverted" channel="8" />
+			<dio name="io3_Out10" mode="notInverted" channel="9" />
+			<dio name="io3_Out11" mode="notInverted" channel="10" />
+			<dio name="io3_Out12" mode="notInverted" channel="11" />
+			<dio name="io3_Out13" mode="notInverted" channel="12" />
+			<dio name="io3_Out14" mode="notInverted" channel="13" />
+			<dio name="io3_Out15" mode="notInverted" channel="14" />
+			<dio name="io3_Out16" mode="notInverted" channel="15" />
+		</doutputs>           
+	</module>
+  <!-- IO4 -->
+  <module name="16IOsepro_4" address="4" heartBeat="210" outputRefreshCycle="16">
+		<dinputs>
+			<dio name="io4_In1" mode="notInverted" channel="0" />
+			<dio name="io4_In2" mode="notInverted" channel="1" />
+			<dio name="io4_In3" mode="notInverted" channel="2" />
+			<dio name="io4_In4" mode="notInverted" channel="3" />
+			<dio name="io4_In5" mode="notInverted" channel="4" />
+			<dio name="io4_In6" mode="notInverted" channel="5" />
+			<dio name="io4_In7" mode="notInverted" channel="6" />
+			<dio name="io4_In8" mode="notInverted" channel="7" />
+			<dio name="io4_In9" mode="notInverted" channel="8" />
+			<dio name="io4_In10" mode="notInverted" channel="9" />
+			<dio name="io4_In11" mode="notInverted" channel="10" />
+			<dio name="io4_In12" mode="notInverted" channel="11" />
+			<dio name="io4_In13" mode="notInverted" channel="12" />
+			<dio name="io4_In14" mode="notInverted" channel="13" />
+			<dio name="io4_In15" mode="notInverted" channel="14" />
+			<dio name="io4_In16" mode="notInverted" channel="15" />
+		</dinputs>
+		<dinputsPdo2>
+			<dio name="io4_StatCC" mode="notInverted" channel="0" />
+		</dinputsPdo2>
+		<doutputs>
+			<dio name="io4_Out1" mode="notInverted" channel="0" />
+			<dio name="io4_Out2" mode="notInverted" channel="1" />
+			<dio name="io4_Out3" mode="notInverted" channel="2" />
+			<dio name="io4_Out4" mode="notInverted" channel="3" />
+			<dio name="io4_Out5" mode="notInverted" channel="4" />
+			<dio name="io4_Out6" mode="notInverted" channel="5" />
+			<dio name="io4_Out7" mode="notInverted" channel="6" />
+			<dio name="io4_Out8" mode="notInverted" channel="7" />
+			<dio name="io4_Out9" mode="notInverted" channel="8" />
+			<dio name="io4_Out10" mode="notInverted" channel="9" />
+			<dio name="io4_Out11" mode="notInverted" channel="10" />
+			<dio name="io4_Out12" mode="notInverted" channel="11" />
+			<dio name="io4_Out13" mode="notInverted" channel="12" />
+			<dio name="io4_Out14" mode="notInverted" channel="13" />
+			<dio name="io4_Out15" mode="notInverted" channel="14" />
+			<dio name="io4_Out16" mode="notInverted" channel="15" />
+		</doutputs>           
+	</module>
+  <!-- IO5 -->
+  <module name="16IOsepro_5" address="5" heartBeat="210" outputRefreshCycle="16">
+		<dinputs>
+			<dio name="io5_In1" mode="notInverted" channel="0" />
+			<dio name="io5_In2" mode="notInverted" channel="1" />
+			<dio name="io5_In3" mode="notInverted" channel="2" />
+			<dio name="io5_In4" mode="notInverted" channel="3" />
+			<dio name="io5_In5" mode="notInverted" channel="4" />
+			<dio name="io5_In6" mode="notInverted" channel="5" />
+			<dio name="io5_In7" mode="notInverted" channel="6" />
+			<dio name="io5_In8" mode="notInverted" channel="7" />
+			<dio name="io5_In9" mode="notInverted" channel="8" />
+			<dio name="io5_In10" mode="notInverted" channel="9" />
+			<dio name="io5_In11" mode="notInverted" channel="10" />
+			<dio name="io5_In12" mode="notInverted" channel="11" />
+			<dio name="io5_In13" mode="notInverted" channel="12" />
+			<dio name="io5_In14" mode="notInverted" channel="13" />
+			<dio name="io5_In15" mode="notInverted" channel="14" />
+			<dio name="io5_In16" mode="notInverted" channel="15" />
+		</dinputs>
+		<dinputsPdo2>
+			<dio name="io5_StatCC" mode="notInverted" channel="0" />
+		</dinputsPdo2>
+		<doutputs>
+			<dio name="io5_Out1" mode="notInverted" channel="0" />
+			<dio name="io5_Out2" mode="notInverted" channel="1" />
+			<dio name="io5_Out3" mode="notInverted" channel="2" />
+			<dio name="io5_Out4" mode="notInverted" channel="3" />
+			<dio name="io5_Out5" mode="notInverted" channel="4" />
+			<dio name="io5_Out6" mode="notInverted" channel="5" />
+			<dio name="io5_Out7" mode="notInverted" channel="6" />
+			<dio name="io5_Out8" mode="notInverted" channel="7" />
+			<dio name="io5_Out9" mode="notInverted" channel="8" />
+			<dio name="io5_Out10" mode="notInverted" channel="9" />
+			<dio name="io5_Out11" mode="notInverted" channel="10" />
+			<dio name="io5_Out12" mode="notInverted" channel="11" />
+			<dio name="io5_Out13" mode="notInverted" channel="12" />
+			<dio name="io5_Out14" mode="notInverted" channel="13" />
+			<dio name="io5_Out15" mode="notInverted" channel="14" />
+			<dio name="io5_Out16" mode="notInverted" channel="15" />
+		</doutputs>           
+	</module>
+  <!-- IO6 -->
+  <module name="16IOsepro_6" address="6" heartBeat="210" outputRefreshCycle="16">
+		<dinputs>
+			<dio name="io6_In1" mode="notInverted" channel="0" />
+			<dio name="io6_In2" mode="notInverted" channel="1" />
+			<dio name="io6_In3" mode="notInverted" channel="2" />
+			<dio name="io6_In4" mode="notInverted" channel="3" />
+			<dio name="io6_In5" mode="notInverted" channel="4" />
+			<dio name="io6_In6" mode="notInverted" channel="5" />
+			<dio name="io6_In7" mode="notInverted" channel="6" />
+			<dio name="io6_In8" mode="notInverted" channel="7" />
+			<dio name="io6_In9" mode="notInverted" channel="8" />
+			<dio name="io6_In10" mode="notInverted" channel="9" />
+			<dio name="io6_In11" mode="notInverted" channel="10" />
+			<dio name="io6_In12" mode="notInverted" channel="11" />
+			<dio name="io6_In13" mode="notInverted" channel="12" />
+			<dio name="io6_In14" mode="notInverted" channel="13" />
+			<dio name="io6_In15" mode="notInverted" channel="14" />
+			<dio name="io6_In16" mode="notInverted" channel="15" />
+		</dinputs>
+		<dinputsPdo2>
+			<dio name="io6_StatCC" mode="notInverted" channel="0" />
+		</dinputsPdo2>
+		<doutputs>
+			<dio name="io6_Out1" mode="notInverted" channel="0" />
+			<dio name="io6_Out2" mode="notInverted" channel="1" />
+			<dio name="io6_Out3" mode="notInverted" channel="2" />
+			<dio name="io6_Out4" mode="notInverted" channel="3" />
+			<dio name="io6_Out5" mode="notInverted" channel="4" />
+			<dio name="io6_Out6" mode="notInverted" channel="5" />
+			<dio name="io6_Out7" mode="notInverted" channel="6" />
+			<dio name="io6_Out8" mode="notInverted" channel="7" />
+			<dio name="io6_Out9" mode="notInverted" channel="8" />
+			<dio name="io6_Out10" mode="notInverted" channel="9" />
+			<dio name="io6_Out11" mode="notInverted" channel="10" />
+			<dio name="io6_Out12" mode="notInverted" channel="11" />
+			<dio name="io6_Out13" mode="notInverted" channel="12" />
+			<dio name="io6_Out14" mode="notInverted" channel="13" />
+			<dio name="io6_Out15" mode="notInverted" channel="14" />
+			<dio name="io6_Out16" mode="notInverted" channel="15" />
+		</doutputs>           
+	</module>
+  <!-- IO7 -->
+  <module name="16IOsepro_7" address="7" heartBeat="210" outputRefreshCycle="16">
+		<dinputs>
+			<dio name="io7_In1" mode="notInverted" channel="0" />
+			<dio name="io7_In2" mode="notInverted" channel="1" />
+			<dio name="io7_In3" mode="notInverted" channel="2" />
+			<dio name="io7_In4" mode="notInverted" channel="3" />
+			<dio name="io7_In5" mode="notInverted" channel="4" />
+			<dio name="io7_In6" mode="notInverted" channel="5" />
+			<dio name="io7_In7" mode="notInverted" channel="6" />
+			<dio name="io7_In8" mode="notInverted" channel="7" />
+			<dio name="io7_In9" mode="notInverted" channel="8" />
+			<dio name="io7_In10" mode="notInverted" channel="9" />
+			<dio name="io7_In11" mode="notInverted" channel="10" />
+			<dio name="io7_In12" mode="notInverted" channel="11" />
+			<dio name="io7_In13" mode="notInverted" channel="12" />
+			<dio name="io7_In14" mode="notInverted" channel="13" />
+			<dio name="io7_In15" mode="notInverted" channel="14" />
+			<dio name="io7_In16" mode="notInverted" channel="15" />
+		</dinputs>
+		<dinputsPdo2>
+			<dio name="io7_StatCC" mode="notInverted" channel="0" />
+		</dinputsPdo2>
+		<doutputs>
+			<dio name="io7_Out1" mode="notInverted" channel="0" />
+			<dio name="io7_Out2" mode="notInverted" channel="1" />
+			<dio name="io7_Out3" mode="notInverted" channel="2" />
+			<dio name="io7_Out4" mode="notInverted" channel="3" />
+			<dio name="io7_Out5" mode="notInverted" channel="4" />
+			<dio name="io7_Out6" mode="notInverted" channel="5" />
+			<dio name="io7_Out7" mode="notInverted" channel="6" />
+			<dio name="io7_Out8" mode="notInverted" channel="7" />
+			<dio name="io7_Out9" mode="notInverted" channel="8" />
+			<dio name="io7_Out10" mode="notInverted" channel="9" />
+			<dio name="io7_Out11" mode="notInverted" channel="10" />
+			<dio name="io7_Out12" mode="notInverted" channel="11" />
+			<dio name="io7_Out13" mode="notInverted" channel="12" />
+			<dio name="io7_Out14" mode="notInverted" channel="13" />
+			<dio name="io7_Out15" mode="notInverted" channel="14" />
+			<dio name="io7_Out16" mode="notInverted" channel="15" />
+		</doutputs>           
+	</module>
+  <!-- IO8 -->
+  <module name="16IOsepro_8" address="8" heartBeat="210" outputRefreshCycle="16">
+		<dinputs>
+			<dio name="io8_In1" mode="notInverted" channel="0" />
+			<dio name="io8_In2" mode="notInverted" channel="1" />
+			<dio name="io8_In3" mode="notInverted" channel="2" />
+			<dio name="io8_In4" mode="notInverted" channel="3" />
+			<dio name="io8_In5" mode="notInverted" channel="4" />
+			<dio name="io8_In6" mode="notInverted" channel="5" />
+			<dio name="io8_In7" mode="notInverted" channel="6" />
+			<dio name="io8_In8" mode="notInverted" channel="7" />
+			<dio name="io8_In9" mode="notInverted" channel="8" />
+			<dio name="io8_In10" mode="notInverted" channel="9" />
+			<dio name="io8_In11" mode="notInverted" channel="10" />
+			<dio name="io8_In12" mode="notInverted" channel="11" />
+			<dio name="io8_In13" mode="notInverted" channel="12" />
+			<dio name="io8_In14" mode="notInverted" channel="13" />
+			<dio name="io8_In15" mode="notInverted" channel="14" />
+			<dio name="io8_In16" mode="notInverted" channel="15" />
+		</dinputs>
+		<dinputsPdo2>
+			<dio name="io8_StatCC" mode="notInverted" channel="0" />
+		</dinputsPdo2>
+		<doutputs>
+			<dio name="io8_Out1" mode="notInverted" channel="0" />
+			<dio name="io8_Out2" mode="notInverted" channel="1" />
+			<dio name="io8_Out3" mode="notInverted" channel="2" />
+			<dio name="io8_Out4" mode="notInverted" channel="3" />
+			<dio name="io8_Out5" mode="notInverted" channel="4" />
+			<dio name="io8_Out6" mode="notInverted" channel="5" />
+			<dio name="io8_Out7" mode="notInverted" channel="6" />
+			<dio name="io8_Out8" mode="notInverted" channel="7" />
+			<dio name="io8_Out9" mode="notInverted" channel="8" />
+			<dio name="io8_Out10" mode="notInverted" channel="9" />
+			<dio name="io8_Out11" mode="notInverted" channel="10" />
+			<dio name="io8_Out12" mode="notInverted" channel="11" />
+			<dio name="io8_Out13" mode="notInverted" channel="12" />
+			<dio name="io8_Out14" mode="notInverted" channel="13" />
+			<dio name="io8_Out15" mode="notInverted" channel="14" />
+			<dio name="io8_Out16" mode="notInverted" channel="15" />
+		</doutputs>           
+	</module>
+  <!-- IMM9 -->
+	<module name="IMMSepro_9" address="9" heartBeat="210" outputRefreshCycle="32">
+		<dinputs>
+			<dio name="IMM9_OPEN" mode="notInverted" channel="0" />
+			<dio name="IMM9_PART_CLOSE" mode="notInverted" channel="1" />
+			<dio name="IMM9_PART_OPEN" mode="notInverted" channel="2" />
+			<dio name="IMM9_AUTO_SEMI" mode="notInverted" channel="3" />
+			<dio name="IMM9_EJECT_FRWD" mode="notInverted" channel="4" />
+			<dio name="IMM9_EJECT_BACK" mode="notInverted" channel="5" />
+			<dio name="IMM9_C1_MVT_OVR" mode="notInverted" channel="6" />
+			<dio name="IMM9_C2_MVT_OVR" mode="notInverted" channel="7" />
+			<dio name="IMM9_MotCtrlRst" mode="notInverted" channel="8" />
+			<dio name="IMM9_No_Pdt_Sel" mode="notInverted" channel="9" />
+			<dio name="IMM9_BAD_PART" mode="notInverted" channel="12" />
+			<dio name="IMM9_PCO" mode="notInverted" channel="13" />
+			<dio name="IMM9_ROBOT_OFF" mode="notInverted" channel="14" />
+			<dio name="IMM9_POWER_OK" mode="notInverted" channel="15" />
+			<dio name="IMM9_PDT_ES_CH1" mode="notInverted" channel="17" />
+			<dio name="IMM9_RBT_ES_CH1" mode="notInverted" channel="18" />
+			<dio name="IMM9_PER_ES_CH1" mode="notInverted" channel="19" />
+			<dio name="IMM9_ES_OK_CH1" mode="notInverted" channel="20" />
+			<dio name="IMM9_PRT_CLS_1" mode="notInverted" channel="21" />
+			<dio name="IMM9_PRO_CLS_1" mode="notInverted" channel="22" />
+		</dinputs>
+		<doutputs>           
+			<dio name="IMM9_VCM" mode="notInverted" channel="0" />
+			<dio name="IMM9_VFO" mode="notInverted" channel="1" />
+			<dio name="IMM9_VSEJ" mode="notInverted" channel="2" />
+			<dio name="IMM9_VREJ" mode="notInverted" channel="3" />
+			<dio name="IMM9_VN1" mode="notInverted" channel="4" />
+			<dio name="IMM9_VN2" mode="notInverted" channel="5" />
+			<dio name="IMM9_ROFF" mode="notInverted" channel="6" />
+			<dio name="IMM9_SBD" mode="notInverted" channel="7" />
+			<dio name="IMM9_POWER" mode="notInverted" channel="11" />
+			<dio name="IMM9_SBD2" mode="notInverted" channel="12" />
+			<dio name="IMM9_BRAKE3" mode="notInverted" channel="13" />
+			<dio name="IMM9_BRAKE2" mode="notInverted" channel="14" />
+			<dio name="IMM9_BRAKE1" mode="notInverted" channel="15" />
+		</doutputs>           
+		<dinputsPdo2>
+			<!-- wordStatus1 -->
+			<dio name="IMM9_Red024Vdef" mode="notInverted" channel="0" />
+			<dio name="IMM9_Red12def" mode="notInverted" channel="1" />
+			<dio name="IMM9_In0V_def" mode="notInverted" channel="2" />
+			<dio name="IMM9_In24V_def" mode="notInverted" channel="3" />
+			<dio name="IMM9_Line1_def" mode="notInverted" channel="4" />
+			<dio name="IMM9_Frc_def" mode="notInverted" channel="5" />
+			<dio name="IMM9_Power_def" mode="notInverted" channel="6" />
+			<dio name="IMM9_Relay_def" mode="notInverted" channel="7" />
+			<!-- wordStatus2 -->
+			<dio name="IMM9_POWER_FAIL" mode="notInverted" channel="8" />
+			<dio name="IMM9_TM_WDG_CPU" mode="notInverted" channel="9" />
+			<!-- wordStatus3 -->
+			<dio name="IMM9_BP1_1" mode="notInverted" channel="16" />
+			<dio name="IMM9_BP1_2" mode="notInverted" channel="17" />
+			<dio name="IMM9_BP1_3" mode="notInverted" channel="18" />
+			<dio name="IMM9_BP1_4" mode="notInverted" channel="19" />
+			<dio name="IMM9_BP1_5" mode="notInverted" channel="20" />
+			<dio name="IMM9_BP1_6" mode="notInverted" channel="21" />
+			<dio name="IMM9_BP1_7" mode="notInverted" channel="22" />
+			<dio name="IMM9_BP1_8" mode="notInverted" channel="23" />
+			<!-- wordStatus4 -->
+			<dio name="IMM9_VCM_ENBL" mode="notInverted" channel="24" />
+			<dio name="IMM9_SBD1_ENBL" mode="notInverted" channel="31" />
+			<!-- wordStatus5 -->
+			<dio name="IMM9_POWER_ENBL" mode="notInverted" channel="35" />
+			<dio name="IMM9_SBD2_ENBL" mode="notInverted" channel="36" />
+			<!-- wordStatus6 -->
+			<dio name="IMM9_PWR_ERR_W6" mode="notInverted" channel="40" />
+			<dio name="IMM9_Frc_ES_0V" mode="notInverted" channel="41" />
+			<dio name="IMM9_Frc_ES_24V" mode="notInverted" channel="42" />
+			<dio name="IMM9_PDT_ES_24V" mode="notInverted" channel="43" />
+			<dio name="IMM9_ES_24V" mode="notInverted" channel="44" />
+			<dio name="IMM9_PRO_CLS_2" mode="notInverted" channel="45" />
+			<dio name="IMM9_PWR_OK_W6" mode="notInverted" channel="46" />
+			<dio name="IMM9_SBD_OK" mode="notInverted" channel="47" />
+			<!-- wordStatus6 ???????? -->
+		</dinputsPdo2>
+    <aoutputsPdo2>
+			<aio name="IMM9_immWd" channel="0" bitCount="8" format="unsigned" />
+		</aoutputsPdo2>
+	</module>
+  <!-- IMMA -->
+	<module name="IMMSepro_A" address="10" heartBeat="210" outputRefreshCycle="32">
+		<dinputs>
+			<dio name="IMMA_OPEN" mode="notInverted" channel="0" />
+			<dio name="IMMA_PART_CLOSE" mode="notInverted" channel="1" />
+			<dio name="IMMA_PART_OPEN" mode="notInverted" channel="2" />
+			<dio name="IMMA_AUTO_SEMI" mode="notInverted" channel="3" />
+			<dio name="IMMA_EJECT_FRWD" mode="notInverted" channel="4" />
+			<dio name="IMMA_EJECT_BACK" mode="notInverted" channel="5" />
+			<dio name="IMMA_C1_MVT_OVR" mode="notInverted" channel="6" />
+			<dio name="IMMA_C2_MVT_OVR" mode="notInverted" channel="7" />
+			<dio name="IMMA_MotCtrlRst" mode="notInverted" channel="8" />
+			<dio name="IMMA_No_Pdt_Sel" mode="notInverted" channel="9" />
+			<dio name="IMMA_BAD_PART" mode="notInverted" channel="12" />
+			<dio name="IMMA_PCO" mode="notInverted" channel="13" />
+			<dio name="IMMA_ROBOT_OFF" mode="notInverted" channel="14" />
+			<dio name="IMMA_POWER_OK" mode="notInverted" channel="15" />
+			<dio name="IMMA_PDT_ES_CH1" mode="notInverted" channel="17" />
+			<dio name="IMMA_RBT_ES_CH1" mode="notInverted" channel="18" />
+			<dio name="IMMA_PER_ES_CH1" mode="notInverted" channel="19" />
+			<dio name="IMMA_ES_OK_CH1" mode="notInverted" channel="20" />
+			<dio name="IMMA_PRT_CLS_1" mode="notInverted" channel="21" />
+			<dio name="IMMA_PRO_CLS_1" mode="notInverted" channel="22" />
+		</dinputs>
+		<doutputs>           
+			<dio name="IMMA_VCM" mode="notInverted" channel="0" />
+			<dio name="IMMA_VFO" mode="notInverted" channel="1" />
+			<dio name="IMMA_VSEJ" mode="notInverted" channel="2" />
+			<dio name="IMMA_VREJ" mode="notInverted" channel="3" />
+			<dio name="IMMA_VN1" mode="notInverted" channel="4" />
+			<dio name="IMMA_VN2" mode="notInverted" channel="5" />
+			<dio name="IMMA_ROFF" mode="notInverted" channel="6" />
+			<dio name="IMMA_SBD" mode="notInverted" channel="7" />
+			<dio name="IMMA_POWER" mode="notInverted" channel="11" />
+			<dio name="IMMA_SBD2" mode="notInverted" channel="12" />
+			<dio name="IMMA_BRAKE3" mode="notInverted" channel="13" />
+			<dio name="IMMA_BRAKE2" mode="notInverted" channel="14" />
+			<dio name="IMMA_BRAKE1" mode="notInverted" channel="15" />
+		</doutputs>           
+		<dinputsPdo2>
+			<!-- wordStatus1 -->
+			<dio name="IMMA_Red024Vdef" mode="notInverted" channel="0" />
+			<dio name="IMMA_Red12def" mode="notInverted" channel="1" />
+			<dio name="IMMA_In0V_def" mode="notInverted" channel="2" />
+			<dio name="IMMA_In24V_def" mode="notInverted" channel="3" />
+			<dio name="IMMA_Line1_def" mode="notInverted" channel="4" />
+			<dio name="IMMA_Frc_def" mode="notInverted" channel="5" />
+			<dio name="IMMA_Power_def" mode="notInverted" channel="6" />
+			<dio name="IMMA_Relay_def" mode="notInverted" channel="7" />
+			<!-- wordStatus2 -->
+			<dio name="IMMA_POWER_FAIL" mode="notInverted" channel="8" />
+			<dio name="IMMA_TM_WDG_CPU" mode="notInverted" channel="9" />
+			<!-- wordStatus3 -->
+			<dio name="IMMA_BP1_1" mode="notInverted" channel="16" />
+			<dio name="IMMA_BP1_2" mode="notInverted" channel="17" />
+			<dio name="IMMA_BP1_3" mode="notInverted" channel="18" />
+			<dio name="IMMA_BP1_4" mode="notInverted" channel="19" />
+			<dio name="IMMA_BP1_5" mode="notInverted" channel="20" />
+			<dio name="IMMA_BP1_6" mode="notInverted" channel="21" />
+			<dio name="IMMA_BP1_7" mode="notInverted" channel="22" />
+			<dio name="IMMA_BP1_8" mode="notInverted" channel="23" />
+			<!-- wordStatus4 -->
+			<dio name="IMMA_VCM_ENBL" mode="notInverted" channel="24" />
+			<dio name="IMMA_SBD1_ENBL" mode="notInverted" channel="31" />
+			<!-- wordStatus5 -->
+			<dio name="IMMA_POWER_ENBL" mode="notInverted" channel="35" />
+			<dio name="IMMA_SBD2_ENBL" mode="notInverted" channel="36" />
+			<!-- wordStatus6 -->
+			<dio name="IMMA_PWR_ERR_W6" mode="notInverted" channel="40" />
+			<dio name="IMMA_Frc_ES_0V" mode="notInverted" channel="41" />
+			<dio name="IMMA_Frc_ES_24V" mode="notInverted" channel="42" />
+			<dio name="IMMA_PDT_ES_24V" mode="notInverted" channel="43" />
+			<dio name="IMMA_ES_24V" mode="notInverted" channel="44" />
+			<dio name="IMMA_PRO_CLS_2" mode="notInverted" channel="45" />
+			<dio name="IMMA_PWR_OK_W6" mode="notInverted" channel="46" />
+			<dio name="IMMA_SBD_OK" mode="notInverted" channel="47" />
+			<!-- wordStatus6 ???????? -->
+		</dinputsPdo2>
+    <aoutputsPdo2>
+			<aio name="IMMA_immWd" channel="0" bitCount="8" format="unsigned" />
+		</aoutputsPdo2>
+	</module>
+</can>

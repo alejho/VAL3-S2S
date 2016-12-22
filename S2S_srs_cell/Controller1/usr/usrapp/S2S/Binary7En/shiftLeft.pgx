@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="shiftLeft" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_sBinary" type="string" xsi:type="element" use="reference" />
+      <Parameter name="x_nPos" type="num" xsi:type="element" />
+    </Parameters>
+    <Locals>
+      <Local name="l_bIsBinary" type="bool" xsi:type="array" size="1" />
+      <Local name="l_sBinary" type="string" xsi:type="array" size="1" />
+      <Local name="l_nIndex" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  l_bIsBinary=false
+  call isBinary(x_sBinary, l_bIsBinary)
+  l_sBinary = x_sBinary
+  
+  if l_bIsBinary
+    for l_nIndex=0 to x_nPos-1
+      l_sBinary = l_sBinary + "0"
+    endFor
+    x_sBinary=right(l_sBinary, len(x_sBinary))
+  else
+    logMsg("Binary->shiftLeft: wrong input format")
+  endIf
+  
+end]]></Code>
+  </Program>
+</Programs>

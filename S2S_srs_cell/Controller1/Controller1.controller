@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalController xmlns="http://www.staubli.com/robotics/controller/1">
+  <Version>s7.9.1</Version>
+  <Properties>
+    <Property type="SRS.VAL3Studio.Services.RobotSkinControllerProperty">
+      <RobotSkin xmlns="http://www.staubli.com/robotics/robotskincontrollerproperty/1">TX60-HB-WS</RobotSkin>
+    </Property>
+    <Property type="SRS._3DView.Services.TcpControllerProperty">
+      <Tcp Name="Tool1.handler" xmlns="http://www.staubli.com/robotics/tcpcontrollerproperty/1" />
+    </Property>
+  </Properties>
+  <Target hostname="192.168.0.254" name="10.10.1.3">
+    <Context type="RemoteConnection" port="5653" username="default" />
+    <Context type="ClientRemoteAccess" port="800" username="default" />
+  </Target>
+</LocalController>

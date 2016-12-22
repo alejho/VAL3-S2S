@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="DecToHex" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nDecimal" type="num" xsi:type="element" />
+      <Parameter name="x_sHex" type="string" xsi:type="element" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nRest" type="num" xsi:type="array" size="1" />
+      <Local name="l_nDecimal" type="num" xsi:type="array" size="1" />
+      <Local name="l_nIndex" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  //only integers allowed!
+  l_nDecimal = round(x_nDecimal)
+  resize(sDecHexBuff, 1, 1)
+  
+  while l_nDecimal != 0
+    
+    l_nRest = l_nDecimal % 16
+    sDecHexBuff[size(sDecHexBuff)-1] = sDec2HexSymbols[l_nRest]   
+    append(sDecHexBuff) 
+    l_nDecimal = roundDown(l_nDecimal/16)
+    
+  endWhile
+  
+  x_sHex = ""
+  for l_nIndex = size(sDecHexBuff)-1 to 0 step-1
+    x_sHex = x_sHex + sDecHexBuff[l_nIndex] 
+  endFor
+  
+  
+end]]></Code>
+  </Program>
+</Programs>

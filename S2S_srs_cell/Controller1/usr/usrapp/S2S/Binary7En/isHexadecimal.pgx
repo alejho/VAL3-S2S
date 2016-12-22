@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="isHexadecimal">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_sHex" type="string" xsi:type="element" />
+      <Parameter name="x_bRes" type="bool" xsi:type="element" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="i" type="num" xsi:type="array" size="1" />
+      <Local name="l_bFound" type="bool" xsi:type="array" size="1" />
+      <Local name="j" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  for i=0 to len(x_sHex)-1 
+    l_bFound=false
+    for j=0 to len(sDec2HexSymbols)-1
+      if mid(x_sHex, 1, i)==sDec2HexSymbols[j]
+        l_bFound=true
+      endIf
+    endFor
+    //character not found in the hexadecimal symbol's list
+    if !l_bFound
+      x_bRes=false
+      return
+    endIf
+  endFor
+  
+  x_bRes=true
+  
+end]]></Code>
+  </Program>
+</Programs>

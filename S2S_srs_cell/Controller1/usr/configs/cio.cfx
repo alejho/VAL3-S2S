@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cio>
+  <cioDin index="0"  name="cDin0" mode="notInverted" />
+  <cioDin index="1"  name="cDin1" mode="notInverted" />
+  <cioDin index="2"  name="cDin2" mode="notInverted" />
+  <cioDin index="3"  name="cDin3" mode="notInverted" />
+  <cioDin index="4"  name="cDin4" mode="notInverted" />
+  <cioDin index="5"  name="cDin5" mode="notInverted" />
+  <cioDin index="6"  name="cDin6" mode="notInverted" />
+  <cioDin index="7"  name="cDin7" mode="notInverted" />
+  <cioDout index="0"  name="cDout0" mode="notInverted" />
+  <cioDout index="1"  name="cDout1" mode="notInverted" />
+  <cioDout index="2"  name="cDout2" mode="notInverted" />
+  <cioDout index="3"  name="cDout3" mode="notInverted" />
+  <cioDout index="4"  name="cDout4" mode="notInverted" />
+  <cioDout index="5"  name="cDout5" mode="notInverted" />
+  <cioDout index="6"  name="cDout6" mode="notInverted" />
+  <cioDout index="7"  name="cDout7" mode="notInverted" />
+  <cioAin index="0"  name="cAin0" coefA="1" coefB="0" />
+  <cioAin index="1"  name="cAin1" coefA="1" coefB="0" />
+  <cioAin index="2"  name="cAin2" coefA="1" coefB="0" />
+  <cioAin index="3"  name="cAin3" coefA="1" coefB="0" />
+  <cioAout index="0"  name="cAout0" coefA="1" coefB="0" />
+  <cioAout index="1"  name="cAout1" coefA="1" coefB="0" />
+  <cioAout index="2"  name="cAout2" coefA="1" coefB="0" />
+  <cioAout index="3"  name="cAout3" coefA="1" coefB="0" />
+</cio>

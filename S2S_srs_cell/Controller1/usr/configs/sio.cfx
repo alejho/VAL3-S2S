@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sio>
+  <socketClt>
+    <String name="name" value="sTcpClient" />
+    <String name="desc" value="" />
+    <Inet name="serverIp" value="127.0.0.1" />
+    <Uint name="portNumber" value="102" />
+    <Int name="endOfString" value="13" />
+    <Float name="timeOut" value="0.5" />
+    <Bool name="nagle" value="false" />
+  </socketClt>
+</sio>

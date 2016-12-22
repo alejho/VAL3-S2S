@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="examplemenu">
+    <Locals>
+      <Local name="l_sBin1" type="string" xsi:type="array" size="1" />
+      <Local name="l_sBin2" type="string" xsi:type="array" size="1" />
+      <Local name="l_sRes" type="string" xsi:type="array" size="1" />
+      <Local name="l_bEnd" type="bool" xsi:type="array" size="1" />
+      <Local name="l_nDec" type="num" xsi:type="array" size="1" />
+      <Local name="l_nKey" type="num" xsi:type="array" size="1" />
+      <Local name="l_nRes" type="num" xsi:type="array" size="1" />
+      <Local name="l_nExpo" type="num" xsi:type="array" size="1" />
+      <Local name="l_ni" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  //-----------------------------------------------------------------------
+  //Header begin
+  //Description of program
+  //  This program is a menu
+  //  The main loop display the menu and wait the function choice
+  //  Display the result.
+  //
+  //    -F1:Decimal(Num) to binair (string value)
+  //    -F2:Binair(string value) to Decimal(num)
+  //    -F3:Operators function (string value)
+  //    -F4:Power calculation
+  //    -F5:And function (Num and Num)
+  //    -F6:Write/Read 16 bit word
+  //    ESC for quit this aplication
+  //
+  //History
+  //  Creation : 16-04-09 - t.Gra
+  //Header end
+  //-----------------------------------------------------------------------
+  //Initialization
+  l_bEnd=false
+  //Start Main Loop
+  do
+    userPage()
+    cls()
+    title("BinaryEn Menu")
+    gotoxy(0,2)
+    //Initialization
+    l_sBin1=l_sBin2=l_sRes=""
+    l_nDec=l_nExpo=l_nRes=nKey=0
+    //Menu display
+    for l_ni=2 to 7
+      gotoxy(2,l_ni)
+      put(sMenu[l_ni])
+    endFor
+    //Choose a function F1,F2,F3,F4,F5 or F6
+    gotoxy(2,10)
+    putln("Select an aplication or ESC for Quit")
+    //Waiting user choice
+    nKey=get()
+    //Function for recovers the value
+    call RecFunction(l_nDec,l_nExpo,l_sBin1,l_sBin2)
+    switch nKey
+      //F1 Decimal to Binair
+      case 271
+        call DecToBin(l_nDec,l_sRes)
+      break
+      //F2 Binair to Decimal
+      case 272
+        call BinToDec(l_sBin1,l_nRes)
+      break
+      //F3 Operande Calcul
+      case 273
+        call SubMenu(l_sBin1,l_sBin2,l_sRes)
+      break
+      //F4 Power Calcul
+      case 274
+        call pow(l_nDec,l_nExpo,l_nRes)
+      break
+      //F5 And function (Num and Num)
+      case 275
+        //Decimal(Num) to binair (string value)
+        call DecToBin(l_nDec,l_sBin1)
+        call DecToBin(l_nExpo,l_sBin2)
+        //And Functin
+        call boolAnd(l_sBin1,l_sBin2,l_sRes)
+        //Binair(string value) to Decimal(num)
+        call BinToDec(l_sRes,l_nRes)
+      break
+      //F6 Write 16 bit word
+      case 276
+        call BitWord(l_nDec,l_sRes)
+      break
+      //ESC To Quit this program
+      case 255
+        l_bEnd=true
+      break
+    endSwitch
+    //Function for display the result
+    call DisplayResult(l_nRes,l_sRes)
+  until (l_bEnd==true)
+end]]></Code>
+  </Program>
+</Programs>

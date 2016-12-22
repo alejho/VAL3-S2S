@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<bio>
+  <bio2Din index="0"  name="b2In0" mode="notInverted" />
+  <bio2Din index="1"  name="b2In1" mode="notInverted" />
+  <bio2Din index="2"  name="b2In2" mode="notInverted" />
+  <bio2Din index="3"  name="b2In3" mode="notInverted" />
+  <bio2Din index="4"  name="b2In4" mode="notInverted" />
+  <bio2Din index="5"  name="b2In5" mode="notInverted" />
+  <bio2Din index="6"  name="b2In6" mode="notInverted" />
+  <bio2Din index="7"  name="b2In7" mode="notInverted" />
+  <bio2Din index="8"  name="b2In8" mode="notInverted" />
+  <bio2Din index="9"  name="b2In9" mode="notInverted" />
+  <bio2Din index="10"  name="b2In10" mode="notInverted" />
+  <bio2Din index="11"  name="b2In11" mode="notInverted" />
+  <bio2Din index="12"  name="b2In12" mode="notInverted" />
+  <bio2Din index="13"  name="b2In13" mode="notInverted" />
+  <bio2Din index="14"  name="b2In14" mode="notInverted" />
+  <bio2Din index="15"  name="b2In15" mode="notInverted" />
+  <bio2Dout index="0"  name="b2Out0" mode="notInverted" />
+  <bio2Dout index="1"  name="b2Out1" mode="notInverted" />
+  <bio2Dout index="2"  name="b2Out2" mode="notInverted" />
+  <bio2Dout index="3"  name="b2Out3" mode="notInverted" />
+  <bio2Dout index="4"  name="b2Out4" mode="notInverted" />
+  <bio2Dout index="5"  name="b2Out5" mode="notInverted" />
+  <bio2Dout index="6"  name="b2Out6" mode="notInverted" />
+  <bio2Dout index="7"  name="b2Out7" mode="notInverted" />
+  <bio2Dout index="8"  name="b2Out8" mode="notInverted" />
+  <bio2Dout index="9"  name="b2Out9" mode="notInverted" />
+  <bio2Dout index="10"  name="b2Out10" mode="notInverted" />
+  <bio2Dout index="11"  name="b2Out11" mode="notInverted" />
+  <bio2Dout index="12"  name="b2Out12" mode="notInverted" />
+  <bio2Dout index="13"  name="b2Out13" mode="notInverted" />
+  <bio2Dout index="14"  name="b2Out14" mode="notInverted" />
+  <bio2Dout index="15"  name="b2Out15" mode="notInverted" />
+</bio>

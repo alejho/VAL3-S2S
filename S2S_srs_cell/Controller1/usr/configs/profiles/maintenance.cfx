@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Profile>
+  <Password name="password" value="c20519dd1699f3ee" />
+  <Password name="connectionPassword" value="c20519dd1699f3ee" />
+  <Bool name="writeAccess" value="true" />
+  <Bool name="readAccess" value="true" />
+  <Bool name="armWriteAccess" value="true" />
+  <Bool name="recovery" value="true" />
+  <Bool name="ioWriteAccess" value="true" />
+  <Bool name="123KeysControl" value="true" />
+  <Bool name="manualMode" value="true" />
+  <Bool name="testMode" value="true" />
+  <Bool name="localMode" value="true" />
+  <Bool name="remoteMode" value="true" />
+  <Bool name="monitorSpeed" value="true" />
+  <Bool name="powerButton" value="true" />
+  <Bool name="moveHoldKey" value="true" />
+  <Bool name="stopKey" value="true" />
+  <Bool name="menuKey" value="true" />
+  <Bool name="hardwareFaultAck" value="true" />
+</Profile>

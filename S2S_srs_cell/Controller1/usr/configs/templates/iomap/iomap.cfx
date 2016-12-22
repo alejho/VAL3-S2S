@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<IoMap>
+    <!--  To activate a io mapping, fill the value  with the physical I/O link  -->
+    <!--  then reboot. Correct / incorrect mappings are listed in the event logger.  -->
+    <!--  The physical link can be copied/pasted from the physical IO tool of VAL3 Studio   -->
+
+    <!-- Here are some signals examples that can be used -->
+    <!--   BasicIO-1\%I0 - BASICIO Board 1 input 0 -->
+    <!--   BasicIO-1\%Q0 - BASICIO Board 1 output 0  -->
+    <!--   BasicIO-2\%I0 - BASICIO Board 2 input 0 -->
+    <!--   BasicIO-2\%Q0 - BASICIO Board 2 output 0  -->
+    <!--   ModbusSrv-0\Modbus-Bit\mbItem1  - Modbus bit, data declared as mbItem1 in SRS modbus IO config tool -->
+    <!--   ModbusSrv-0\Modbus-Word\mbItem3 - Modbus word, data declared as mbItem3 in SRS modbus IO config tool -->
+
+    <!--   ApplicomIO-1\STATION\%Q23 - Fieldbus output bit address 23 declared as STATION in the Topic name of ApplicomIO Console -->
+    <!--   Can be read from  ConfigTag.xml file -->
+    <!--   Etc... -->
+
+    <!--  CONFIGURATION OF SYSTEM INPUTS  -->
+    <!--  estopAcknowledge - digital input - acknowledge Estop in manual mode - default is MCP park signal -->
+    <String name="estopAcknowledge" value="" />
+    <!--  validationKey - digital input - switch to fast speed in test mode -->
+    <String name="validationKey" value="" />
+    <!-- enablePower - digital input - enable power in remote mode -->
+    <String name="enablePower" value="" />
+    <!-- remoteMonitorSpeed - analog input ]0,+100] - replace the -/+ keys of the MCP (only when MCP is replaced with a dummy plug) -->
+    <String name="remoteMonitorSpeed" value="" />
+    <!-- remoteMoveHold - digital input - replace the Move/Hold button of the MCP (only when MCP is replaced with a dummy plug) -->
+    <String name="remoteMoveHold" value="" />
+    <!-- hardwareFaultAcknowledge - digital input - acknowledge the repair of a fault on hardware signals -->
+    <String name="hardwareFaultAcknowledge" value="" />
+
+    <!--  MAPPING OF SYSTEM SIGNALS TO SYSTEM OUTPUTS  -->
+    <!-- limitSwitch - digital output - status of the electrical limit switches (LSW signal) -->
+    <String name="limitSwitch" value="" />
+    <!-- driveFault - digital output - status of the drives (DF signal) -->
+    <String name="driveFault" value="" />
+    <!-- initSwitch - digital output - status of the software activation of the safety chain (SHORTR signal) -->
+    <String name="initSwitch" value="" />
+    <!-- watchdog - digital output - status of the USBI board watchdog (WDG signal) -->
+    <String name="watchdog" value="" />
+    <!-- fuse24V - digital output - status of the USBI board fuse 24V (24V_FUS signal) -->
+    <String name="fuse24V" value="" />
+    <!-- estopMCP - digital output - status of the MCP emergency stop (deduced from TPES1 and TPES2 signals) -->
+    <String name="estopMCP" value="" />
+    <!-- estopUser1-2 - digital output - status of one user emergency stop (deduced from UES1 and UES2 signals) -->
+    <String name="estopUser1-2" value="" />
+    <!-- estopUser3-4 - digital output - status of the other user emergency stop (deduced from UES3 and UES4 signals) -->
+    <String name="estopUser3-4" value="" />
+    <!-- userEnable - digital output - status of the user enable signals (deduced from UEN1 and UEN2 signals) -->
+    <String name="userEnable" value="" />
+    <!-- door - digital output - status of the door (deduced from DOOR1 and DOOR2 signals) -->
+    <String name="door" value="" />
+    <!-- brakeSelect - digital output - status of the brake select switch (BRK_SEL signal) -->
+    <String name="brakeSelect" value="" />
+    <!-- brakeRelease - digital output - status of the brake release switch (BRK_REL signal) -->
+    <String name="brakeRelease" value="" />
+    <!-- estopWMS - digital output - status of the remote or "working mode selector" emergency stop (deduced from WMSES1 and WMSES2 signals) -->
+    <String name="estopWMS" value="" />
+    <!-- deadman - digital output - status of the MCP deadman switch (deduced from DEADMAN1 and DEADMAN2 signals) -->
+    <String name="deadman" value="" />
+    <!-- park - digital output - status of the MCP park captor (deduced from PARK1 and PARK2 signals) -->
+    <String name="park" value="" />
+    <!-- hardwareFault - digital output - a fault on hardware signals was detected and must be fixed -->
+    <String name="hardwareFault" value="" />  
+    <!-- acknowledgeFault - digital output - a fault on hardware signals was repaired and must be acknowledged -->
+    <String name="acknowledgeFault" value="" />  
+
+    <!-- popup - serial output - transmit popup messages -->
+    <String name="popup" value="" />
+    <!-- power - digital output - status of arm power -->
+    <String name="power" value="" />
+    <!-- fastSpeed - digital output - status of the fast speed mode in test working mode -->
+    <String name="fastSpeed" value="" />
+    <!-- dummyPlug - digital output - presence of the dummy plug in replacement of the MCP -->
+    <String name="dummyPlug" value="" />
+    <!-- temperature - analog output - temperature of the cabinet in °C (measured on safety board) -->
+    <String name="temperature" value="" />
+
+    <!-- REMOTE MCP OPTION  -->  
+    <!-- remoteEnablePower= digital input - replace the Power button of the MCP -->
+    <String name="remoteEnablePower" value="" />
+    <!-- remoteTestMode = digital input - switch to Test mode (only with 'remote Mcp' option) -->
+    <String name="remoteTestMode" value="" />
+    <!-- remoteManualMode = digital input - switch to Manual mode (only with 'remote Mcp' option) -->
+    <String name="remoteManualMode" value="" />
+    <!-- remoteLocalMode = digital input - switch to Local mode (only with 'remote Mcp' option) -->
+    <String name="remoteLocalMode" value="" />
+    <!-- remoteRemoteMode = digital input - switch to Remote mode (only with 'remote Mcp' option) -->
+    <String name="remoteRemoteMode" value="" />
+    <!-- remoteDeadman1 = digital input - replace one deadman contact of the MCP (only with 'remote Mcp' option) -->
+    <String name="remoteDeadman1" value="" />
+    <!-- remoteDeadman2 = digital input - replace the other deadman contact of the MCP (only with 'remote Mcp' option) -->
+    <String name="remoteDeadman2" value="" />
+    <!-- remotePark1 = digital input - replace one park contact of the MCP (only with 'remote Mcp' option) -->
+    <String name="remotePark1" value="" />
+    <!-- remotePark2 = digital input - replace the other park contact of the MCP (only with 'remote Mcp' option) -->
+    <String name="remotePark2" value="" />
+    <!-- remoteJogJointMode = digital input - replace the Joint button of the MCP (only with 'remote Mcp' option) -->
+    <String name="remoteJogJointMode" value="" />
+    <!-- remoteJogFrameMode = digital input - replace the Frame button of the MCP (only with 'remote Mcp' option) -->
+    <String name="remoteJogFrameMode" value="" />
+    <!-- remoteJogToolMode = digital input - replace the Tool button of the MCP (only with 'remote Mcp' option) -->
+    <String name="remoteJogToolMode" value="" />
+    <!-- remoteJogUserMode = digital input - replace the Point button of the MCP (only with 'remote Mcp' option) -->
+    <String name="remoteJogUserMode" value="" />
+    <!-- remoteJogMove1 = analog input [-100,+100] - replace the X -/+ buttons of the MCP (only with 'remote Mcp' option) -->
+    <String name="remoteJogMove1" value="" />
+    <!-- remoteJogMove2 = analog input [-100,+100] - replace the Y -/+ buttons of the MCP (only with 'remote Mcp' option) -->
+    <String name="remoteJogMove2" value="" />
+    <!-- remoteJogMove3 = analog input [-100,+100] - replace the Z -/+ buttons of the MCP (only with 'remote Mcp' option) -->
+    <String name="remoteJogMove3" value="" />
+    <!-- remoteJogMove4 = analog input [-100,+100] - replace the RX -/+ buttons of the MCP (only with 'remote Mcp' option) -->
+    <String name="remoteJogMove4" value="" />
+    <!-- remoteJogMove5 = analog input [-100,+100] - replace the RY -/+ buttons of the MCP (only with 'remote Mcp' option) -->
+    <String name="remoteJogMove5" value="" />
+    <!-- remoteJogMove6 = analog input [-100,+100] - replace the RZ -/+ buttons of the MCP (only with 'remote Mcp' option) -->
+    <String name="remoteJogMove6" value="" />
+    <!-- remoteSpeedLimit = digital input - increase the max. Cartesian speed in fast test mode (only with 'remote Mcp' option) -->
+    <String name="remoteSpeedLimit" value="" />
+</IoMap>

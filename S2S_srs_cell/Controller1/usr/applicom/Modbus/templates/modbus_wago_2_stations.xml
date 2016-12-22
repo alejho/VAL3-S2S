@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<TOPICSLIST>
+	<TOPIC Name="Wago 2 stations" Card="0" Channel="0" Equipment="0" RefreshPeriod="200" Actif="1">
+		<MODULE Tag_name_root="" IDModule="BOOLEAN" InputSize="" OutputSize="36">
+			<ITEM Name="mbLifeBit1" Syntaxe="%Q0" Offset="0"/><ITEM Name="mbUnusedBit1" Syntaxe="%Q1" Offset="1"/><ITEM Name="mbDin1" Syntaxe="%Q2:8" Offset="2"/><ITEM Name="mbDout1" Syntaxe="%I10:8" Offset="10"/><ITEM Name="mbLifeBit2" Syntaxe="%Q18" Offset="18"/><ITEM Name="mbUnusedBit2" Syntaxe="%Q19" Offset="19"/><ITEM Name="mbDin2" Syntaxe="%Q20:8" Offset="20"/><ITEM Name="mbDout2" Syntaxe="%I28:8" Offset="28"/></MODULE>
+		<MODULE Tag_name_root="" IDModule="WORD" InputSize="" OutputSize="192">
+			<ITEM Name="mbVersion1" Syntaxe="%QW0" Offset="0"/><ITEM Name="mbUnusedWord1" Syntaxe="%QW1" Offset="1"/><ITEM Name="mbAin1" Syntaxe="%QW2:2" Offset="2"/><ITEM Name="mbAout1" Syntaxe="%IW4:2" Offset="4"/><ITEM Name="mbVersion2" Syntaxe="%QW6" Offset="6"/><ITEM Name="mbUnusedWord2" Syntaxe="%QW7" Offset="7"/><ITEM Name="mbAin2" Syntaxe="%QW8:2" Offset="8"/><ITEM Name="mbAout2" Syntaxe="%IW10:2" Offset="10"/></MODULE>
+	</TOPIC>
+	<GENERAL_PARAMETERS TopicName="Wago 2 stations" TCP_Port="502" ConnectionNumber="2"/>
+</TOPICSLIST>

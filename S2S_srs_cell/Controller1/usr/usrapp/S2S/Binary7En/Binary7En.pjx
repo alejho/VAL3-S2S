@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://www.staubli.com/robotics/VAL3/Project/3">
+  <Parameters version="s7.7.2" stackSize="5000" millimeterUnit="true" />
+  <Programs>
+    <Program file="BinToDec.pgx" />
+    <Program file="BitWord.pgx" />
+    <Program file="boolAnd.pgx" />
+    <Program file="boolNand.pgx" />
+    <Program file="boolNor.pgx" />
+    <Program file="boolOr.pgx" />
+    <Program file="boolXor.pgx" />
+    <Program file="ChekCompBinary.pgx" />
+    <Program file="DecToBin.pgx" />
+    <Program file="DecToHex.pgx" />
+    <Program file="DisplayResult.pgx" />
+    <Program file="examplemenu.pgx" />
+    <Program file="HexToDec.pgx" />
+    <Program file="isBinary.pgx" />
+    <Program file="isHexadecimal.pgx" />
+    <Program file="pow.pgx" />
+    <Program file="readme.pgx" />
+    <Program file="RecFunction.pgx" />
+    <Program file="shiftLeft.pgx" />
+    <Program file="shiftRight.pgx" />
+    <Program file="start.pgx" />
+    <Program file="stop.pgx" />
+    <Program file="SubMenu.pgx" />
+  </Programs>
+  <Database>
+    <Data file="Binary7En.dtx" />
+  </Database>
+  <Libraries />
+</Project>

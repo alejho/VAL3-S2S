@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="pow" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nNumber" type="num" xsi:type="element" />
+      <Parameter name="x_nValue" type="num" xsi:type="element" />
+      <Parameter name="x_nResult" type="num" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nI" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  //-----------------------------------------------------------------------
+  //Header begin
+  //Description of program
+  //  This program receives 2 numbers, 1 decimal value and 1 exponent value
+  //  ex: 5^2 = 25
+  //  This function is similate to the Val3 function << num power(<num nX>,<num nY>) >>
+  //  returns the result of nX^nY.
+  //
+  //Input parameters
+  //  string x_nNumber :
+  //    role : Decimal value
+  //  string x_nValue :
+  //    role : Exponent value
+  //
+  //Output parameters
+  //  num x_nResult :
+  //    role : Result of this function
+  //
+  //Example
+  //  pow(34,5,nResult)
+  //
+  //History
+  //  Creation : 16-04-09 - t.Gra
+  //Header end
+  //-----------------------------------------------------------------------
+  //test 0^x = 0
+  if (x_nNumber==0)
+    x_nResult=0
+  endIf
+  //test X^0 = 1
+  if round(x_nValue)==0
+    x_nResult=1
+    //test X^1 = X
+  elseIf round(x_nValue)==1
+    x_nResult=x_nNumber
+  elseIf round(x_nValue)>1
+    x_nResult=x_nNumber
+    //calcul result loop
+    for l_nI=1 to x_nValue-1
+      x_nResult=x_nResult*x_nNumber
+    endFor
+  endIf
+end]]></Code>
+  </Program>
+</Programs>

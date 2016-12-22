@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="RecFunction">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nVal1" type="num" xsi:type="array" use="reference" />
+      <Parameter name="x_nVal2" type="num" xsi:type="array" use="reference" />
+      <Parameter name="x_sValsup" type="string" xsi:type="array" use="reference" />
+      <Parameter name="x_sValmin" type="string" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_sBin1" type="string" xsi:type="array" size="1" />
+      <Local name="l_sBin2" type="string" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  //-----------------------------------------------------------------------
+  //Header begin
+  //Description of program
+  //  This function recovers the decimal and/or binary numbers given by the user
+  //
+  //    -And, Or, Xor, Nand, Nor Functions
+  //    -Binary to decimal function
+  //    -Decimal to Binary function
+  //    -Power function
+  //    -16 bit Word
+  //
+  //Output parameters
+  //  num x_nVal1 :
+  //    role : Decimal value 1
+  //  num x_nVal2 :
+  //    role : Decimal value 2
+  //  string x_sValsup :
+  //    role : Binary value 1 max
+  //  string x_sValmin :
+  //    role : Binary value 2 min
+  //
+  //History
+  //  Creation : 16-04-09 - t.Gra
+  //Header end
+  //-----------------------------------------------------------------------
+  //Initialization
+  cls()
+  gotoxy(2,2)
+  l_sBin1=l_sBin2=""
+  x_nVal1=x_nVal2=0
+  //Choice F3
+  if (nKey==273)
+    put("Binair number 1 : ")
+    get(l_sBin1)
+    put(l_sBin1)
+    gotoxy(2,4)
+    put("Binair number 2 : ")
+    get(l_sBin2)
+    put(l_sBin2)
+    //Choice F2
+  elseIf (nKey==272)
+    put("Binair number : ")
+    get(l_sBin1)
+    put(l_sBin1)
+    //Choice F5
+  elseIf (nKey==275)
+    put("Decimal number : ")
+    get(x_nVal1)
+    put(x_nVal1)
+    gotoxy(2,4)
+    put("Decimal number 2 : ")
+    get(x_nVal2)
+    put(x_nVal2)
+    //Choice F1 or F6
+  elseIf (nKey==271 or nKey==276)
+    put("Decimal number : ")
+    get(x_nVal1)
+    put(x_nVal1)
+    //Choice F4
+  elseIf (nKey==274)
+    put("Decimal number : ")
+    get(x_nVal1)
+    put(x_nVal1)
+    gotoxy(2,4)
+    put("Power : ")
+    get(x_nVal2)
+    put(x_nVal2)
+  endIf
+  //Function for check the value binair
+  call ChekCompBinary(l_sBin1,l_sBin2,x_sValsup,x_sValmin)
+end]]></Code>
+  </Program>
+</Programs>

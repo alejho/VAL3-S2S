@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cell>
+  <String name="language" value="english" />
+  <Uint name="coderCounts" value="1024" />
+  <String name="valve1Mode" value="notInverted" />
+  <String name="valve2Mode" value="notInverted" />
+  <String name="vreg1Mode" value="inverted" />
+  <String name="vreg2Mode" value="inverted" />
+  <String name="vreg1_enMode" value="inverted" />
+  <String name="vreg2_enMode" value="inverted" />
+  <String name="usrIn0Mode" value="notInverted" />
+  <String name="usrIn1Mode" value="notInverted" />
+  <Bool name="longEsOut" value="true" />
+  <Uint name="magicFlag" value="0" />
+  <Float name="cycleTime" value="-1" />
+  <Float name="val3WatchdogPeriod" value="-1" />
+  <Float name="maxManuCartSpeed" value="250" />
+  <Float name="maxStartMonitorSpeed" value="10" />
+  <FloatArray name="minCellJointPos" >
+    <Float index="0" value="-99999" />
+    <Float index="1" value="-99999" />
+    <Float index="2" value="-99999" />
+    <Float index="3" value="-99999" />
+    <Float index="4" value="-99999" />
+    <Float index="5" value="-99999" />
+  </FloatArray>
+  <FloatArray name="maxCellJointPos" >
+    <Float index="0" value="99999" />
+    <Float index="1" value="99999" />
+    <Float index="2" value="99999" />
+    <Float index="3" value="99999" />
+    <Float index="4" value="99999" />
+    <Float index="5" value="99999" />
+  </FloatArray>
+  <CellJntRange>
+  </CellJntRange>
+  <String name="refPos" value="FactoryMarks" />
+  <FloatArray name="refPos1" >
+    <Float index="0" value="0" />
+    <Float index="1" value="0" />
+    <Float index="2" value="0" />
+    <Float index="3" value="0" />
+    <Float index="4" value="0" />
+    <Float index="5" value="0" />
+  </FloatArray>
+  <FloatArray name="refPos2" >
+    <Float index="0" value="0" />
+    <Float index="1" value="0" />
+    <Float index="2" value="0" />
+    <Float index="3" value="0" />
+    <Float index="4" value="0" />
+    <Float index="5" value="0" />
+  </FloatArray>
+  <Bool name="parkCheckInAutoMode" value="false" />
+  <String name="robotName" value="" />
+  <autoStart name="" location="" />
+  <String name="initWorkingMode" value="local" />
+  <CellDynamicParams>
+    <VectCart name="gravity" x="0" y="0" z="-9.81" />
+    <Payload>
+      <Float name="mass" value="0" />
+      <VectCart name="gravityCenter" x="0" y="0" z="0" />
+      <Inertia>
+        <Value line="0" column="0" >0</Value>
+        <Value line="0" column="1" >0</Value>
+        <Value line="0" column="2" >0</Value>
+        <Value line="1" column="0" >0</Value>
+        <Value line="1" column="1" >0</Value>
+        <Value line="1" column="2" >0</Value>
+        <Value line="2" column="0" >0</Value>
+        <Value line="2" column="1" >0</Value>
+        <Value line="2" column="2" >0</Value>
+      </Inertia>
+    </Payload>
+  </CellDynamicParams>
+  <Bool name="miniJog" value="true" />
+  <Bool name="useUsUnits" value="false" />
+  <String name="T1_key" value="valve1" />
+  <String name="T2_key" value="valve2" />
+  <String name="T3_key" value="" />
+  <String name="defaultUser" value="default" />
+  <Float name="monitorSpeed" value="10" />
+</cell>

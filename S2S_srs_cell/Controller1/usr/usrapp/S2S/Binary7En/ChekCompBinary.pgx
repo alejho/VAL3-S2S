@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="ChekCompBinary">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_sBinary1" type="string" xsi:type="array" use="reference" />
+      <Parameter name="x_sBinary2" type="string" xsi:type="array" use="reference" />
+      <Parameter name="x_sValuesup" type="string" xsi:type="array" use="reference" />
+      <Parameter name="x_sValuemin" type="string" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nNumBit" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  //-----------------------------------------------------------------------
+  //Header begin
+  //Description of program
+  //  This program receives 2 binary words, verifies this number
+  //  and add bit to the minimal number.
+  //
+  //Input parameters
+  //  string x_sBinary1 :
+  //    role : Binary value 1
+  //  string x_sBinary2 :
+  //    role : Binary value 2
+  //
+  //Output parameters
+  //  string x_sValuesup :
+  //    role : maximal binary value
+  //  string x_sValuemin :
+  //    role : minimal binary value
+  //
+  //Example
+  //  ChekCompBinary(0101101,11110,sResultsup,sResultmin)
+  //
+  //History
+  //  Creation : 16-04-09 - t.Gra
+  //Header end
+  //-----------------------------------------------------------------------
+  //Initialization
+  bRead=true
+  x_sValuesup=""
+  x_sValuemin=""
+  //chek binary 1
+  for l_nNumBit=(len(x_sBinary1)-1) to 0 step -1
+    if (mid(x_sBinary1,1,l_nNumBit)=="1" or mid(x_sBinary1,1,l_nNumBit)=="0")
+    else
+      bRead=false
+    endIf
+  endFor
+  //chek binary 2
+  for l_nNumBit=(len(x_sBinary2)-1) to 0 step -1
+    if (mid(x_sBinary2,1,l_nNumBit)=="1" or mid(x_sBinary2,1,l_nNumBit)=="0")
+    else
+      bRead=false
+    endIf
+  endFor
+  //Compare the binary number
+  if len(x_sBinary2)>len(x_sBinary1)
+    x_sValuesup=x_sBinary2
+    x_sValuemin=x_sBinary1
+  else
+    x_sValuesup=x_sBinary1
+    x_sValuemin=x_sBinary2
+  endIf
+  x_sBinary1=x_sValuesup
+  x_sBinary2=x_sValuemin
+  //add bit to the min value
+  for l_nNumBit=1 to (len(x_sBinary1)-len(x_sBinary2))
+    x_sValuemin="0"+x_sValuemin
+  endFor
+end]]></Code>
+  </Program>
+</Programs>

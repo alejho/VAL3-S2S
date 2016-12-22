@@ -1,0 +1,278 @@
+<HTML>
+<HEAD>
+<TITLE>Staubli Binary7En Library Documentation </TITLE>
+</HEAD>
+<BODY>
+<PRE>
+<img src="data:image/jpg;base64,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" alt="Staubli Robotics" />
+
+<FONT FACE="Arial" SIZE="6">Library Binary7En Documentation<BR> </FONT>
+
+<FONT FACE="Arial" SIZE="5"> <B>Description and requirements<BR> </B> </FONT>
+<FONT FACE="Arial" SIZE="4">Title: Mathematical and Binary functions
+</FONT><FONT FACE="Arial" SIZE="4">
+</FONT><FONT FACE="Arial" SIZE="4">General description :
+</FONT><FONT FACE="Arial" SIZE="4">  This library provides a functions for binary and mathematical
+</FONT><FONT FACE="Arial" SIZE="4">  calculations.
+</FONT><FONT FACE="Arial" SIZE="4">
+</FONT><FONT FACE="Arial" SIZE="4">  1) transforms a binary to a decimal or vice-versa
+</FONT><FONT FACE="Arial" SIZE="4">  2) provides OR, XOR, AND operators for binary calculation
+</FONT><FONT FACE="Arial" SIZE="4">  3) Exponent Calculation
+</FONT><FONT FACE="Arial" SIZE="4">
+</FONT><FONT FACE="Arial" SIZE="4">Hardware required :
+</FONT><FONT FACE="Arial" SIZE="4">  - Robot system    : no specific robot system
+</FONT><FONT FACE="Arial" SIZE="4">  - Peripherals     : no peripherals required
+</FONT><FONT FACE="Arial" SIZE="4">
+</FONT><FONT FACE="Arial" SIZE="4">VAL3 options :
+</FONT><FONT FACE="Arial" SIZE="4">  - VAL3 version    : 7.*
+</FONT><FONT FACE="Arial" SIZE="4">  - VAL3 licenses   : no licenses required
+</FONT><FONT FACE="Arial" SIZE="4">  - VAL3 add-ons    : none
+</FONT><FONT FACE="Arial" SIZE="4">
+</FONT><FONT FACE="Arial" SIZE="4">Library version     : 7.6.1.0
+</FONT><FONT FACE="Arial" SIZE="4">
+</FONT><FONT FACE="Arial" SIZE="4">Public variables    : none
+</FONT><FONT FACE="Arial" SIZE="4">
+</FONT><FONT FACE="Arial" SIZE="4">Included libraries  : none
+</FONT><FONT FACE="Arial" SIZE="4">
+</FONT><FONT FACE="Arial" SIZE="4">Miscellaneous       : ---
+</FONT><FONT FACE="Arial" SIZE="4">
+</FONT><FONT FACE="Arial" SIZE="4">Keywords            : calculation, Operator, And, Or, Xor, Decimal, binary,
+</FONT><FONT FACE="Arial" SIZE="4">                      function, word.
+</FONT>
+<BR>
+<BR>
+<BR><FONT FACE="Arial" SIZE="5" ID="TOP"> <B>Description of functions </B> </FONT>
+<a href="#And">public And(...) </a>
+<a href="#BinToDec">public BinToDec(...) </a>
+<a href="#BitWord">public BitWord(...) </a>
+<a href="#DecToBin">public DecToBin(...) </a>
+<a href="#Nand">public Nand(...) </a>
+<a href="#Nor">public Nor(...) </a>
+<a href="#Or">public Or(...) </a>
+<a href="#pow">public pow(...) </a>
+<a href="#Xor">public Xor(...) </a>
+<FONT FACE="Arial" SIZE="4" ID="And"> <B>
+public And(string& x_sBinary1, string& x_sBinary2, string& x_sReturn[---])</B> </FONT>
+<FONT FACE="Arial" SIZE="3">  Description of program
+</FONT><FONT FACE="Arial" SIZE="3">    This program provides an And logical operator for 2 binary values.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">       0 and 0 = 0
+</FONT><FONT FACE="Arial" SIZE="3">       0 and 1 = 0
+</FONT><FONT FACE="Arial" SIZE="3">       1 and 1 = 1
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sBinary1 :
+</FONT><FONT FACE="Arial" SIZE="3">      role : 1 st binary number
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sBinary2 :
+</FONT><FONT FACE="Arial" SIZE="3">      role : 2 nd binary number
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sReturn :
+</FONT><FONT FACE="Arial" SIZE="3">      role : Result of calculation x_sBinary1 AND x_sBinary2
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Example
+</FONT><FONT FACE="Arial" SIZE="3">    And("10101011","00011011",sResult)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">    Creation : 16-04-09 - t.Gra
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="BinToDec"> <B>
+public BinToDec(string& x_sBinary, num& x_nDecimal[---])</B> </FONT>
+<FONT FACE="Arial" SIZE="3">  Description of program
+</FONT><FONT FACE="Arial" SIZE="3">    This program turns a binary word into a Decimal number
+</FONT><FONT FACE="Arial" SIZE="3">    Receives the binary word, verifies that the value is a
+</FONT><FONT FACE="Arial" SIZE="3">    binary value and turns it into the corresponding decimal
+</FONT><FONT FACE="Arial" SIZE="3">    number.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sBinary :
+</FONT><FONT FACE="Arial" SIZE="3">      role : Binary value to convert
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">    num x_nDecimal :
+</FONT><FONT FACE="Arial" SIZE="3">      role : Decimal value converted
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Example
+</FONT><FONT FACE="Arial" SIZE="3">    BinToDec("101110",nDecimalValue)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">    Creation : 16-04-09 - t.Gra
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="BitWord"> <B>
+public BitWord(num& x_nDecimal, string& x_sBinary[---])</B> </FONT>
+<FONT FACE="Arial" SIZE="3">  Description of program
+</FONT><FONT FACE="Arial" SIZE="3">    This program turns a decimal number into a binary word.
+</FONT><FONT FACE="Arial" SIZE="3">    Receives decimal value and turns it into the corresponding
+</FONT><FONT FACE="Arial" SIZE="3">    binary word (16 Bits).
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">    num x_nDecimal :
+</FONT><FONT FACE="Arial" SIZE="3">      role : decimal value to convert
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sBinary :
+</FONT><FONT FACE="Arial" SIZE="3">      role : binary value converted (16 Bits)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Example
+</FONT><FONT FACE="Arial" SIZE="3">    BitWord(78,sBinaryValue)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">    Creation : 16-04-09 - t.Gra
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="DecToBin"> <B>
+public DecToBin(num& x_nDecimal, string& x_sBinary[---])</B> </FONT>
+<FONT FACE="Arial" SIZE="3">  Description of program
+</FONT><FONT FACE="Arial" SIZE="3">    This program turns a decimal number into a binary word.
+</FONT><FONT FACE="Arial" SIZE="3">    Receives decimal value and turns it into the corresponding
+</FONT><FONT FACE="Arial" SIZE="3">    binary word.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">    num x_nDecimal :
+</FONT><FONT FACE="Arial" SIZE="3">      role : decimal value to convert
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sBinary :
+</FONT><FONT FACE="Arial" SIZE="3">      role : binary value converted
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Example
+</FONT><FONT FACE="Arial" SIZE="3">    DecToBin(42,sBinaryValue)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">    Creation : 16-04-09 - t.Gra
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="Nand"> <B>
+public Nand(string& x_sBinary1, string& x_sBinary2, string& x_sReturn[---])</B> </FONT>
+<FONT FACE="Arial" SIZE="3">  Description of program
+</FONT><FONT FACE="Arial" SIZE="3">    This program provides a Nand logical operator for 2 binary values.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">       0 and 0 = 1
+</FONT><FONT FACE="Arial" SIZE="3">       0 and 1 = 1
+</FONT><FONT FACE="Arial" SIZE="3">       1 and 1 = 0
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sBinary1 :
+</FONT><FONT FACE="Arial" SIZE="3">      role : 1 st binary number
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sBinary2 :
+</FONT><FONT FACE="Arial" SIZE="3">      role : 2 nd binary number
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sReturn :
+</FONT><FONT FACE="Arial" SIZE="3">      role : Result of calculation x_sBinary1 NAND x_sBinary2
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Example
+</FONT><FONT FACE="Arial" SIZE="3">    Nand("10101011","00011011",sResult)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">    Creation : 16-04-09 - t.Gra
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="Nor"> <B>
+public Nor(string& x_sBinary1, string& x_sBinary2, string& x_sReturn[---])</B> </FONT>
+<FONT FACE="Arial" SIZE="3">  Description of program
+</FONT><FONT FACE="Arial" SIZE="3">    This program provides a Nor logical operator for 2 binary values.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">       0 or 0 = 1
+</FONT><FONT FACE="Arial" SIZE="3">       0 or 1 = 0
+</FONT><FONT FACE="Arial" SIZE="3">       1 or 1 = 0
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sBinary1 :
+</FONT><FONT FACE="Arial" SIZE="3">      role : 1 st binary number
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sBinary2 :
+</FONT><FONT FACE="Arial" SIZE="3">      role : 2 nd binary number
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sReturn :
+</FONT><FONT FACE="Arial" SIZE="3">      role : Result of calculation x_sBinary1 NOR x_sBinary2
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Example
+</FONT><FONT FACE="Arial" SIZE="3">    Nor("10101011","00011011",sResult)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">    Creation : 16-04-09 - t.Gra
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="Or"> <B>
+public Or(string& x_sBinary1, string& x_sBinary2, string& x_sReturn[---])</B> </FONT>
+<FONT FACE="Arial" SIZE="3">  Description of program
+</FONT><FONT FACE="Arial" SIZE="3">    This program provides an Or logical operator for 2 binary values.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">       0 or 0 = 0
+</FONT><FONT FACE="Arial" SIZE="3">       0 or 1 = 1
+</FONT><FONT FACE="Arial" SIZE="3">       1 or 1 = 1
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sBinary1 :
+</FONT><FONT FACE="Arial" SIZE="3">      role : 1 st binary number
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sBinary2 :
+</FONT><FONT FACE="Arial" SIZE="3">      role : 2 nd binary number
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sReturn :
+</FONT><FONT FACE="Arial" SIZE="3">      role : Result of calculation x_sBinary1 OR x_sBinary2
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Example
+</FONT><FONT FACE="Arial" SIZE="3">    Or("10101011","00011011",sResult)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">    Creation : 16-04-09 - t.Gra
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="pow"> <B>
+public pow(num& x_nNumber, num& x_nValue, num& x_nResult[---])</B> </FONT>
+<FONT FACE="Arial" SIZE="3">  Description of program
+</FONT><FONT FACE="Arial" SIZE="3">    This program receives 2 numbers, 1 decimal value and 1 exponent value
+</FONT><FONT FACE="Arial" SIZE="3">    ex: 5^2 = 25
+</FONT><FONT FACE="Arial" SIZE="3">    This function is similate to the Val3 function << num power(<num nX>,<num nY>) >>
+</FONT><FONT FACE="Arial" SIZE="3">    returns the result of nX^nY.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">    string x_nNumber :
+</FONT><FONT FACE="Arial" SIZE="3">      role : Decimal value
+</FONT><FONT FACE="Arial" SIZE="3">    string x_nValue :
+</FONT><FONT FACE="Arial" SIZE="3">      role : Exponent value
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">    num x_nResult :
+</FONT><FONT FACE="Arial" SIZE="3">      role : Result of this function
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Example
+</FONT><FONT FACE="Arial" SIZE="3">    pow(34,5,nResult)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">    Creation : 16-04-09 - t.Gra
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="Xor"> <B>
+public Xor(string& x_sBinary1, string& x_sBinary2, string& x_sReturn[---])</B> </FONT>
+<FONT FACE="Arial" SIZE="3">  Description of program
+</FONT><FONT FACE="Arial" SIZE="3">    This program provides a Xor logical operator for 2 binary values.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">       0 xor 0 = 0
+</FONT><FONT FACE="Arial" SIZE="3">       0 xor 1 = 1
+</FONT><FONT FACE="Arial" SIZE="3">       1 xor 1 = 0
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sBinary1 :
+</FONT><FONT FACE="Arial" SIZE="3">      role : 1 st binary number
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sBinary2 :
+</FONT><FONT FACE="Arial" SIZE="3">      role : 2 nd binary number
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">    string x_sReturn :
+</FONT><FONT FACE="Arial" SIZE="3">      role : Result of calculation x_sBinary1 XOR x_sBinary2
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Example
+</FONT><FONT FACE="Arial" SIZE="3">    Xor("10101011","00011011",sResult)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">    Creation : 16-04-09 - t.Gra
+</FONT>
+<a href="#TOP">Back to top</a>
+</PRE>
+</BODY>
+</HTML>

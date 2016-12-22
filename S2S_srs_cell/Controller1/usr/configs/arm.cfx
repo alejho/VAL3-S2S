@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<arm>
+  <String name="arm" value="tx60-S1" />
+  <String name="tuning" value="" />
+  <String name="mount" value="floor" />
+  <FloatArray name="zeroOffset">
+    <Float index="0" value="0.0000000" />
+    <Float index="1" value="0.0000000" />
+    <Float index="2" value="0.0000000" />
+    <Float index="3" value="0.0000000" />
+    <Float index="4" value="0.0000000" />
+    <Float index="5" value="0.0000000" />
+  </FloatArray>
+  <FloatArray name="factoryMark">
+    <Float index="0" value="0.0000001" />
+    <Float index="1" value="0.0000000" />
+    <Float index="2" value="0.0000000" />
+    <Float index="3" value="0.0000000" />
+    <Float index="4" value="0.0000000" />
+    <Float index="5" value="0.0000000" />
+  </FloatArray>
+</arm>

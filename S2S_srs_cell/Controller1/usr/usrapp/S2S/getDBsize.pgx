@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="getDBsize" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nDBnumber" type="num" xsi:type="element" />
+      <Parameter name="x_nSize" type="num" xsi:type="element" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nLength" type="num" xsi:type="array" size="1" />
+      <Local name="l_nS7_BI" type="num" xsi:type="array" size="37" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  call setLastError(nNoErrors)
+  x_nSize=0
+  
+  //setup the telegram
+  getData("nS7_BI", l_nS7_BI)
+  
+  l_nS7_BI[31]=round((x_nDBnumber/10000)+48)
+  x_nDBnumber=round(x_nDBnumber%10000)
+  
+  l_nS7_BI[32]=round((x_nDBnumber/1000)+48)
+  x_nDBnumber=round(x_nDBnumber%1000)
+  
+  l_nS7_BI[33]=round((x_nDBnumber/100)+48)
+  x_nDBnumber=round(x_nDBnumber%100)
+  
+  l_nS7_BI[34]=round((x_nDBnumber/10)+48)
+  x_nDBnumber=round(x_nDBnumber%10)
+  
+  l_nS7_BI[35]=round((x_nDBnumber)+48)
+  
+  call sendPacket(l_nS7_BI, size(l_nS7_BI))
+  if nLastError==nNoErrors
+    call recvISOpacket(l_nLength)
+    //26 is the minimum expected
+    if l_nLength>=26
+      //if ((PDU.H[37]==0x00) && (PDU.H[38]==0x00) && (PDU.H[39]==0xFF))
+      if PDU.S7telegram.DATA[2]==0 or PDU.S7telegram.DATA[3]==0 or PDU.S7telegram.DATA[4]==255
+        x_nSize=PDU.S7telegram.DATA[48]
+        x_nSize=x_nSize*power(2,8)+PDU.S7telegram.DATA[49]
+      else
+        call setLastError(nErrS7Func)
+      endIf   
+    else
+      call setLastError(nErrISOInvPDU)
+    endIf 
+  else
+    call setLastError(nErrTCPSend)
+  endIf
+  
+end]]></Code>
+  </Program>
+</Programs>

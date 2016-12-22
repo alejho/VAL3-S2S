@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="empty2dNum" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nBuffer" type="num" xsi:type="array" use="reference" dimensions="2" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nIndex" type="num" xsi:type="array" size="1" />
+      <Local name="l_nIndex2" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+
+  //empty a bidimensional array of num
+
+  for l_nIndex=0 to size(x_nBuffer,1)-1
+    for l_nIndex2=0 to size(x_nBuffer,2)-1
+      x_nBuffer[l_nIndex,l_nIndex2]=0
+    endFor
+  endFor
+
+end]]></Code>
+  </Program>
+</Programs>

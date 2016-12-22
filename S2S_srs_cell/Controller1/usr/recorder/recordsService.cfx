@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RecorderList>
+  <Recorder name="drive" >
+    <Record name="record"  index="0" description="RecAnalysis 6axis 30secs" >
+	<String name="path" value="recordService" />
+	<Float name="duration" value="60" /> <!-- Record duration in s MAX TESTED 120 s -->
+	<Float name="frequency" value="5" /> <!-- Record frequency  DO NOT CHANGE FOR LIFETIME -->
+      <StringList name="variables" >
+        <String index="0" value="pcmd" />
+        <String index="1" value="pfbk" />
+        <String index="2" value="iphA" />
+        <String index="3" value="iphC" />
+        <String index="4" value="icmd" />
+      </StringList>
+    </Record>
+  </Recorder>
+</RecorderList>

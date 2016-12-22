@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="recvISOpacket">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nLength" type="num" xsi:type="element" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_bDone" type="bool" xsi:type="array" size="1" />
+      <Local name="i" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  nLastError=0
+  
+  while (nLastError==nNoErrors and !l_bDone)
+    // Get TPKT (4 bytes)
+    call recvPacket(PDU.TPKT, 4)
+    if nLastError==nNoErrors
+      call ISO_PDUsize(x_nLength)
+      if x_nLength==7
+        //only TPKT+COTP(7bytes)...skip next 3 bytes and receive another packet
+        call recvPacket(PDU.COPT, 3)
+      elseIf x_nLength>nMaxPduSize or x_nLength<nMinPduSize
+        //wrong size!
+        call setLastError(nErrISOInvPDU)
+      else
+        //valid length !=7 && >16 && <247...done!
+        l_bDone=true
+      endIf
+    endIf  
+  endWhile
+  
+  if nLastError==nNoErrors
+    // Skip remaining 3 COTP bytes
+    call recvPacket(PDU.COPT, 3)
+    nLastPDUType=PDU.COPT[1]
+    x_nLength = x_nLength-nISOheaderSize
+    call recvPacket(nDataBuffer, x_nLength)
+    for i=0 to size(PDU.S7telegram.H)-1
+      PDU.S7telegram.H[i]=nDataBuffer[i] 
+    endFor
+    for i=0 to size(PDU.S7telegram.DATA)-1
+      PDU.S7telegram.DATA[i]=nDataBuffer[i+size(PDU.S7telegram.H)]
+    endFor
+  else
+    clearBuffer(sTCPclient)
+  endIf
+  
+end]]></Code>
+  </Program>
+</Programs>

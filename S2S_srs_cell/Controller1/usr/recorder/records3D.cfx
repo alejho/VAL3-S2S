@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RecorderList>
+  <Recorder name="controller" >
+    <Record name="record" index="0" description="SRS 3D Studio" >
+      <String name="path" value="record" />			<!-- path to the record file -->
+      <Float name="duration" value="30" />			<!-- record max. duration in s -->
+      <Float name="frequency" value="100" />		<!-- record frequency in % of max. frequency -->
+      <StringList name="variables" >
+        <String index="0" value="jntCmdPos" />
+        <String index="1" value="jntFbkPos" />
+      </StringList>
+    </Record>
+  </Recorder>
+  <Recorder name="uniVAL" >
+    <Record name="record" index="0" description="uniVAL" >
+      <String name="path" value="uniVAL/record" />			<!-- path to the record file -->
+      <Float name="duration" value="30" />			<!-- record max. duration in s -->
+    </Record>
+  </Recorder>
+</RecorderList>

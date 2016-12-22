@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="trimAsciiBuffer" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nNum" type="num" xsi:type="array" use="reference" />
+      <Parameter name="x_nTrimmed" type="num" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="i" type="num" xsi:type="array" size="1" />
+      <Local name="l_nIndex" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  //remove the null chars from an ascii array
+  //call generic:empty1dNum(x_nTrimmed)
+  resize(x_nTrimmed,1,1)
+  for l_nIndex=0 to size(x_nNum)-1
+    
+    if x_nNum[l_nIndex]!=0
+      x_nTrimmed[i]=x_nNum[l_nIndex]
+      resize(x_nTrimmed,1,size(x_nTrimmed)+1)
+      i=i+1
+    endIf
+    
+  endFor
+  
+  if size(x_nTrimmed)>1
+    resize(x_nTrimmed,1,size(x_nTrimmed)-1)
+  endIf
+end]]></Code>
+  </Program>
+</Programs>

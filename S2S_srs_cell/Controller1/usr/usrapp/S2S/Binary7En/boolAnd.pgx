@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="boolAnd" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_sBinary1" type="string" xsi:type="element" />
+      <Parameter name="x_sBinary2" type="string" xsi:type="element" />
+      <Parameter name="x_sReturn" type="string" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nNumBit" type="num" xsi:type="array" size="1" />
+      <Local name="l_sValsup" type="string" xsi:type="array" size="1" />
+      <Local name="l_sValmin" type="string" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  //-----------------------------------------------------------------------
+  //Header begin
+  //Description of program
+  //  This program provides an And logical operator for 2 binary values.
+  //
+  //     0 and 0 = 0
+  //     0 and 1 = 0
+  //     1 and 1 = 1
+  //
+  //Input parameters
+  //  string x_sBinary1 :
+  //    role : 1 st binary number
+  //  string x_sBinary2 :
+  //    role : 2 nd binary number
+  //
+  //Output parameters
+  //  string x_sReturn :
+  //    role : Result of calculation x_sBinary1 AND x_sBinary2
+  //
+  //Example
+  //  And("10101011","00011011",sResult)
+  //
+  //History
+  //  Creation : 16-04-09 - t.Gra
+  //Header end
+  //-----------------------------------------------------------------------
+  //Initialization
+  l_nNumBit=0
+  l_sValsup=""
+  l_sValmin=""
+  x_sReturn=""
+  //call function for error control
+  call ChekCompBinary(x_sBinary1,x_sBinary2,l_sValsup,l_sValmin)
+  //calcul loop
+  if (bRead==true)
+    for l_nNumBit=(len(l_sValsup)-1) to 0 step -1
+      if ((mid(l_sValsup,1,l_nNumBit)=="1") and (mid(l_sValmin,1,l_nNumBit)=="1"))
+        x_sReturn="1"+x_sReturn
+      else
+        x_sReturn="0"+x_sReturn
+      endIf
+    endFor
+  else
+    x_sReturn="Error"
+  endIf
+end]]></Code>
+  </Program>
+</Programs>

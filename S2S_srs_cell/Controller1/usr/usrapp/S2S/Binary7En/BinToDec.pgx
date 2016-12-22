@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="BinToDec" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_sBinary" type="string" xsi:type="element" />
+      <Parameter name="x_nDecimal" type="num" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nNumBit" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  //-----------------------------------------------------------------------
+  //Header begin
+  //Description of program
+  //  This program turns a binary word into a Decimal number
+  //  Receives the binary word, verifies that the value is a
+  //  binary value and turns it into the corresponding decimal
+  //  number.
+  //
+  //Input parameters
+  //  string x_sBinary :
+  //    role : Binary value to convert
+  //
+  //Output parameters
+  //  num x_nDecimal :
+  //    role : Decimal value converted
+  //
+  //Example
+  //  BinToDec("101110",nDecimalValue)
+  //
+  //History
+  //  Creation : 16-04-09 - t.Gra
+  //Header end
+  //-----------------------------------------------------------------------
+  //Initialization
+  bRead=true
+  l_nNumBit=0
+  //chek the binary number is true and transforms this
+  for l_nNumBit=(len(x_sBinary)-1) to 0 step -1
+    if mid(x_sBinary,1,l_nNumBit)=="1"
+      x_nDecimal=x_nDecimal+exp(((len(x_sBinary)-1)-l_nNumBit)*ln(2))
+    elseIf mid(x_sBinary,1,l_nNumBit)=="0"
+    else
+      bRead=false
+      x_nDecimal=0
+    endIf
+  endFor
+end]]></Code>
+  </Program>
+</Programs>

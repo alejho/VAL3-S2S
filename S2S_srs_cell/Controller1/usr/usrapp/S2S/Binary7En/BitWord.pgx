@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="BitWord" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nDecimal" type="num" xsi:type="element" />
+      <Parameter name="x_sBinary" type="string" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_ni" type="num" xsi:type="array" size="1" />
+      <Local name="l_sVal" type="string" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  //-----------------------------------------------------------------------
+  //Header begin
+  //Description of program
+  //  This program turns a decimal number into a binary word.
+  //  Receives decimal value and turns it into the corresponding
+  //  binary word (16 Bits).
+  //
+  //Input parameters
+  //  num x_nDecimal :
+  //    role : decimal value to convert
+  //
+  //Output parameters
+  //  string x_sBinary :
+  //    role : binary value converted (16 Bits)
+  //
+  //Example
+  //  BitWord(78,sBinaryValue)
+  //
+  //History
+  //  Creation : 16-04-09 - t.Gra
+  //Header end
+  //-----------------------------------------------------------------------
+  //take the full value
+  x_nDecimal=roundDown(x_nDecimal)
+  //Calcul loop
+  do
+    if (x_nDecimal%2)==0
+      x_sBinary="0"+x_sBinary
+    else
+      x_sBinary="1"+x_sBinary
+    endIf
+    x_nDecimal=roundDown(x_nDecimal/2)
+  until (x_nDecimal<1)
+  l_sVal=x_sBinary
+  //Add bit 0
+  for l_ni=1 to (16-len(l_sVal))
+    x_sBinary="0"+x_sBinary
+  endFor
+end]]></Code>
+  </Program>
+</Programs>

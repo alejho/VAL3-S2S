@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="waitPLCstart">
+    <Locals>
+      <Local name="l_bRes" type="bool" xsi:type="array" size="1" />
+      <Local name="l_nRes" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+
+  //let's suppose the "start bit" is in the third byte, 5th bit of "nDBread" on plc-side
+  //
+  //  nDBread: 
+  //    byte0:  bit0 bit1 bit2 bit3 bit4 bit5 bit6 bit7
+  //    byte1:  bit0 bit1 bit2 bit3 bit4 bit5 bit6 bit7  
+  //    byte2:  bit0 bit1 bit2 bit3 "bStartRobot" bit5 bit6 bit7  
+
+  l_bRes=false
+  do
+    //i just need to read starting from the 3th byte (counting from 0) one byte from "nDBread" and put it into l_nRes
+    call S7:readArea(S7:nAreaDB,nDBread,2,1,l_nRes)
+    //now i get the 5th bit (counting from 0) value from the beginning (0) of the "buffer" l_nRes
+    call S7:getBitAt(0,4,l_nRes,l_bRes)
+    delay(0)
+  until l_bRes
+
+
+end]]></Code>
+  </Program>
+</Programs>

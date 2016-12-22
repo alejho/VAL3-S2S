@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="getBitAt" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nByteIndex" type="num" xsi:type="element" />
+      <Parameter name="x_nBitIndex" type="num" xsi:type="element" />
+      <Parameter name="x_nBuffer" type="num" xsi:type="array" use="reference" />
+      <Parameter name="x_bRes" type="bool" xsi:type="element" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_sMask" type="string" xsi:type="array" size="1" />
+      <Local name="l_sByte" type="string" xsi:type="array" size="1" />
+      <Local name="l_sResult" type="string" xsi:type="array" size="1" />
+      <Local name="l_nResult" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  if x_nBitIndex>7
+    x_bRes=false
+    return
+  endIf
+  
+  call bitOp:DecToBin(x_nBuffer[x_nByteIndex], l_sByte)
+  call bitOp:DecToBin(power(2, x_nBitIndex), l_sMask)
+  call bitOp:boolAnd(l_sByte, l_sMask, l_sResult)
+  
+  call bitOp:BinToDec(l_sResult, l_nResult)
+  if l_nResult>0
+    x_bRes=true
+  else
+    x_bRes=false
+  endIf
+  
+end]]></Code>
+  </Program>
+</Programs>

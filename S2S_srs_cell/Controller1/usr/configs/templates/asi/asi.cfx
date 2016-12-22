@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<asi>
+  <!--  Slave1 Settings-->
+  <asiSlave name="slave1" address="1" >
+    <asiDinputs>
+      <asiDio name="asi1Din0" mode="notInverted" channel="0" />
+      <asiDio name="asi1Din1" mode="notInverted" channel="1" />
+      <asiDio name="asi1Din2" mode="notInverted" channel="2" />
+      <asiDio name="asi1Din3" mode="notInverted" channel="3" />
+    </asiDinputs>
+    <asiDoutputs>
+      <asiDio name="asi1Dout0" mode="notInverted" channel="0" />
+      <asiDio name="asi1Dout1" mode="notInverted" channel="1" />
+      <asiDio name="asi1Dout2" mode="notInverted" channel="2" />
+      <asiDio name="asi1Dout3" mode="notInverted" channel="3" />
+    </asiDoutputs>
+    <asiAinputs>
+      <asiAio name="asi1Ain0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAinputs>
+    <asiAoutputs>
+      <asiAio name="asi1Aout0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAoutputs>
+  </asiSlave>
+  <!--  Slave2 Settings-->
+  <asiSlave name="slave2" address="2" >
+    <asiDinputs>
+      <asiDio name="asi2Din0" mode="notInverted" channel="0" />
+      <asiDio name="asi2Din1" mode="notInverted" channel="1" />
+      <asiDio name="asi2Din2" mode="notInverted" channel="2" />
+      <asiDio name="asi2Din3" mode="notInverted" channel="3" />
+    </asiDinputs>
+    <asiDoutputs>
+      <asiDio name="asi2Dout0" mode="notInverted" channel="0" />
+      <asiDio name="asi2Dout1" mode="notInverted" channel="1" />
+      <asiDio name="asi2Dout2" mode="notInverted" channel="2" />
+      <asiDio name="asi2Dout3" mode="notInverted" channel="3" />
+    </asiDoutputs>
+    <asiAinputs>
+      <asiAio name="asi2Ain0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAinputs>
+    <asiAoutputs>
+      <asiAio name="asi2Aout0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAoutputs>
+  </asiSlave>
+  <!--  Slave3 Settings-->
+  <asiSlave name="slave3" address="3" >
+    <asiDinputs>
+      <asiDio name="asi3Din0" mode="notInverted" channel="0" />
+      <asiDio name="asi3Din1" mode="notInverted" channel="1" />
+      <asiDio name="asi3Din2" mode="notInverted" channel="2" />
+      <asiDio name="asi3Din3" mode="notInverted" channel="3" />
+    </asiDinputs>
+    <asiDoutputs>
+      <asiDio name="asi3Dout0" mode="notInverted" channel="0" />
+      <asiDio name="asi3Dout1" mode="notInverted" channel="1" />
+      <asiDio name="asi3Dout2" mode="notInverted" channel="2" />
+      <asiDio name="asi3Dout3" mode="notInverted" channel="3" />
+    </asiDoutputs>
+    <asiAinputs>
+      <asiAio name="asi3Ain0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAinputs>
+    <asiAoutputs>
+      <asiAio name="asi3Aout0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAoutputs>
+  </asiSlave>
+  <!--  Slave4 Settings-->
+  <asiSlave name="slave4" address="4" >
+    <asiDinputs>
+      <asiDio name="asi4Din0" mode="notInverted" channel="0" />
+      <asiDio name="asi4Din1" mode="notInverted" channel="1" />
+      <asiDio name="asi4Din2" mode="notInverted" channel="2" />
+      <asiDio name="asi4Din3" mode="notInverted" channel="3" />
+    </asiDinputs>
+    <asiDoutputs>
+      <asiDio name="asi4Dout0" mode="notInverted" channel="0" />
+      <asiDio name="asi4Dout1" mode="notInverted" channel="1" />
+      <asiDio name="asi4Dout2" mode="notInverted" channel="2" />
+      <asiDio name="asi4Dout3" mode="notInverted" channel="3" />
+    </asiDoutputs>
+    <asiAinputs>
+      <asiAio name="asi4Ain0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAinputs>
+    <asiAoutputs>
+      <asiAio name="asi4Aout0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAoutputs>
+  </asiSlave>
+  <!--  Slave5 Settings-->
+  <asiSlave name="slave5" address="5" >
+    <asiDinputs>
+      <asiDio name="asi5Din0" mode="notInverted" channel="0" />
+      <asiDio name="asi5Din1" mode="notInverted" channel="1" />
+      <asiDio name="asi5Din2" mode="notInverted" channel="2" />
+      <asiDio name="asi5Din3" mode="notInverted" channel="3" />
+    </asiDinputs>
+    <asiDoutputs>
+      <asiDio name="asi5Dout0" mode="notInverted" channel="0" />
+      <asiDio name="asi5Dout1" mode="notInverted" channel="1" />
+      <asiDio name="asi5Dout2" mode="notInverted" channel="2" />
+      <asiDio name="asi5Dout3" mode="notInverted" channel="3" />
+    </asiDoutputs>
+    <asiAinputs>
+      <asiAio name="asi5Ain0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAinputs>
+    <asiAoutputs>
+      <asiAio name="asi5Aout0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAoutputs>
+  </asiSlave>
+  <!--  Slave6 Settings-->
+  <asiSlave name="slave6" address="6" >
+    <asiDinputs>
+      <asiDio name="asi6Din0" mode="notInverted" channel="0" />
+      <asiDio name="asi6Din1" mode="notInverted" channel="1" />
+      <asiDio name="asi6Din2" mode="notInverted" channel="2" />
+      <asiDio name="asi6Din3" mode="notInverted" channel="3" />
+    </asiDinputs>
+    <asiDoutputs>
+      <asiDio name="asi6Dout0" mode="notInverted" channel="0" />
+      <asiDio name="asi6Dout1" mode="notInverted" channel="1" />
+      <asiDio name="asi6Dout2" mode="notInverted" channel="2" />
+      <asiDio name="asi6Dout3" mode="notInverted" channel="3" />
+    </asiDoutputs>
+    <asiAinputs>
+      <asiAio name="asi6Ain0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAinputs>
+    <asiAoutputs>
+      <asiAio name="asi6Aout0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAoutputs>
+  </asiSlave>
+  <!--  Slave7 Settings-->
+  <asiSlave name="slave7" address="7" >
+    <asiDinputs>
+      <asiDio name="asi7Din0" mode="notInverted" channel="0" />
+      <asiDio name="asi7Din1" mode="notInverted" channel="1" />
+      <asiDio name="asi7Din2" mode="notInverted" channel="2" />
+      <asiDio name="asi7Din3" mode="notInverted" channel="3" />
+    </asiDinputs>
+    <asiDoutputs>
+      <asiDio name="asi7Dout0" mode="notInverted" channel="0" />
+      <asiDio name="asi7Dout1" mode="notInverted" channel="1" />
+      <asiDio name="asi7Dout2" mode="notInverted" channel="2" />
+      <asiDio name="asi7Dout3" mode="notInverted" channel="3" />
+    </asiDoutputs>
+    <asiAinputs>
+      <asiAio name="asi7Ain0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAinputs>
+    <asiAoutputs>
+      <asiAio name="asi7Aout0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAoutputs>
+  </asiSlave>
+  <!--  Slave8 Settings-->
+  <asiSlave name="slave8" address="8" >
+    <asiDinputs>
+      <asiDio name="asi8Din0" mode="notInverted" channel="0" />
+      <asiDio name="asi8Din1" mode="notInverted" channel="1" />
+      <asiDio name="asi8Din2" mode="notInverted" channel="2" />
+      <asiDio name="asi8Din3" mode="notInverted" channel="3" />
+    </asiDinputs>
+    <asiDoutputs>
+      <asiDio name="asi8Dout0" mode="notInverted" channel="0" />
+      <asiDio name="asi8Dout1" mode="notInverted" channel="1" />
+      <asiDio name="asi8Dout2" mode="notInverted" channel="2" />
+      <asiDio name="asi8Dout3" mode="notInverted" channel="3" />
+    </asiDoutputs>
+    <asiAinputs>
+      <asiAio name="asi8Ain0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAinputs>
+    <asiAoutputs>
+      <asiAio name="asi8Aout0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAoutputs>
+  </asiSlave>
+  <!--  Slave9 Settings-->
+  <asiSlave name="slave9" address="9" >
+    <asiDinputs>
+      <asiDio name="asi9Din0" mode="notInverted" channel="0" />
+      <asiDio name="asi9Din1" mode="notInverted" channel="1" />
+      <asiDio name="asi9Din2" mode="notInverted" channel="2" />
+      <asiDio name="asi9Din3" mode="notInverted" channel="3" />
+    </asiDinputs>
+    <asiDoutputs>
+      <asiDio name="asi9Dout0" mode="notInverted" channel="0" />
+      <asiDio name="asi9Dout1" mode="notInverted" channel="1" />
+      <asiDio name="asi9Dout2" mode="notInverted" channel="2" />
+      <asiDio name="asi9Dout3" mode="notInverted" channel="3" />
+    </asiDoutputs>
+    <asiAinputs>
+      <asiAio name="asi9Ain0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAinputs>
+    <asiAoutputs>
+      <asiAio name="asi9Aout0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAoutputs>
+  </asiSlave>
+  <!--  Slave10 Settings-->
+  <asiSlave name="slave10" address="10" >
+    <asiDinputs>
+      <asiDio name="asi10Din0" mode="notInverted" channel="0" />
+      <asiDio name="asi10Din1" mode="notInverted" channel="1" />
+      <asiDio name="asi10Din2" mode="notInverted" channel="2" />
+      <asiDio name="asi10Din3" mode="notInverted" channel="3" />
+    </asiDinputs>
+    <asiDoutputs>
+      <asiDio name="asi10Dout0" mode="notInverted" channel="0" />
+      <asiDio name="asi10Dout1" mode="notInverted" channel="1" />
+      <asiDio name="asi10Dout2" mode="notInverted" channel="2" />
+      <asiDio name="asi10Dout3" mode="notInverted" channel="3" />
+    </asiDoutputs>
+    <asiAinputs>
+      <asiAio name="asi10Ain0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAinputs>
+    <asiAoutputs>
+      <asiAio name="asi10Aout0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAoutputs>
+  </asiSlave>
+  <!--  Slave11 Settings-->
+  <asiSlave name="slave11" address="11" >
+    <asiDinputs>
+      <asiDio name="asi11Din0" mode="notInverted" channel="0" />
+      <asiDio name="asi11Din1" mode="notInverted" channel="1" />
+      <asiDio name="asi11Din2" mode="notInverted" channel="2" />
+      <asiDio name="asi11Din3" mode="notInverted" channel="3" />
+    </asiDinputs>
+    <asiDoutputs>
+      <asiDio name="asi11Dout0" mode="notInverted" channel="0" />
+      <asiDio name="asi11Dout1" mode="notInverted" channel="1" />
+      <asiDio name="asi11Dout2" mode="notInverted" channel="2" />
+      <asiDio name="asi11Dout3" mode="notInverted" channel="3" />
+    </asiDoutputs>
+    <asiAinputs>
+      <asiAio name="asi11Ain0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAinputs>
+    <asiAoutputs>
+      <asiAio name="asi11Aout0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAoutputs>
+  </asiSlave>
+  <!--  Slave12 Settings-->
+  <asiSlave name="slave12" address="12" >
+    <asiDinputs>
+      <asiDio name="asi12Din0" mode="notInverted" channel="0" />
+      <asiDio name="asi12Din1" mode="notInverted" channel="1" />
+      <asiDio name="asi12Din2" mode="notInverted" channel="2" />
+      <asiDio name="asi12Din3" mode="notInverted" channel="3" />
+    </asiDinputs>
+    <asiDoutputs>
+      <asiDio name="asi12Dout0" mode="notInverted" channel="0" />
+      <asiDio name="asi12Dout1" mode="notInverted" channel="1" />
+      <asiDio name="asi12Dout2" mode="notInverted" channel="2" />
+      <asiDio name="asi12Dout3" mode="notInverted" channel="3" />
+    </asiDoutputs>
+    <asiAinputs>
+      <asiAio name="asi12Ain0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAinputs>
+    <asiAoutputs>
+      <asiAio name="asi12Aout0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAoutputs>
+  </asiSlave>
+  <!--  Slave13 Settings-->
+  <asiSlave name="slave13" address="13" >
+    <asiDinputs>
+      <asiDio name="asi13Din0" mode="notInverted" channel="0" />
+      <asiDio name="asi13Din1" mode="notInverted" channel="1" />
+      <asiDio name="asi13Din2" mode="notInverted" channel="2" />
+      <asiDio name="asi13Din3" mode="notInverted" channel="3" />
+    </asiDinputs>
+    <asiDoutputs>
+      <asiDio name="asi13Dout0" mode="notInverted" channel="0" />
+      <asiDio name="asi13Dout1" mode="notInverted" channel="1" />
+      <asiDio name="asi13Dout2" mode="notInverted" channel="2" />
+      <asiDio name="asi13Dout3" mode="notInverted" channel="3" />
+    </asiDoutputs>
+    <asiAinputs>
+      <asiAio name="asi13Ain0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAinputs>
+    <asiAoutputs>
+      <asiAio name="asi13Aout0" coefA="1" coefB="0" channel="0" bitCount="4" format="unsigned" />
+    </asiAoutputs>
+  </asiSlave>
+</asi>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="HexToDec" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_sHex" type="string" xsi:type="element" />
+      <Parameter name="x_nDecimal" type="num" xsi:type="element" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nIndex" type="num" xsi:type="array" size="1" />
+      <Local name="l_nResult" type="num" xsi:type="array" size="1" />
+      <Local name="l_bIsHex" type="bool" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  //upgrade: trim the input string!
+  
+  l_bIsHex=false
+  call isHexadecimal(x_sHex, l_bIsHex)
+  
+  if l_bIsHex
+    for l_nIndex=len(x_sHex)-1 to 0 step-1 
+      l_nResult = l_nResult + (nHex2DecSymbols[mid(x_sHex, 1, l_nIndex)]*power(16, len(x_sHex)-l_nIndex-1))
+    endFor
+    x_nDecimal = l_nResult
+  else
+    logMsg("Binary->HexToDec: wrong input format")
+  endIf
+  
+end]]></Code>
+  </Program>
+</Programs>

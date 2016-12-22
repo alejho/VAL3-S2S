@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="readme">
+    <Code><![CDATA[begin
+  //Title: Mathematical and Binary functions
+  //
+  //General description :
+  //  This library provides a functions for binary and mathematical
+  //  calculations.
+  //
+  //  1) transforms a binary to a decimal or vice-versa
+  //  2) provides OR, XOR, AND operators for binary calculation
+  //  3) Exponent Calculation
+  //
+  //Hardware required :
+  //  - Robot system    : no specific robot system
+  //  - Peripherals     : no peripherals required
+  //
+  //VAL3 options :
+  //  - VAL3 version    : 7.*
+  //  - VAL3 licenses   : no licenses required
+  //  - VAL3 add-ons    : none
+  //
+  //Library version     : 7.6.1.0
+  //
+  //Public variables    : none
+  //
+  //Included libraries  : none
+  //
+  //Miscellaneous       : ---
+  //
+  //Keywords            : calculation, Operator, And, Or, Xor, Decimal, binary,
+  //                      function, word.
+end]]></Code>
+  </Program>
+</Programs>

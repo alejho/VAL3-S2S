@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="SubMenu">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_sBin1" type="string" xsi:type="element" />
+      <Parameter name="x_sBin2" type="string" xsi:type="element" />
+      <Parameter name="x_sRes" type="string" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_ni" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  //-----------------------------------------------------------------------
+  //Header begin
+  //Description of program
+  //  This program is a Submenu for the Operators.
+  //  The main loop display the menu and wait the function choice
+  //
+  //    -F1:And function
+  //    -F2:Or function
+  //    -F3:Xor function
+  //    -F4:Nand function
+  //    -F5:Nor function
+  //
+  //Input parameters
+  //  string x_sBin1 :
+  //    role : 1 st binary number
+  //  string x_sBin2 :
+  //    role : 2 nd binary number
+  //
+  //Output parameters
+  //  string x_sRes :
+  //    role : binary Result of function
+  //
+  //History
+  //  Creation : 16-04-09 - t.Gra
+  //Header end
+  //-----------------------------------------------------------------------
+  //Initialization
+  userPage()
+  cls()
+  title("BinaryEn Menu")
+  gotoxy(0,2)
+  //Menu display
+  for l_ni=2 to 6
+    gotoxy(2,l_ni)
+    put(sSubMenu[l_ni])
+  endFor
+  //Choose a function F1,F2,F3,F4 or F5.
+  gotoxy(2,10)
+  putln("Select a function")
+  //Waiting user choice
+  l_ni=get()
+  switch nKey
+    //F1 Operator AND
+    case 271
+      call boolAnd(x_sBin1,x_sBin2,x_sRes)
+    break
+    //F2 Operator OR
+    case 272
+      call boolOr(x_sBin1,x_sBin2,x_sRes)
+    break
+    //F3 Operator XOR
+    case 273
+      call boolXor(x_sBin1,x_sBin2,x_sRes)
+    break
+    //F4 Operator NAND
+    case 274
+      call boolNand(x_sBin1,x_sBin2,x_sRes)
+    break
+    //F5 Operator NOR
+    case 275
+      call boolNor(x_sBin1,x_sBin2,x_sRes)
+    break
+  endSwitch
+  cls()
+end]]></Code>
+  </Program>
+</Programs>

@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SystemCards>
+
+  <!-- ======= -->
+  <!-- CS8 IOs -->
+  <!-- ======= -->
+  <Cs8>
+  
+    <!-- Common Cards -->
+    <CommonCards>
+    
+      <Card name="UserIO" type="DIGITAL">
+        <DInputs>
+          <DInput name="usrIn0" description="" />
+          <DInput name="usrIn1" description="" />
+          <DInput name="vreg1" description="" />
+          <DInput name="vreg2" description="" />
+        </DInputs>
+        <DOutputs>
+          <DOutput name="vreg1_en" description="" />
+          <DOutput name="vreg2_en" description="" />
+          <DOutput name="valve1" description="" />
+          <DOutput name="valve2" description="" />
+        </DOutputs>
+      </Card>
+    
+      <Card name="CpuIO" type="ANALOGIC">
+        <AInputs>
+          <AInput name="CPU_TEMP" description="" />
+        </AInputs>
+        <AOutputs />
+      </Card>
+
+      <Card name="UsbiIO" type="ANALOGIC">
+        <AInputs>
+          <AInput name="CBT_TEMP" description="" />
+        </AInputs>
+        <AOutputs />
+      </Card>
+            
+    </CommonCards>
+    
+  </Cs8>
+  
+  
+  
+  <!-- ======== -->
+  <!-- CS8C IOs -->
+  <!-- ======== -->
+  <Cs8C>
+  
+    <!-- Common Cards -->
+    <CommonCards>
+
+      <Card name="PtCFaultIO" type="DIGITAL">
+        <DInputs>
+          <DInput name="MOTOR_1_2_GEAR_1" description="" />
+          <DInput name="MOTOR_3_4" description="" />
+          <DInput name="MOTOR_1_3" description="" />
+          <DInput name="MOTOR_2_4" description="" />
+          <DInput name="MOTOR_1_3_5" description="" />
+          <DInput name="MOTOR_2_4_6" description="" />
+          <DInput name="CASTING" description="" />
+          <DInput name="DSI_BOARD" description="" />
+          <DInput name="EXCHANGER" description="" />
+          <DInput name="GLOBAL_PTC" description="" />
+        </DInputs>
+        <DOutputs />
+      </Card>
+      
+      <Card name="CpuIO" type="ANALOGIC">
+        <AInputs>
+          <AInput name="CPU_TEMP" description="" />
+        </AInputs>
+        <AOutputs />
+      </Card>
+          
+      <Card name="UserIO" type="DIGITAL">
+        <DInputs>
+          <DInput name="usrIn0" description="" />
+          <DInput name="usrIn1" description="" />
+        </DInputs>
+        <DOutputs>
+          <DOutput name="valve1" description="" />
+          <DOutput name="valve2" description="" />
+        </DOutputs>
+      </Card>
+
+      <Card name="FastIO" type="DIGITAL">
+        <DInputs>
+          <DInput name="fIn0" description="" />
+          <DInput name="fIn1" description="" />
+          <DInput name="SECTEUR_OK" description="" />
+        </DInputs>
+        <DOutputs>
+          <DOutput name="fOut0" description="" />
+        </DOutputs>
+      </Card>
+
+      <Card name="RsiIO" type="ANALOGIC">
+        <AInputs>
+          <AInput name="CBT_TEMP" description="" />
+        </AInputs>
+        <AOutputs />
+      </Card>
+              
+    </CommonCards>
+    
+    <!-- Starc 1 -->
+    <Starc1Cards>
+    
+      <Card name="EncoderIO" type="ANALOGIC_DIGITAL">
+        <AInputs>
+          <AInput name="cCurrPos" description="" />
+          <AInput name="cLatchPos" description="" />
+        </AInputs>
+        <AOutputs>
+          <AOutput name="cCounts" description="" />
+          <AOutput name="cPrstPos" description="" />
+        </AOutputs>    
+        <DInputs>
+          <DInput name="cLatch" description="" />
+          <DInput name="cHwErr" description="" />
+          <DInput name="cOvsErr" description="" />
+        </DInputs>
+        <DOutputs>
+          <DOutput name="cEnLatch" description="" />
+          <DOutput name="cEnPrst" description="" />
+          <DOutput name="cRstErr" description="" />
+        </DOutputs>
+      </Card>
+    
+    </Starc1Cards>
+
+    <!-- Starc 2 -->
+    <Starc2Cards>
+    
+      <Card name="EncoderIO-B0_0" type="ANALOGIC_DIGITAL">
+        <AInputs>
+          <AInput name="e00CurrPos" description="" />
+          <AInput name="e00LatchPos" description="" />
+          <AInput name="e00CountsMes" description="" />
+        </AInputs>
+        <AOutputs>
+          <AOutput name="e00Counts" description="" />
+          <AOutput name="e00PrstPos" description="" />
+          <AOutput name="e00LatchFilter" description="" />
+        </AOutputs>    
+        <DInputs>
+          <DInput name="e00LatchSig" description="" />
+          <DInput name="e00Latch" description="" />
+          <DInput name="e00PowerErr" description="" />
+          <DInput name="e00HwErr" description="" />
+          <DInput name="e00OvsErr" description="" />
+          <DInput name="e00CountsErr" description="" />
+        </DInputs>
+        <DOutputs>
+          <DOutput name="e00EnLatch" description="" />
+          <DOutput name="e00EnPrst" description="" />
+          <DOutput name="e00RstErr" description="" />
+          <DOutput name="e00LatchEdgFall" description="" />
+        </DOutputs>
+      </Card>
+
+      <Card name="EncoderIO-B0_1" type="ANALOGIC_DIGITAL">
+        <AInputs>
+          <AInput name="e01CurrPos" description="" />
+          <AInput name="e01LatchPos" description="" />
+          <AInput name="e01CountsMes" description="" />
+        </AInputs>
+        <AOutputs>
+          <AOutput name="e01Counts" description="" />
+          <AOutput name="e01PrstPos" description="" />
+          <AOutput name="e01LatchFilter" description="" />
+        </AOutputs>    
+        <DInputs>
+          <DInput name="e01LatchSig" description="" />
+          <DInput name="e01Latch" description="" />
+          <DInput name="e01PowerErr" description="" />
+          <DInput name="e01HwErr" description="" />
+          <DInput name="e01OvsErr" description="" />
+          <DInput name="e01CountsErr" description="" />
+        </DInputs>
+        <DOutputs>
+          <DOutput name="e01EnLatch" description="" />
+          <DOutput name="e01EnPrst" description="" />
+          <DOutput name="e01RstErr" description="" />
+          <DOutput name="e01LatchEdgFall" description="" />
+        </DOutputs>
+      </Card>
+      
+      <Card name="EncoderIO-B1_0" type="ANALOGIC_DIGITAL">
+        <AInputs>
+          <AInput name="e10CurrPos" description="" />
+          <AInput name="e10LatchPos" description="" />
+          <AInput name="e10CountsMes" description="" />
+        </AInputs>
+        <AOutputs>
+          <AOutput name="e10Counts" description="" />
+          <AOutput name="e10PrstPos" description="" />
+          <AOutput name="e10LatchFilter" description="" />
+        </AOutputs>    
+        <DInputs>
+          <DInput name="e10LatchSig" description="" />
+          <DInput name="e10Latch" description="" />
+          <DInput name="e10PowerErr" description="" />
+          <DInput name="e10HwErr" description="" />
+          <DInput name="e10OvsErr" description="" />
+          <DInput name="e10CountsErr" description="" />
+        </DInputs>
+        <DOutputs>
+          <DOutput name="e10EnLatch" description="" />
+          <DOutput name="e10EnPrst" description="" />
+          <DOutput name="e10RstErr" description="" />
+          <DOutput name="e10LatchEdgFall" description="" />
+        </DOutputs>
+      </Card>
+
+      <Card name="EncoderIO-B1_1" type="ANALOGIC_DIGITAL">
+        <AInputs>
+          <AInput name="e11CurrPos" description="" />
+          <AInput name="e11LatchPos" description="" />
+          <AInput name="e11CountsMes" description="" />
+        </AInputs>
+        <AOutputs>
+          <AOutput name="e11Counts" description="" />
+          <AOutput name="e11PrstPos" description="" />
+          <AOutput name="e11LatchFilter" description="" />
+        </AOutputs>    
+        <DInputs>
+          <DInput name="e11LatchSig" description="" />
+          <DInput name="e11Latch" description="" />
+          <DInput name="e11PowerErr" description="" />
+          <DInput name="e11HwErr" description="" />
+          <DInput name="e11OvsErr" description="" />
+          <DInput name="e11CountsErr" description="" />
+        </DInputs>
+        <DOutputs>
+          <DOutput name="e11EnLatch" description="" />
+          <DOutput name="e11EnPrst" description="" />
+          <DOutput name="e11RstErr" description="" />
+          <DOutput name="e11LatchEdgFall" description="" />
+        </DOutputs>
+      </Card>
+      
+      <Card name="EncoderIO-B2_0" type="ANALOGIC_DIGITAL">
+        <AInputs>
+          <AInput name="e20CurrPos" description="" />
+          <AInput name="e20LatchPos" description="" />
+          <AInput name="e20CountsMes" description="" />
+        </AInputs>
+        <AOutputs>
+          <AOutput name="e20Counts" description="" />
+          <AOutput name="e20PrstPos" description="" />
+          <AOutput name="e20LatchFilter" description="" />
+        </AOutputs>    
+        <DInputs>
+          <DInput name="e20LatchSig" description="" />
+          <DInput name="e20Latch" description="" />
+          <DInput name="e20PowerErr" description="" />
+          <DInput name="e20HwErr" description="" />
+          <DInput name="e20OvsErr" description="" />
+          <DInput name="e20CountsErr" description="" />
+        </DInputs>
+        <DOutputs>
+          <DOutput name="e20EnLatch" description="" />
+          <DOutput name="e20EnPrst" description="" />
+          <DOutput name="e20RstErr" description="" />
+          <DOutput name="e20LatchEdgFall" description="" />
+        </DOutputs>
+      </Card>
+
+      <Card name="EncoderIO-B2_1" type="ANALOGIC_DIGITAL">
+        <AInputs>
+          <AInput name="e21CurrPos" description="" />
+          <AInput name="e21LatchPos" description="" />
+          <AInput name="e21CountsMes" description="" />
+        </AInputs>
+        <AOutputs>
+          <AOutput name="e21Counts" description="" />
+          <AOutput name="e21PrstPos" description="" />
+          <AOutput name="e21LatchFilter" description="" />
+        </AOutputs>    
+        <DInputs>
+          <DInput name="e21LatchSig" description="" />
+          <DInput name="e21Latch" description="" />
+          <DInput name="e21PowerErr" description="" />
+          <DInput name="e21HwErr" description="" />
+          <DInput name="e21OvsErr" description="" />
+          <DInput name="e21CountsErr" description="" />
+        </DInputs>
+        <DOutputs>
+          <DOutput name="e21EnLatch" description="" />
+          <DOutput name="e21EnPrst" description="" />
+          <DOutput name="e21RstErr" description="" />
+          <DOutput name="e21LatchEdgFall" description="" />
+        </DOutputs>
+      </Card>
+            
+    </Starc2Cards> 
+  </Cs8C>
+  
+
+</SystemCards>

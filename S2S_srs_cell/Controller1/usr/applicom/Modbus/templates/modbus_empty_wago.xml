@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<TOPICSLIST>
+	<TOPIC Name="Empty Wago" Card="0" Channel="0" Equipment="0" RefreshPeriod="200" Actif="1">
+		<MODULE Tag_name_root="" IDModule="BOOLEAN" InputSize="" OutputSize="2">
+			<ITEM Name="mbLifeBit" Syntaxe="%Q0" Offset="0"/><ITEM Name="mbUnusedBit" Syntaxe="%Q1" Offset="1"/></MODULE>
+		<MODULE Tag_name_root="" IDModule="WORD" InputSize="" OutputSize="32">
+			<ITEM Name="mbVersion" Syntaxe="%QW0" Offset="0"/><ITEM Name="mbUnusedWord" Syntaxe="%QW1" Offset="1"/></MODULE>
+	</TOPIC>
+	<GENERAL_PARAMETERS TopicName="Empty Wago" TCP_Port="502" ConnectionNumber="2"/>
+</TOPICSLIST>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Locals>
+      <Local name="l_bMismatch" type="bool" xsi:type="array" size="1" />
+      <Local name="l_nIndex" type="num" xsi:type="array" size="1" />
+      <Local name="l_nRes" type="num" xsi:type="array" size="1" />
+      <Local name="i" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  //this is the basic example to test the S2S library
+  //this demo will try to:
+  // -connect to a plc (so remember to change the ip address!)
+  // -get the db size of db "nDBnumber"
+  // -write a sample buffer to plc's db "nDBnumber"
+  // -read the whole db
+  // -verify that what i read is the same stuff i wrote
+  
+  cls()
+  call S7:init(sTcpClient)
+  //connectTo(string ipAddress, num rack, num slot)
+  nTimer=clock()
+  userPage()
+  putln("trying to connect to plc...")
+  call S7:connectTo("127.0.0.1",0,2)
+  
+  if S7:nLastError==S7:nNoErrors
+    putln("connection established!")
+    putln("connection time required: "+toString(".3", clock()-nTimer)+" s")
+    //get the db size
+    putln("checking db "+toString("", nDBnumber)+" size")
+    call S7:getDBsize(nDBnumber, l_nRes)
+    if S7:nLastError==S7:nNoErrors and l_nRes>0 
+      putln("db "+toString("", nDBnumber)+" size is " + toString("", l_nRes) + " bytes")
+      //set up the sample buffer 
+      resize(nSampleBuffer, 1, l_nRes)
+      i=0
+      for l_nIndex=0 to l_nRes-1
+        //filling it up with nosense data
+        nSampleBuffer[l_nIndex] = i
+        i=i+1
+        if i>100
+          i=0
+        endIf
+      endFor
+      //write the sample buffer to db
+      putln("writing data to db "+toString("", nDBnumber))
+      nTimer=clock()
+      call S7:writeArea(S7:nAreaDB, nDBnumber, nSampleBuffer, 0, size(nSampleBuffer))
+      if S7:nLastError==S7:nNoErrors
+        putln(toString("", l_nRes)+" bytes written in "+toString(".3", clock()-nTimer)+" s")
+        putln("reading the whole db "+toString("", nDBnumber))
+        //read the whole db nDBnumber from plc nDB WILL BE RESIZED BY getDB...so IT MUST BE A GLOBAL VARIABLE!!!
+        nTimer=clock()
+        call S7:readDB(nDBnumber, nDB)
+        if S7:nLastError==S7:nNoErrors
+          putln(toString("", l_nRes)+" bytes read in "+toString(".3", clock()-nTimer)+" s")
+          //check if it match with the sample buffer i wrote before
+          l_bMismatch=false
+          for l_nIndex=0 to size(nSampleBuffer)-1
+            //the size of the nSampleBuffer should match the db size
+            if nSampleBuffer[l_nIndex]!=nDB[l_nIndex]
+              l_bMismatch=true
+            endIf
+          endFor
+          if !l_bMismatch
+            putln("test completed successfully!")
+          else
+            putln("data read different from data written")
+          endIf
+        else
+          putln("error while reading from plc")
+        endIf
+      else
+        putln("error while writing to plc")
+      endIf
+    else
+      putln("error reading db size")
+    endIf
+  else
+    putln("error while trying to connect")
+  endIf
+  
+end]]></Code>
+  </Program>
+</Programs>
