@@ -159,6 +159,7 @@
 <li><a href="#5 Library Functions:5.1 read-write functions:5.1.1 readArea" title="5.1.1 readArea" class="page">5.1.1 readArea</a></li>
 <li><a href="#5 Library Functions:5.1 read-write functions:5.1.2 writeArea" title="5.1.2 writeArea" class="page">5.1.2 writeArea</a></li>
 <li><a href="#5 Library Functions:5.1 read-write functions:5.1.3 readDB" title="5.1.3 readDB" class="page">5.1.3 readDB</a></li>
+<li><a href="#5 Library Functions:5.1 read-write functions:5.1.4 getDBsize" title="5.1.4 getDBsize" class="page">5.1.4 getDBsize</a></li>
 </ul>
 </li>
 <li><a href="#5 Library Functions:5.2 Helper functions" title="5.2 Helper functions" class="page">5.2 Helper functions</a>
@@ -263,7 +264,10 @@ In these arrays of "num" (actually bytes) are "hidden" the information we want t
 			<hr class='pageseparator'/>
 			<h1>5 Library Functions <a name='5 Library Functions'></a></h1>
 			<br><br>
-			
+			<p>
+In this section you'll find the documentation of the public functions of the library.
+</p>
+
 
 			<br>
 
@@ -463,6 +467,40 @@ This function is a convenient wrapper of "readArea" useful to read a whole DB fr
 
 <p>
 <img src="./S2Sdoc_files/5_Library_Functions/5.1_read-write_functions/5.1.3_readDB/pasted_image.png">
+</p>
+
+
+			<br>
+
+			<hr class='pageseparator'/>
+			<h1>5.1.4 getDBsize <a name='5 Library Functions:5.1 read-write functions:5.1.4 getDBsize'></a></h1>
+			<br><br>
+			<h2>getDBsize(num x_nDBnumber, num&amp; x_nSize)</h2>
+
+<br>
+
+<p>
+Writes in the x_nSize argument the size in bytes of the db "x_nDBnumber".
+</p>
+
+<h4>Arguments:</h4>
+
+<br>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li><b>x_nDBnumber</b>: the DB number you want to know the size.</li>
+<li><b>x_nSize</b>: the variable where the size of the db will be written<b>.</b></li>
+</ul>
+</p>
+
+<h4>Example:</h4>
+
+<br>
+<br>
+
+<p>
+<img src="./S2Sdoc_files/5_Library_Functions/5.1_read-write_functions/5.1.4_getDBsize/pasted_image.png">
 </p>
 
 
@@ -792,12 +830,11 @@ Run the application to perform automatically the following operation:
 </p>
 
 <p>
-<ol type="1" start="1">
-<li>Initialize the library.</li>
-<li>Connect to PLC.</li>
-<li>Write a sample buffer to the db "nDBnumber".</li>
-<li>Read the whole db "nDBnumber".</li>
-</ol>
+ -connect to a plc (so remember to change the ip address!)<br>
+ -get the db size of db "nDBnumber"<br>
+ -write a sample buffer to plc's db "nDBnumber"<br>
+ -read the whole db<br>
+ -verify that what i read is the same stuff i wrote
 </p>
 
 <p>
@@ -805,7 +842,7 @@ If everything is ok you'll se a succes message...otherwise an error message will
 </p>
 
 <p>
-<img src="./S2Sdoc_files/6_Integration_in_VAL3_application/6.0_Getting_Started/pasted_image005.png"><img src="./S2Sdoc_files/6_Integration_in_VAL3_application/6.0_Getting_Started/pasted_image006.png">
+<img src="./S2Sdoc_files/6_Integration_in_VAL3_application/6.0_Getting_Started/pasted_image007.png">  <img src="./S2Sdoc_files/6_Integration_in_VAL3_application/6.0_Getting_Started/pasted_image008.png">
 </p>
 
 <p>
@@ -893,8 +930,25 @@ Like this:
 			<hr class='pageseparator'/>
 			<h1>7 PLC notes <a name='7 PLC notes'></a></h1>
 			<br><br>
-			<p>
-In theory S2S should work with the following hardware (but, at the moment i didn't test it!):
+			<h3>tested hardware:</h3>
+
+<br>
+
+<p>
+At the moment S2S have been tested succesfully with the following hardware:
+</p>
+
+<p>
+<ul>
+<li>315-2 PN/DP  </li>
+<li>IM151-8F PN/DP</li>
+</ul>
+</p>
+
+<br>
+
+<p>
+In theory S2S should work with the following hardware:
 </p>
 
 <p>
