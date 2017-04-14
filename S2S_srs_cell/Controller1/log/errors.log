@@ -2599,3 +2599,40 @@
 [12/19/16 15:50:53]: <0x5402> S2S_test_1 application started {e56f6d66}
 [12/19/16 15:50:54]: <0x5403> S2S_test_1 application stopped {ed99bfd9}
 [12/19/16 16:19:28]: <0x2402> MCP communication disconnected {b1552786}
+[01/26/17 12:11:17]: ----------------------------------------------- {1fb0ebe6}
+[01/26/17 12:11:17]: Logger started (1048576) {3b36a6d0}
+[01/26/17 12:11:21]: <0x0003> CPU board: TEKNOR ?Mhz; ?Mb RAM; ?Mb disk; bios: ?; fpga: ?; ataIde: ? {0943fd0f}
+[01/26/17 12:11:21]: <0x0003> Cycle time set to 0.004s {e88912ea}
+[01/26/17 12:11:21]: <0x0003> Simulation cycle time set to 0.1s {ca357627}
+[01/26/17 12:11:21]: <0x0002> Controller IP address could not be updated {315e426f}
+[01/26/17 12:11:21]: <0x0003> Mcp = TSimulated {f472cc51}
+[01/26/17 12:11:21]: <0x340A> Mcp communication established {f8d791c7}
+[01/26/17 12:11:21]: <0x2401> Power hour count = 10:27:26 {e4a8ba34}
+[01/26/17 12:11:21]: <0x2401> Mac Address = a0-a8-cd-17-bb-32 {a111de42}
+[01/26/17 12:11:21]: <0x0003> COM-PC: server created on all interfaces [851] {dd813f0e}
+[01/26/17 12:11:22]: <0x2402> History handler has been connected to IHM {ca45be71}
+[01/26/17 12:11:22]: <0x2401> System: s7.9.1 Mar 30 2016 {663f3a94}
+[01/26/17 12:11:22]: <0x2401> Configuration Version: c1.038  {b2d5fa87}
+[01/26/17 12:11:22]: <0x2401> CPU: TEKNOR  {f1b5c477}
+[01/26/17 12:11:22]: <0x2401> Option testMode: enabled  {4f80607e}
+[01/26/17 12:11:22]: <0x2401> Option VAL 3: enabled  {5f26048c}
+[01/26/17 12:11:22]: <0x2401> Machine Number: ?  {78817afa}
+[01/26/17 12:11:22]: <0x2401> Arm: tx60-S1-R4 floor {e7c2537c}
+[01/26/17 12:11:22]: <0x2401> Arm serial number: ?  {e7976037}
+[01/26/17 12:11:22]: <0x2401> Arm oil type:   {97e39b58}
+[01/26/17 12:11:22]: <0x2401> Robot name:   {9146ad39}
+[01/26/17 12:11:22]: <0x2401> EP: s7.9.1 Mar 30 2016 {5fb3a106}
+[01/26/17 12:11:22]: <0x2401> EP10: s7.9.1 Mar 30 2016 {22abc7a0}
+[01/26/17 12:11:22]: <0x2401> EP20: s7.9.1 Mar 30 2016 {1e1bac30}
+[01/26/17 12:11:22]: <0x2401> SCA: s7.9.1 Mar 30 2016 {25557ef6}
+[01/26/17 12:11:22]: <0x2401> B_SCS: s7.9.1 Mar 30 2016 {a7fe0f0a}
+[01/26/17 12:11:22]: <0x2401> Expansion: s7.9.1 Mar 30 2016 {7d0981b2}
+[01/26/17 12:11:22]: <0x2201> New profile : default {a0b88d03}
+[01/26/17 12:11:22]: <0x2401> End of controller initialization {35e761d8}
+[01/26/17 12:11:22]: <0x1801> Working mode:automatic. {9d808b36}
+[01/26/17 12:11:22]: <0x1602> End of arm power shutdown phase. {8a5f2806}
+[01/26/17 12:11:27]: <0x2401> Saving controller context... {bb7bd2e4}
+[01/26/17 12:11:27]: <0x2402> Controller temperature: 28°C {4a539d3f}
+[01/26/17 12:11:27]: <0x2402> CPU temperature: 28°C {43911fd0}
+[01/26/17 12:11:57]: <0x5402> S2S_demo_0 application started {5f5b7a94}
+[01/26/17 12:11:57]: <0x5403> S2S_demo_0 application stopped {03029d44}

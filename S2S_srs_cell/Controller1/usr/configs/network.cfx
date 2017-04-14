@@ -3,7 +3,7 @@
   <Bool name="dhcpClient" value="false" />
   <Int name="dhcpClientType" value="-1" />
   <String name="dhcpClientAddress" value="" />
-  <Inet name="ipAddress" value="10.12.80.77" />
+  <Inet name="ipAddress" value="10.12.80.87" />
   <Inet name="ipMask" value="255.255.0.0" />
   <Inet name="ipAddress2" value="172.31.0.1" />
   <Inet name="ipMask2" value="255.255.0.0" />

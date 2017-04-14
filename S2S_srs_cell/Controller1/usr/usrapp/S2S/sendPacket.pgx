@@ -12,7 +12,12 @@
   
   resize(nTempBuffer,1,1)
   nTempBuffer=0
-  resize(nTempBuffer,1,x_nSize)
+  if x_nSize>0
+    resize(nTempBuffer,1,x_nSize)
+  else
+    call setLastError(nErrTCPSend)
+    return
+  endIf
   
   for l_nIndex=0 to x_nSize-1
     nTempBuffer[l_nIndex]=x_nBuff[l_nIndex]
