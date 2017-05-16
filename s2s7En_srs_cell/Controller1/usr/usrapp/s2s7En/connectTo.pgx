@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="connectTo" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_sIp" type="string" xsi:type="element" />
+      <Parameter name="x_nRack" type="num" xsi:type="element" />
+      <Parameter name="x_nSlot" type="num" xsi:type="element" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nTempDec" type="num" xsi:type="array" size="1" />
+      <Local name="l_sRes" type="string" xsi:type="array" size="1" />
+      <Local name="l_sTempBin" type="string" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+
+  //Header begin
+  
+  // Create an ISO-on-TCP connection from the controller (client) to the plc (server)
+  //
+  //Input parameters
+  // string x_sIp: ip address of the plc 
+  // num x_nRack: rack number of the plc (see the hardware configuration in plc's project)
+  // num x_nSlot: slot number of the plc (see the hardware configuration in plc's project)
+  
+  //Examples
+  // call connectTo("127.0.0.1",0,2)
+  //
+  //History
+  // Creation: 24-12-16 - Alessio Villa
+  //Header end
+  
+
+  //set connection parameters
+  sioCtrl(sioTCPclient,"target",x_sIp)
+
+  nLocalTSAP_HI=1
+  nLocalTSAP_LO=0
+
+  //nRemoteTSAP_HI
+  l_sTempBin=""
+  call bitOp:DecToBin(((nConnType*256)+(x_nRack*32)+x_nSlot),l_sTempBin)
+  call bitOp:shiftRight(l_sTempBin,8)
+  l_nTempDec=0
+  call bitOp:BinToDec(l_sTempBin,l_nTempDec)
+  nRemoteTSAP_HI=l_nTempDec
+
+  //nRemoteTSAP_LO
+  l_sTempBin=""
+  call bitOp:DecToBin(((nConnType*256)+(x_nRack*32)+x_nSlot),l_sTempBin)
+  call bitOp:boolAnd(l_sTempBin,"0000000011111111",l_sRes)
+  l_nTempDec=0
+  call bitOp:BinToDec(l_sRes,l_nTempDec)
+  nRemoteTSAP_LO=l_nTempDec
+
+  call setLastError(nNoErrors)
+  if !bConnected
+    call tcpConnect()
+    if nLastError==nNoErrors
+      call isoConnect()
+      if nLastError==nNoErrors
+        //putln("connected to plc!")
+        call negotPduLength()
+      endIf
+    endIf
+  endIf
+
+  if nLastError==nNoErrors
+    bConnected=true
+  endIf
+
+end]]></Code>
+  </Program>
+</Programs>

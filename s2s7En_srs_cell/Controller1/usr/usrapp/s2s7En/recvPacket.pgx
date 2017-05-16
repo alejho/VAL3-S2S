@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="recvPacket">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nBuff" type="num" xsi:type="array" use="reference" />
+      <Parameter name="x_nSize" type="num" xsi:type="element" />
+    </Parameters>
+    <Code><![CDATA[begin
+
+  resize(nTempBuffer,1,1)
+  nTempBuffer=0
+  resize(nTempBuffer,1,x_nSize)
+
+  if sioGet(sioTCPclient,nTempBuffer)!=x_nSize
+    call setLastError(nErrTCPConnRst)
+  endIf
+
+  getData("nTempBuffer",x_nBuff)
+
+end]]></Code>
+  </Program>
+</Programs>

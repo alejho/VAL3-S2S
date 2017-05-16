@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CellUserOptions>
+  <Controller Name="Controller1">
+    <Application>Disk://S2S_demo_1/S2S_demo_1.pjx</Application>
+    <Application>Disk://s2s7En/s2s7En.pjx</Application>
+    <Application>Disk://S2S_demo_0/S2S_demo_0.pjx</Application>
+  </Controller>
+  <Option Name="DataTreeView" />
+  <Option Name="CellExplorer">
+    <Nodes>
+      <Node Path="s2s7En" IsExpanded="true" />
+      <Node Path="s2s7En\Controller1" IsExpanded="true" />
+    </Nodes>
+  </Option>
+  <Option Name="GeometryView" />
+  <Option Name="Breakpoints">
+    <Breakpoints />
+  </Option>
+  <Option Name="IOsControlPanel">
+    <Ios />
+  </Option>
+  <Option Name="Watches">
+    <Watches />
+  </Option>
+  <Option Name="3DView">
+    <_3DView Visible="true" />
+  </Option>
+  <Option Name="SynchronizerMode">
+    <Synchronizers>
+      <Synchronizer Controller="Controller1" Mode="Target" />
+    </Synchronizers>
+  </Option>
+  <Option Name="Safety">
+    <Safeties />
+  </Option>
+</CellUserOptions>

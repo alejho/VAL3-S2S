@@ -1,0 +1,332 @@
+<HTML>
+<HEAD>
+<TITLE>Staubli s2s7En Library Documentation </TITLE>
+</HEAD>
+<BODY>
+<PRE>
+<img src="data:image/jpg;base64,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" alt="Staubli Robotics" />
+
+<FONT FACE="Arial" SIZE="6">Library s2s7En Documentation<BR> </FONT>
+
+<FONT FACE="Arial" SIZE="5"> <B>Description and requirements<BR> </B> </FONT>
+<FONT FACE="Arial" SIZE="4">  Title: S2S Library (Staubli to Siemens) 
+</FONT><FONT FACE="Arial" SIZE="4">  General description:  S2S is a minimal VAL3 porting of the "S7_micro_client" class of the SNAP7 library (Copyright (C) 2013, Davide Nardella, http:  snap7.sourceforge.net/).
+</FONT><FONT FACE="Arial" SIZE="4">  It allows the read/write communication from a Staubli controller to a Siemens PLC over a standard ethernet TCP/IP connection.
+</FONT><FONT FACE="Arial" SIZE="4">  
+</FONT><FONT FACE="Arial" SIZE="4">  Hardware required: Siemens PLC's S7 300/400/WinAC or S7 1200/1500 (see the complete documentation <a href="https://www.github.com/alejho/S2S"> here </a> )
+</FONT><FONT FACE="Arial" SIZE="4">  
+</FONT><FONT FACE="Arial" SIZE="4">  VAL3 options: 7.9.1
+</FONT><FONT FACE="Arial" SIZE="4">  
+</FONT><FONT FACE="Arial" SIZE="4">  Library version: 7.9.1.1
+</FONT><FONT FACE="Arial" SIZE="4">  
+</FONT><FONT FACE="Arial" SIZE="4">  Public variables: nAreaCT, nAreaDB, nAreaMK, nAreaPA, nAreaPE, nAreaTM, nLastError, nNoErrors
+</FONT><FONT FACE="Arial" SIZE="4">  
+</FONT><FONT FACE="Arial" SIZE="4">  
+</FONT><FONT FACE="Arial" SIZE="4">  Miscellaneous: Since the snap7 are released under lgplv3 license and this is a derivative work, this library is also released un lgplv3 license.
+</FONT><FONT FACE="Arial" SIZE="4">  You should have received a copy of the GNU General Public License and a copy of Lesser GNU General Public License along with S2S, if not,<br>  see  http:  www.gnu.org/licenses/ 
+</FONT><FONT FACE="Arial" SIZE="4">  For licensing reasons the library must be publicly available here: https:  github.com/alejho/S2S where you can find the most up-to-date version and a full <br>  documentation of this library.
+</FONT><FONT FACE="Arial" SIZE="4">  
+</FONT><FONT FACE="Arial" SIZE="4">  Contact the author (a.villa@staubli.com) for support and information.
+</FONT><FONT FACE="Arial" SIZE="4">  
+</FONT><FONT FACE="Arial" SIZE="4">  Keywords: Siemens PLC Ethernet 
+</FONT>
+<BR>
+<BR>
+<BR><FONT FACE="Arial" SIZE="5" ID="TOP"> <B>Description of functions </B> </FONT>
+<a href="#connectTo">public connectTo(...) </a>
+<a href="#getBitAt">public getBitAt(...) </a>
+<a href="#getByteAt">public getByteAt(...) </a>
+<a href="#getDBsize">public getDBsize(...) </a>
+<a href="#getdWordAt">public getdWordAt(...) </a>
+<a href="#getWordAt">public getWordAt(...) </a>
+<a href="#init">public init(...) </a>
+<a href="#readArea">public readArea(...) </a>
+<a href="#readDB">public readDB(...) </a>
+<a href="#setBitAt">public setBitAt(...) </a>
+<a href="#setByteAt">public setByteAt(...) </a>
+<a href="#setWordAt">public setWordAt(...) </a>
+<a href="#writeArea">public writeArea(...) </a>
+<FONT FACE="Arial" SIZE="4" ID="connectTo"> <B>
+public connectTo(string& x_sIp, num& x_nRack, num& x_nSlot)</B> </FONT>
+<FONT FACE="Arial" SIZE="3">
+</FONT><FONT FACE="Arial" SIZE="3">   Create an ISO-on-TCP connection from the controller (client) to the plc (server)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">   string x_sIp: ip address of the plc 
+</FONT><FONT FACE="Arial" SIZE="3">   num x_nRack: rack number of the plc (see the hardware configuration in plc's project)
+</FONT><FONT FACE="Arial" SIZE="3">   num x_nSlot: slot number of the plc (see the hardware configuration in plc's project)
+</FONT><FONT FACE="Arial" SIZE="3">
+</FONT><FONT FACE="Arial" SIZE="3">  Examples
+</FONT><FONT FACE="Arial" SIZE="3">   call connectTo("127.0.0.1",0,2)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">   Creation: 24-12-16 - Alessio Villa
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="getBitAt"> <B>
+public getBitAt(num& x_nByteIndex, num& x_nBitIndex, num& x_nBuffer[---], bool& x_bRes)</B> </FONT>
+<FONT FACE="Arial" SIZE="3">
+</FONT><FONT FACE="Arial" SIZE="3">   This function get the boolean value of the bit number "x_nBitIndex" of the "x_nByteIndex" element (that represent a byte) of the passed array of num<br>  (most likely a plc's memory area you read with readArea()).
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   num x_nByteIndex: the index of the "x_nBuffer[]" array representing the byte we want to read from (most likely a plc's memory area you read with readArea())
+</FONT><FONT FACE="Arial" SIZE="3">   num x_nBitIndex: the bit number from 0(LSB) to 7(MSB) in the x_nByteIndex byte, if this value is lower than 0 or higher than 7 x_bRes will be set to false by default.
+</FONT><FONT FACE="Arial" SIZE="3">   num x_nBuffer[1]: the monodimensional array of num from where we are reading the bit value.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">   bool x_bRes: the result, set to "true" if the bit is high, false otherwise. 
+</FONT><FONT FACE="Arial" SIZE="3">
+</FONT><FONT FACE="Arial" SIZE="3">  Examples
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   call getBitAt(0,4,l_nRes,l_bRes)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">   Creation: 24-12-16 - Alessio Villa
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="getByteAt"> <B>
+public getByteAt(num& x_nByteIndex, num& x_nBuffer[---], num& x_nRes)</B> </FONT>
+<FONT FACE="Arial" SIZE="3">
+</FONT><FONT FACE="Arial" SIZE="3">   This function is trivial, it just return in "x_nRes" the "x_nByteIndex" element of the array x_nBuffer (most likely a plc's memory area you read with readArea()).
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   num x_nByteIndex: the index of the element in the "x_nBuffer[]" array representing the byte we want to read
+</FONT><FONT FACE="Arial" SIZE="3">   num x_nBuffer[1]: the monodimensional array of num from where we are reading a byte.
+</FONT><FONT FACE="Arial" SIZE="3">
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   num x_nRes: where the result is stored
+</FONT><FONT FACE="Arial" SIZE="3">
+</FONT><FONT FACE="Arial" SIZE="3">  Examples
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   	call getByteAt(12, nDB, l_nRes)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">   Creation: 24-12-16 - Alessio Villa
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="getDBsize"> <B>
+public getDBsize(num& x_nDBnumber, num& x_nSize)</B> </FONT>
+<FONT FACE="Arial" SIZE="3">
+</FONT><FONT FACE="Arial" SIZE="3">  This function return the size in bytes for a given db
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   num x_nDBnumber: the DB number you want to know the size.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   num x_nSize: the variable where the size of the db will be written.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Examples
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   call S7:getDBsize(nDBnumber, l_nRes)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">   Creation: 24-12-16 - Alessio Villa
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="getdWordAt"> <B>
+public getDwordAt(num& x_nByteIndex, num& x_nBuffer[---], num& x_nRes)</B> </FONT>
+<FONT FACE="Arial" SIZE="3">
+</FONT><FONT FACE="Arial" SIZE="3">  This function return in "x_nRes" the value of the double word composed by four bytes starting from "x_nByteIndex" element of the array x_nBuffer<br>  (most likely a plc's memory area you read with readArea()).
+</FONT><FONT FACE="Arial" SIZE="3">  The first byte is the lower part of the word (Big Endian)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nByteIndex: the index of the element in the "x_nBuffer[]" array representing the starting byte of the double word we want to read
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nBuffer[1]: the monodimensional array of num from where we are reading a double word.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   num x_nRes: where the result is stored.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Examples
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   	call getDWordAt(7, nDB, l_nRes)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">   Creation: 24-12-16 - Alessio Villa
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="getWordAt"> <B>
+public getWordAt(num& x_nByteIndex, num& x_nBuffer[---], num& x_nRes)</B> </FONT>
+<FONT FACE="Arial" SIZE="3">
+</FONT><FONT FACE="Arial" SIZE="3">  This function return in "x_nRes" the value of the word composed by two bytes starting from "x_nByteIndex" element of the array x_nBuffer<br>  (most likely a plc's memory area you read with readArea()).
+</FONT><FONT FACE="Arial" SIZE="3">  The first byte is the lower part of the word (Big Endian)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nByteIndex: the index of the element in the "x_nBuffer[]" array representing the starting byte of the double word we want to read
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nBuffer[1]: the monodimensional array of num from where we are reading a double word.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   num x_nRes: where the result is stored.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Examples
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   	call getWordAt(3, nDB, l_nRes)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">   Creation: 24-12-16 - Alessio Villa
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="init"> <B>
+public init(sio& x_sTCPclient)</B> </FONT>
+<FONT FACE="Arial" SIZE="3">   This function initialize the library.
+</FONT><FONT FACE="Arial" SIZE="3">  Use it once at the beginning of your VAL3 application. 
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  x_sTCPclient: the sio variable linked with the TCP client socket you must define on your controller.   
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">   
+</FONT><FONT FACE="Arial" SIZE="3">  Examples
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">    call S7:init(sTcpClient)
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">   Creation: 24-12-16 - Alessio Villa
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="readArea"> <B>
+public readArea(num& x_nIdArea, num& x_nDBnumber, num& x_nStartAt, num& x_nQty, num& x_nBuffer[---])</B> </FONT>
+<FONT FACE="Arial" SIZE="3">
+</FONT><FONT FACE="Arial" SIZE="3">  This function read a memory area from the PLC starting from "x_nStartAt" byte and for a "x_nQty" number of bytes.
+</FONT><FONT FACE="Arial" SIZE="3">  The result is stored in a "num" array where each element is a byte of the memory area read.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nIdArea: the PLC's memory area identifier (you'll find several identifier as public members of the library with the suffix "nArea").
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nDBnumber: the DB number you're reading from (this parameter is not important if you're not reading a db...but in VAL3 there's no possibility<br>  to overload functions so we must pass it the same to this function!).
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nStartAt:: the byte adddress you want start to read from.
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nQty: the amount of bytes you want to read. 
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">   num x_nBuffer[1]:  a monodimensional array where the area read is stored. If the size of this buffer is smaller than "x_nQty" only "size(x_nBuffer[])" will be read .
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Examples
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   call S7:readArea(S7:nAreaDB,nDBread,2,1,l_nRes)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">   Creation: 24-12-16 - Alessio Villa
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="readDB"> <B>
+public readDB(num& x_nDBnumber, num& x_nDB[---])</B> </FONT>
+<FONT FACE="Arial" SIZE="3">
+</FONT><FONT FACE="Arial" SIZE="3">   This function is a convenient wrapper of "readArea" useful to read a whole DB from the PLC.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   num x_nDBnumber:the DB number you want to read
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   num x_nDB[1]:a monodimensional array of "num" where the db is stored. The size of this buffer will be resized to match exactly the db's size ,<br>  for this reason x_nDB[] MUST BE A GLOBAL VARIABLE.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Examples
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   call S7:readDB(nDBnumber, nDB)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">   Creation: 24-12-16 - Alessio Villa
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="setBitAt"> <B>
+public setBitAt(num& x_nByteIndex, num& x_nBitIndex, bool& x_bBit, num& x_nBuffer[---])</B> </FONT>
+<FONT FACE="Arial" SIZE="3">
+</FONT><FONT FACE="Arial" SIZE="3">   This function set to "x_bBit" the boolean value of the bit number "x_nBitIndex" of the "x_nByteIndex" element (that represent a byte) of the passed array of num.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nByteIndex: the index of the "x_nBuffer[]" array representing the byte we want to set.
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nBitIndex: the bit number from 0(LSB) to 7(MSB) in the x_nByteIndex byte, if this value is lower than 0 or higher than 7 this function will have no effetcs.
+</FONT><FONT FACE="Arial" SIZE="3">  num x_bBit: the boolean value we want to set. 
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   num x_nBuffer[1]: the monodimensional array of num from we are writing the bit value (most likely a plc's memory area we are about to write with writeArea).
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Examples
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   call setBitAt(0, 3, true, nPlcWriteBuffer)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">   Creation: 24-12-16 - Alessio Villa
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="setByteAt"> <B>
+public setByteAt(num& x_nByteIndex, num& x_nByte, num& x_nBuffer[---])</B> </FONT>
+<FONT FACE="Arial" SIZE="3">
+</FONT><FONT FACE="Arial" SIZE="3">  This function is trivial, it just set to "x_nByte" the "x_nByteIndex" element of the array x_nBuffer.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nByteIndex: the index of the element in the "x_nBuffer[]" array representing the byte we want to read.
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nRes: the byte value we want to set.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nBuffer[1]: the monodimensional array of num where we are writing a byte (most likely a plc's memory area we are about to write with writeArea). 
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Examples
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  call S7:setWordAt(0,231,l_nLocalByte) 
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">   Creation: 24-12-16 - Alessio Villa
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="setWordAt"> <B>
+public setWordAt(num& x_nByteIndex, num& x_nWord, num& x_nBuffer[---])</B> </FONT>
+<FONT FACE="Arial" SIZE="3">
+</FONT><FONT FACE="Arial" SIZE="3">   This function set to "x_nWord" the value of the word composed by two bytes starting from "x_nByteIndex" element of the array x_nBuffer<br>  (most likely a plc's memory area we are about to write with writeArea).
+</FONT><FONT FACE="Arial" SIZE="3">   This will be done according to the Big Endian notation used in Siemens.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nByteIndex: the index of the element in the "x_nBuffer[]" array representing the starting byte of the word we want to read.
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nRes: the word value we want to set.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Output parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nBuffer[1]: the monodimensional array of num where we are writing a word (most likely a plc's memory area we are about to write with writeArea). 
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Examples
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   call setWordAt(0,554,l_nLocalWord)
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">   Creation: 24-12-16 - Alessio Villa
+</FONT>
+<a href="#TOP">Back to top</a>
+<FONT FACE="Arial" SIZE="4" ID="writeArea"> <B>
+public writeArea(num& x_nIdArea, num& x_nDBnumber, num& x_nBuffer[---], num& x_nStartAt, num& x_nQty)</B> </FONT>
+<FONT FACE="Arial" SIZE="3">
+</FONT><FONT FACE="Arial" SIZE="3">   This function write in a given PLC memory's area the content of the passed array of num, starting from a gven byte and for a given amount of bytes.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Input parameters
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nIdArea: the PLC's memory area identifier (you'll find several identifier as public members of the library with the suffix "nArea").
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nDBnumber: the DB number you're writing to (this parameter is not important if you're not writing a db...but in VAL3 there's no possibility<br>  to overload functions so we must pass it the same to this function!).
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nBuffer[1]:  a monodimensional array where representing the memory area we want to write.<br>  If the size of this buffer is smaller than "x_nQty" only "size(x_nBuffer[])" will be written .
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nStartAt: the byte address you want start to write from.
+</FONT><FONT FACE="Arial" SIZE="3">  num x_nQty: the amount of bytes you want to write.
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  Examples
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  call S7:writeArea(S7:nAreaDB, nDBnumber, nSampleBuffer, 0, size(nSampleBuffer)) 
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">  History
+</FONT><FONT FACE="Arial" SIZE="3">  
+</FONT><FONT FACE="Arial" SIZE="3">   Creation: 24-12-16 - Alessio Villa
+</FONT>
+<a href="#TOP">Back to top</a>
+</PRE>
+</BODY>
+</HTML>

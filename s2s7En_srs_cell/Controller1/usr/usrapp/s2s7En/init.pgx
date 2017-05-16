@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="init" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_sTCPclient" type="sio" xsi:type="element" use="reference" />
+    </Parameters>
+    <Code><![CDATA[begin
+
+  //Header begin
+  // This function initialize the library.
+  //Use it once at the beginning of your VAL3 application. 
+  //
+  //Input parameters
+  //
+  //x_sTCPclient: the sio variable linked with the TCP client socket you must define on your controller.   
+  //
+  //Output parameters
+  // 
+  //Examples
+  //
+  //  call S7:init(sTcpClient)
+  //History
+  // Creation: 24-12-16 - Alessio Villa
+  //Header end
+
+  sioLink(sioTCPclient,x_sTCPclient)
+  sioCtrl(sioTCPclient,"port",nISOPort)
+  sioCtrl(sioTCPclient,"timeout",nRecvTimeout)
+  sioCtrl(sioTCPclient,"endOfString",13)
+  sioCtrl(sioTCPclient,"clients",1)
+  sioCtrl(sioTCPclient,"nagle",false)
+
+
+  nLocalTSAP_HI=1
+  nLocalTSAP_LO=0
+  nRemoteTSAP_HI=1
+  nRemoteTSAP_LO=2
+
+  bConnected=false
+  //PG connection type
+  nConnType=1
+  call setLastError(nNoErrors)
+  nPDULength=0
+  nRecvTimeout=0.5
+
+end]]></Code>
+  </Program>
+</Programs>

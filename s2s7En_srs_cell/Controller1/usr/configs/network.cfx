@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<network>
+  <Bool name="dhcpClient" value="false" />
+  <Int name="dhcpClientType" value="-1" />
+  <String name="dhcpClientAddress" value="" />
+  <Inet name="ipAddress" value="192.168.137.107" />
+  <Inet name="ipMask" value="255.255.0.0" />
+  <Inet name="ipAddress2" value="172.31.0.1" />
+  <Inet name="ipMask2" value="255.255.0.0" />
+  <Uint name="remotePort" value="800" />
+  <Uint name="fieldbusConsolePort" value="5001" />
+  <Uint name="telnetPort" value="23" />
+  <soapServer>
+    <String name="host" value="" />
+    <Uint name="port" value="851" />
+    <Int name="sendTimeout" value="60" />
+    <Int name="receiveTimeout" value="1" />
+    <Int name="acceptTimeout" value="0" />
+    <Uint name="maxKeepAlive" value="2147483647" />
+    <Float name="sessionTimeout" value="3600" />
+    <Int name="backLog" value="100" />
+  </soapServer>
+  <sntpClient>
+    <Bool name="enable" value="false" />
+    <Inet name="serverIp" value="0.0.0.0" />
+    <Int name="gmt" value="0" />
+    <Int name="timeout" value="3000" />
+  </sntpClient>
+</network>

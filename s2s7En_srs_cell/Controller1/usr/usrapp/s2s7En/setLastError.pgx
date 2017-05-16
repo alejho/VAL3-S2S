@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="setLastError">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nError" type="num" xsi:type="element" />
+    </Parameters>
+    <Code><![CDATA[begin
+  
+  //Header begin
+  
+  // Describe functionality and purpose
+  //
+  //Input parameters
+  // type param1: description (role, possible values,...)
+  // param1 description (continued)
+  // param1 description (continued)
+  // type param2: description (role, possible values,...)
+  // type param3: description (role, possible values,...)
+  // ...
+  //
+  //Output parameters
+  // type param1: description (role, possible values,...)
+  // type param2: description (role, possible values,...)
+  // type param3: description (role, possible values,...)
+  // ...
+  //
+  //Examples
+  // call examples (for public programs mostly)
+  //
+  //History
+  // Creation: DD-MM-YY - AUTHOR NAME
+  // Modification: DD-MM-YY - AUTHOR NAME - Description of modification
+  // description of modification (continued)
+  // description of modification (continued)
+  // Modification: DD-MM-YY - AUTHOR NAME - Description of modification
+  //Header end
+
+  nLastError=x_nError
+
+end]]></Code>
+  </Program>
+</Programs>

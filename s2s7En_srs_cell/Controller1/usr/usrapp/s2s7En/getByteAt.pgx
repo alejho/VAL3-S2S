@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="getByteAt" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nByteIndex" type="num" xsi:type="element" />
+      <Parameter name="x_nBuffer" type="num" xsi:type="array" use="reference" />
+      <Parameter name="x_nRes" type="num" xsi:type="element" use="reference" />
+    </Parameters>
+    <Code><![CDATA[begin
+
+  //Header begin
+  
+  // This function is trivial, it just return in "x_nRes" the "x_nByteIndex" element of the array x_nBuffer (most likely a plc's memory area you read with readArea()).
+  //
+  //Input parameters
+  //
+  // num x_nByteIndex: the index of the element in the "x_nBuffer[]" array representing the byte we want to read
+	// num x_nBuffer[1]: the monodimensional array of num from where we are reading a byte.
+
+  //Output parameters
+  //
+  // num x_nRes: where the result is stored
+  
+  //Examples
+  //
+  // 	call getByteAt(12, nDB, l_nRes)
+  //
+  //History
+  // Creation: 24-12-16 - Alessio Villa
+  //Header end
+
+  x_nRes=x_nBuffer[x_nByteIndex]
+
+end]]></Code>
+  </Program>
+</Programs>

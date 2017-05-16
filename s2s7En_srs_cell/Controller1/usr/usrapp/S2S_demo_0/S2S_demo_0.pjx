@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://www.staubli.com/robotics/VAL3/Project/3">
+  <Parameters version="s7.9.1" stackSize="5000" millimeterUnit="true" />
+  <Programs>
+    <Program file="start.pgx" />
+    <Program file="stop.pgx" />
+  </Programs>
+  <Database>
+    <Data file="S2S_demo_0.dtx" />
+  </Database>
+  <Libraries>
+    <Library alias="S7" path="Disk://s2s7En/s2s7En.pjx" />
+  </Libraries>
+</Project>

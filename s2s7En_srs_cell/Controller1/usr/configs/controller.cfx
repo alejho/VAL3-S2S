@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<controller>
+  <String name="testMode" value="Demo" />
+  <Bool name="buildBio" value="false" />
+  <Bool name="buildBio2" value="false" />
+  <Bool name="buildMio" value="false" />
+  <Bool name="buildCio" value="false" />
+  <String name="cioBoardConfig" value="" />
+  <Bool name="buildSerial1" value="false" />
+  <Bool name="buildSerial2" value="false" />
+  <Bool name="buildSerial3" value="false" />
+  <Bool name="buildSerial4" value="false" />
+  <Bool name="buildSerial5" value="false" />
+  <Bool name="buildSerial6" value="false" />
+  <Bool name="buildSerial7" value="false" />
+  <Bool name="buildSerial8" value="false" />
+  <String name="UserApp" value="usrapp" />
+  <String name="templateDir" value="templates" />
+  <Bool name="buildStarc2" value="true" />
+  <starc2Slot index="0"  board="" />
+  <starc2Slot index="1"  board="" />
+  <starc2Slot index="2"  board="" />
+  <uniVALparams>
+    <String name="config" value="axis" />
+    <String name="fieldbus" value="" />
+  </uniVALparams>
+  <String name="simulMode" value="simulation" />
+  <String name="serialNumber" value="" />
+  <Bool name="buttonWorkingMode" value="true" />
+  <Bool name="traceSignals" value="false" />
+  <Bool name="logging" value="true" />
+  <Uint name="loggerSize" value="1048576" />
+  <Float name="powerShutdownDelay" value="-1" />
+  <String name="standardFiles" value="" />
+  <Float name="lliCycleTime" value="-1" />
+  <Float name="powerHourCount" value="1074.164814" />
+</controller>

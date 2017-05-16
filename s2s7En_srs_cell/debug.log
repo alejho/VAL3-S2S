@@ -1,0 +1,66 @@
+[0516/124207:VERBOSE1:pref_proxy_config_tracker_impl.cc(216)] 000000001BC487D0: set chrome proxy config service to 0000000031B20B90
+[0516/124207:VERBOSE1:pref_proxy_config_tracker_impl.cc(353)] 000000001BC487D0: Done pushing proxy to UpdateProxyConfig
+[0516/124208:VERBOSE1:child_thread_impl.cc(367)] Mojo is disabled on child
+[0516/124229:VERBOSE1:ipc_sync_channel.cc(386)] Canceling pending sends
+[0516/124229:VERBOSE1:ipc_sync_channel.cc(386)] Canceling pending sends
+[0516/124229:VERBOSE1:ipc_sync_channel.cc(386)] Canceling pending sends
+[0516/124229:VERBOSE1:ipc_sync_channel.cc(386)] Canceling pending sends
+[0516/124229:VERBOSE1:ipc_sync_channel.cc(386)] Canceling pending sends
+[0516/124229:VERBOSE1:statistics_recorder.cc(332)] Collections of all histograms
+Histogram: GPU.ANGLE.D3D11CreateDeviceMS recorded 1 samples, average = 66.0 (flags = 0x1)
+0   ... 
+57  ------------------------------------------------------------------------O (1 = 100.0%) {0.0%}
+68  ... 
+
+Histogram: GPU.ANGLE.D3D11FeatureLevel recorded 1 samples, average = 5.0 (flags = 0x1)
+0  ... 
+5  ------------------------------------------------------------------------O (1 = 100.0%) {0.0%}
+6  O                                                                         (0 = 0.0%) {100.0%}
+
+Histogram: GPU.ANGLE.D3D11InitializeResult recorded 1 samples, average = 0.0 (flags = 0x1)
+0  ------------------------------------------------------------------------O (1 = 100.0%)
+1  ... 
+
+Histogram: GPU.ANGLE.DisplayInitializeMS recorded 1 samples, average = 68.0 (flags = 0x1)
+0   ... 
+68  ------------------------------------------------------------------------O (1 = 100.0%) {0.0%}
+81  ... 
+
+Histogram: GPU.ANGLE.Renderer11InitializeDLLsMS recorded 1 samples, average = 1.0 (flags = 0x1)
+0  O                                                                         (0 = 0.0%)
+1  ------------------------------------------------------------------------O (1 = 100.0%) {0.0%}
+2  ... 
+
+Histogram: GPU.ANGLE.Renderer11InitializeDeviceMS recorded 1 samples, average = 0.0 (flags = 0x1)
+0  ------------------------------------------------------------------------O (1 = 100.0%)
+1  ... 
+
+Histogram: GPU.ANGLE.SupportsDXGI1_2 recorded 1 samples, average = 1.0 (flags = 0x1)
+0  O                                                                         (0 = 0.0%)
+1  ------------------------------------------------------------------------O (1 = 100.0%) {0.0%}
+2  O                                                                         (0 = 0.0%) {100.0%}
+
+Histogram: GPU.CollectContextGraphicsInfo recorded 1 samples, average = 0.0 (flags = 0x1)
+0  ------------------------------------------------------------------------O (1 = 100.0%)
+1  ... 
+
+Histogram: GPU.InitializeOneOffMediumTime recorded 1 samples, average = 75.0 (flags = 0x1)
+0   ... 
+75  ------------------------------------------------------------------------O (1 = 100.0%) {0.0%}
+92  ... 
+
+Histogram: GPU.MaxMSAASampleCount recorded 1 samples (flags = 0x1)
+8  ------------------------------------------------------------------------O (1 = 100.0%)
+
+Histogram: V8.Initializer.LoadV8Snapshot.Result recorded 1 samples, average = 0.0 (flags = 0x1)
+0  ------------------------------------------------------------------------O (1 = 100.0%)
+1  ... 
+
+Histogram: V8.Initializer.OpenV8File.Result recorded 2 samples, average = 0.0 (flags = 0x1)
+0  ------------------------------------------------------------------------O (2 = 100.0%)
+1  ... 
+
+
+[0516/124816:VERBOSE1:pref_proxy_config_tracker_impl.cc(216)] 000000001BAF2980: set chrome proxy config service to 000000001BBF4040
+[0516/124816:VERBOSE1:pref_proxy_config_tracker_impl.cc(353)] 000000001BAF2980: Done pushing proxy to UpdateProxyConfig
+[0516/124816:VERBOSE1:child_thread_impl.cc(367)] Mojo is disabled on child

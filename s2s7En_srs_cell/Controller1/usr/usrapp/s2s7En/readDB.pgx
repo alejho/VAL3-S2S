@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="readDB" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nDBnumber" type="num" xsi:type="element" />
+      <Parameter name="x_nDB" type="num" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nLength" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  //Header begin
+  
+  // This function is a convenient wrapper of "readArea" useful to read a whole DB from the PLC.
+  //
+  //Input parameters
+  //
+  // num x_nDBnumber:the DB number you want to read
+  //
+  //Output parameters
+  //
+  // num x_nDB[1]:a monodimensional array of "num" where the db is stored. The size of this buffer will be resized to match exactly the db's size , for this reason x_nDB[] MUST BE A GLOBAL VARIABLE.
+  //
+  //Examples
+  //
+  // call S7:readDB(nDBnumber, nDB)
+  //
+  //History
+  // Creation: 24-12-16 - Alessio Villa
+  //Header end
+
+  call getDBsize(x_nDBnumber,l_nLength)
+
+  if nLastError==nNoErrors
+    resize(x_nDB,1,l_nLength)
+    call readArea(nAreaDB,x_nDBnumber,0,l_nLength,x_nDB)
+  endIf
+
+end]]></Code>
+  </Program>
+</Programs>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="setBitAt" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nByteIndex" type="num" xsi:type="element" />
+      <Parameter name="x_nBitIndex" type="num" xsi:type="element" />
+      <Parameter name="x_bBit" type="bool" xsi:type="element" />
+      <Parameter name="x_nBuffer" type="num" xsi:type="array" use="reference" />
+    </Parameters>
+    <Code><![CDATA[begin
+  
+  //Header begin
+  
+  // This function set to "x_bBit" the boolean value of the bit number "x_nBitIndex" of the "x_nByteIndex" element (that represent a byte) of the passed array of num.
+  //
+  //Input parameters
+  //
+  //num x_nByteIndex: the index of the "x_nBuffer[]" array representing the byte we want to set.
+	//num x_nBitIndex: the bit number from 0(LSB) to 7(MSB) in the x_nByteIndex byte, if this value is lower than 0 or higher than 7 this function will have no effetcs.
+	//num x_bBit: the boolean value we want to set. 
+  //
+  //Output parameters
+  //
+  // num x_nBuffer[1]: the monodimensional array of num from we are writing the bit value (most likely a plc's memory area we are about to write with writeArea).
+  //
+  //Examples
+  //
+  // call setBitAt(0, 3, true, nPlcWriteBuffer)
+  //
+  //History
+  // Creation: 24-12-16 - Alessio Villa
+  //Header end
+
+  if x_nBitIndex>7
+    return
+  endIf
+
+  if x_bBit
+    x_nBuffer[x_nByteIndex]=bOr(power(2,x_nBitIndex),x_nBuffer[x_nByteIndex])
+  else
+    x_nBuffer[x_nByteIndex]=bAnd(power(2,8)-power(2,x_nBitIndex)-1,x_nBuffer[x_nByteIndex])
+  endIf
+
+end]]></Code>
+  </Program>
+</Programs>

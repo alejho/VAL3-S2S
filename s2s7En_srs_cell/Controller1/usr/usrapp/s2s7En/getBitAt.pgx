@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="getBitAt" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nByteIndex" type="num" xsi:type="element" />
+      <Parameter name="x_nBitIndex" type="num" xsi:type="element" />
+      <Parameter name="x_nBuffer" type="num" xsi:type="array" use="reference" />
+      <Parameter name="x_bRes" type="bool" xsi:type="element" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nResult" type="num" xsi:type="array" size="1" />
+      <Local name="l_sByte" type="string" xsi:type="array" size="1" />
+      <Local name="l_sMask" type="string" xsi:type="array" size="1" />
+      <Local name="l_sResult" type="string" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  //Header begin
+  
+  // This function get the boolean value of the bit number "x_nBitIndex" of the "x_nByteIndex" element (that represent a byte) of the passed array of num (most likely a plc's memory area you read with readArea()).
+  //
+  //Input parameters
+  //
+  // num x_nByteIndex: the index of the "x_nBuffer[]" array representing the byte we want to read from (most likely a plc's memory area you read with readArea())
+	// num x_nBitIndex: the bit number from 0(LSB) to 7(MSB) in the x_nByteIndex byte, if this value is lower than 0 or higher than 7 x_bRes will be set to false by default.
+	// num x_nBuffer[1]: the monodimensional array of num from where we are reading the bit value.
+  //
+  //Output parameters
+  // bool x_bRes: the result, set to "true" if the bit is high, false otherwise. 
+  
+  //Examples
+  //
+  // call getBitAt(0,4,l_nRes,l_bRes)
+  //
+  //History
+  // Creation: 24-12-16 - Alessio Villa
+  //Header end
+
+  if x_nBitIndex>7
+    x_bRes=false
+    return
+  endIf
+
+  call bitOp:DecToBin(x_nBuffer[x_nByteIndex],l_sByte)
+  call bitOp:DecToBin(power(2,x_nBitIndex),l_sMask)
+  call bitOp:boolAnd(l_sByte,l_sMask,l_sResult)
+
+  call bitOp:BinToDec(l_sResult,l_nResult)
+  if l_nResult>0
+    x_bRes=true
+  else
+    x_bRes=false
+  endIf
+
+end]]></Code>
+  </Program>
+</Programs>

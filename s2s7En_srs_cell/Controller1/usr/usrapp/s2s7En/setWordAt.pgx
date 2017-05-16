@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="setWordAt" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nByteIndex" type="num" xsi:type="element" />
+      <Parameter name="x_nWord" type="num" xsi:type="element" />
+      <Parameter name="x_nBuffer" type="num" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nHIword" type="num" xsi:type="array" size="1" />
+      <Local name="l_nLOword" type="num" xsi:type="array" size="1" />
+      <Local name="l_sBinWord" type="string" xsi:type="array" size="1" />
+      <Local name="l_sTempBinByte" type="string" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  //Header begin
+  
+  // This function set to "x_nWord" the value of the word composed by two bytes starting from "x_nByteIndex" element of the array x_nBuffer (most likely a plc's memory area we are about to write with writeArea).
+  // This will be done according to the Big Endian notation used in Siemens.
+  //
+  //Input parameters
+  //
+  //num x_nByteIndex: the index of the element in the "x_nBuffer[]" array representing the starting byte of the word we want to read.
+	//num x_nRes: the word value we want to set.
+  //
+  //Output parameters
+  //
+  //num x_nBuffer[1]: the monodimensional array of num where we are writing a word (most likely a plc's memory area we are about to write with writeArea). 
+  //
+  //Examples
+  //
+  // call setWordAt(0,554,l_nLocalWord)
+  //
+  //History
+  // Creation: 24-12-16 - Alessio Villa
+  //Header end
+
+  //gestione del segno???
+  if x_nWord<0 or x_nWord>power(2,16)-1
+    x_nBuffer[x_nByteIndex]=0
+    x_nBuffer[x_nByteIndex+1]=0
+    return
+  endIf
+
+  l_sBinWord=""
+  call bitOp:BitWord(x_nWord,l_sBinWord)
+  call bitOp:shiftRight(l_sBinWord,8)
+  call bitOp:BinToDec(l_sBinWord,l_nLOword)
+
+  l_sBinWord=""
+  call bitOp:BitWord(x_nWord,l_sBinWord)
+  call bitOp:boolAnd(l_sBinWord,"0000000011111111",l_sTempBinByte)
+  call bitOp:BinToDec(l_sTempBinByte,l_nHIword)
+
+  x_nBuffer[x_nByteIndex]=l_nLOword
+  x_nBuffer[x_nByteIndex+1]=l_nHIword
+
+end]]></Code>
+  </Program>
+</Programs>
